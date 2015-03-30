@@ -21,7 +21,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import model.FileWeb;
-
+ 
 public final class AddingDownload {
 	private static AddingDownload instance = new AddingDownload();
 	/**
