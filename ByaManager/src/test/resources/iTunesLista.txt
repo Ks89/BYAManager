@@ -1,0 +1,158 @@
+7.3.0.54___0___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Mac/061-3018.20070629.60NoI/iTunes.dmg___266a60d260eb82ce9d489b64713af61012d98d31
+7.3.1.3___0___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Mac/061-3550.20070711.B72nt/iTunes.dmg___cd29af8373fc21424558cd302f806ddb57d9b169
+7.3.2.6___0___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Mac/061-3608.20070802.im8t3/iTunes7.3.2.dmg___bce60930813741667c6db59f6f41bc0cf6691b0b
+7.4.0.26___0___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Mac/061-3602.20070905.mUy57/iTunes7.4.dmg___4422396fee3323cceab7d0ae83f47f7bedb21033
+7.4.1.2___0___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Mac/061-3889-20070907.ItU741/iTunes7.4.1.dmg___24e11dbc7498ef5d51b629e3caa202c0633b75ac
+7.4.2.4___0___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Mac/061-3873.20070917.Rg7Vw/iTunes7.4.2.dmg___b0471389ab987bc98d5f6ae1122a4f780048d930
+7.5.0.19___0___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Mac/061-3899.20071105.Vg7Tg/iTunes7.5.dmg___b7057a5d13d4ff5b1bb0faa5af5d9e203db4cca9
+7.6.0.29___0___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Mac/061-3983.20080115.i7gnh/iTunes.dmg___f3d68cd00043933a5d1192a39113d21b89e43842
+7.6.1.9___0___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Mac/061-4265.20080221.MscTs/iTunes.dmg___74844cfb88003535e396fa0437e2df285c909614
+7.6.2.9___0___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Mac/061-4474.20080402.1Swef/iTunes.dmg___d01c28611f6e23b277b338ee8a594b1d8955aa25
+7.7.0.43___0___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Mac/061-5099.20080710.frt56/iTunes.dmg___f37043528c43b94451ce53c676647d0a441486a8
+7.7.1.11___0___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Mac/061-5123.20080730.fr4Ym/iTunes.dmg___3fdaf990a103799255112dccb0e0c01f28d64937
+8.0.0.35___0___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes8/061-4744.20080909.5Ty6li/iTunes8.dmg___af54727e4b2e0e6bb0c367b34ae5075f36096aef
+8.0.1.11___0___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes8/061-5633.20081003.Njki0/iTunes801.dmg___ab5604e2b7492d3f0cf4e2d06520553ed5153039
+8.0.1.12___0___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes8/061-5649.20081008.hji9O/iTunes801.dmg___35c736471228e0b47a0fb54a52447ec8ff11681f
+8.0.2.20___0___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes8/061-5810.20081120.wm3n4/iTunes802.dmg___ad1d027ec850af8c70a3af39eb3c47e1192067df
+8.1.0.50___0___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes8/061-5641.20090311.Cfe4r/iTunes81.dmg___6c9ee64741158c9f45417b965b38b01ea3b51af1
+8.1.1.10___0___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes8/061-6171.20090406.i98u7/iTunes811.dmg___447933eee85feca7b8a2335e441202794c19b966
+8.2.0.23___0___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes8/061-6183.20090601.Pldj3/iTunes8.2.dmg___a07c4fb0dfd94ba238024cf8d448165da24e5be5
+8.2.1.6___0___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes8/061-6715.20090715.cfR54/iTunes8.2.1.dmg___f6d1e5453b7c2ae9a85fe61a7d0eaf972e4d7266
+9.0.0.70___0___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes9/061-6350.20090909.tnzs2/iTunes9.dmg___eb436fbe738bfa9682805d7ea76bd03c72736e89
+9.0.1.8___0___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes9/061-7191.20090922.P6uhj/iTunes9.0.1.dmg___eea9dbc34e395a44bfa821501827ea3c5b4c24a9
+9.0.2.25___0___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes9/061-7197.20091029.tnz9f/iTunes9.0.2.dmg___9ea11cc2ffb54a3779f3d6042756a48f945d2594
+9.0.3.15___0___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes9/061-7752.20100201.Tz39N/iTunes9.0.3.dmg___980568d7429b1093eff092e8fe68115151c2bb22
+9.1.0.79___0___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes9/061-7203.20100330.XswP8/iTunes9.1.dmg___cbfe7da9ccc2934395e27ee99ab400c3fdea0595
+9.1.1.11___0___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes9/061-8084.2010.04.27.6lQSu/iTunes9.1.1.dmg___d240d0326941592b21b0303a65c8a266092c6faa
+9.1.1.12___0___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes9/061-8202.20100427.5vfkH/iTunes9.1.1.dmg___4d766a400590fa0e11fc28827d4cbc1e8e5802f7
+9.2.0.61___0___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes9/061-8440.20100616.Tnzs2/iTunes9.2.dmg___fc0cd72f63ce2a39ae24ccc6cdd00c921a8a542e
+9.2.1.4___0___http://appldnld.apple.com/iTunes9/061-8601.20100719.nhy5R/iTunes9.2.1.dmg___96b8d985867f7bdeb440db81303d151d5b94d1d0
+9.2.1.5___0___http://appldnld.apple.com/iTunes9/061-8725.20100722.Bhnyt/iTunes9.2.1.dmg___adc7ca871aace3361575dd78e0f69bcbeca186c8
+10.0.0.67 (1)___0___http://appldnld.apple.com/iTunes10/061-8247.20100901.Ktjyt/iTunes10.dmg___936a24a8897d024bddaeab1ef771d8b6e678f1f9
+10.0.0.67 (2)___0___http://appldnld.apple.com/iTunes10/061-9183.20100902.X2ndX/iTunes10.dmg___a21838677e073c3888bad217dc375b6989f881cd
+10.0.1.22 (1)___0___http://appldnld.apple.com/iTunes10/061-9207.20100924.Nzse2/iTunes10.0.1.dmg___4c12b51e2a2b08a93687fdee0a79390c192117eb
+10.0.1.22 (2)___0___http://appldnld.apple.com/iTunes10/061-9447.20100929.Bhny5/iTunes10.0.1.dmg___328ba2970062902e54147082c1c2722ce1d0ab9d
+10.1.0.54___0___http://appldnld.apple.com/iTunes10/061-9530.20101112.MSakc/iTunes10.1.dmg___e8fec05f2bf414585fdcebf52163c8c189779a6f
+10.1.1.4___0___http://appldnld.apple.com/iTunes10/041-0027.20101215.AzsL3/iTunes10.1.1.dmg___69f1f89455c5550e4e6c78dc041ede2242bd7e06
+10.1.2.17___0___http://appldnld.apple.com/iTunes10/061-9991.20110127.ZxsE3/iTunes10.1.2.dmg___75304d4f16f8a790f5a819b04a59b98b563a062f
+10.2.0.34___0___http://appldnld.apple.com/iTunes10/061-9637.20110302.Tnz2t/iTunes10.2.dmg___35da52c03a478d7ff325e67d589e48afd195c9ab
+10.2.1.1___0___http://appldnld.apple.com/iTunes10/041-0475.20110308.mAcaz/iTunes10.2.1.dmg___27fa797873c68b44017a6769b9057e8428d54da8
+10.2.2.12___0___http://appldnld.apple.com/iTunes10/041-0533.20110418.AqP4r/iTunes10.2.2.dmg___7b94065174927dbce71182c89a00b3966021ceb8
+10.3.0.54___0___http://appldnld.apple.com/iTunes10/041-0271.20110606.O0tc5/iTunes10.3.dmg___cdad2cc9c5aa11f3ea23650eab6fe0ae929aab9a
+10.3.1.55___0___http://appldnld.apple.com/iTunes10/041-1632.20110607.SUch3/iTunes10.3.1.dmg___a4707d61a4d0b2d3a76b77b57a6a56f2eef9a5c1
+10.4.0.80 (1)___0___http://appldnld.apple.com/iTunes10/041-0717.20110720.MP6Y2/iTunes10.4.dmg___2082404e19bdc1f22033be5ae5a41cf997cb1ce1
+10.4.0.80 (2)___0___http://appldnld.apple.com/iTunes10/041-1988.20110720.Rt5Yp/iTunes10.4.dmg___1a0e914a906222004dd0c9b3aac0130584d092ca
+10.4.0.80 (3)___0___http://appldnld.apple.com/iTunes10/041-2057.20110726.1WEPD/iTunes10.4.dmg___58c28ed2f98fbd7f5e860fd8968cb3c87d0495a2
+10.4.1.10___0___http://appldnld.apple.com/iTunes10/041-2072.20110822.frk45/iTunes10.4.1.dmg___18c12446addcb7783cfa2954b514705c621fd674
+10.5.0.141___0___http://appldnld.apple.com/iTunes10/041-2597.20111011.PigVe/iTunes10.5.dmg___d6ecdd767b31b6c4661ef97a6a1a1234d2f695d1
+10.5.1.42___0___http://appldnld.apple.com/iTunes10/041-3230.20111114.bNft5/iTunes10.5.1.dmg___08f8ebe3f75d7b98a215750c08b7d6eff7c9ceb9
+10.5.2.11___0___http://appldnld.apple.com/iTunes10/041-3446.20111212.Tgjr4/iTunes10.5.2.dmg___29fbe3c2220ac882276dfd194bc1b8ef6f912a6e
+10.5.3.3___0___http://appldnld.apple.com/iTunes10/041-3779.20120119.Bgty5/iTunes10.5.3.dmg___f27c4e65282f92726aae28d8759dbe4334c7f7ea
+10.6.0.40___0___http://appldnld.apple.com/iTunes10/041-3540.20120307.Defjr/iTunes10.6.dmg___989eae5442d64dfc6dd4ce3ced38eba3fa9609c3
+7.3.0.54___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Win/061-3312.20070629.Mu8Bv/iTunesSetup.exe___333be2547b5eb9fe3ddf65115b14756a7f72690a
+7.3.1.3___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Win/061-3552.20070711.RxT4b/iTunesSetup.exe___77144b39b768143cb4882b7b6f463724f87fcbd8
+7.3.2.6___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Win/061-3610.20070802.x4r9j/iTunesSetup.exe___7a2f987fe25e98db6017942e772300adc32be751
+7.4.0.26___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Win/061-3604.20070905.Cyi94/iTunesSetup.exe___fefe391446a8d8010d0a26e9819e893a76319da6
+7.4.1.2___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Win/061-3885-20070907.sk2j7/iTunesSetup.exe___2c57aa25db4085569368e8485b97002705dbefb1
+7.4.2.4___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Win/061-3874.20070917.pQ2cG/iTunes742Setup.exe___828bb0dfa6727d05f80cf338538dba5a9e90c0d9
+7.4.3.1___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Win/061-3945.20070927.9I8un/iTunes743Setup.exe___908ccbb1544799825d80df899e2e9f1eabfa8899
+7.5.0.20 (1)___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Win/061-3902.20071105.G6edS/iTunes75Setup.exe___b38005b53e608dcd2b4fe18b44cc419fefbc9411
+7.5.0.20 (2)___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Win/061-4183.20071213.FNXDz/iTunesSetup.exe___e0f384fbf385f98fce3431f084b474bd092312a3
+7.6.0.29 (1)___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Win/061-3986.20080115.mBvyG/iTunesSetup.exe___eec2aa5c7b502d7fcd959317508ed7b1c6fca207
+7.6.0.29 (2)___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Win/061-4287.20080206.Wntz2/iTunesSetup.exe___9c1c0cdc2a1375af71f6423277a41cc2ce6273d1
+7.6.1.9 (1)___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Win/061-4268.20080221.Tnz76/iTunesSetup.exe___598282bd4cb48a06a38a87645fedfe9ab26e8d57
+7.6.2.9 (2)___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Win/061-4476.200402.tGbhu/iTunesSetup.exe___ff2a3c234d164f30f8b1d05297a49a55f3f4e8c0
+7.7.0.43___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Win/061-5102.20080710.bgty8/iTunesSetup.exe___eb2fa90ed5a99519184a5443b0ae4228100d0d46
+7.7.1.11___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Win/061-5126.20080730.vft5r/iTunesSetup.exe___23f34be26870bb2b46472551c6965909cb4548ec
+8.0.0.35 (1)___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes8/061-4746.20080909.Detnz/iTunes8Setup.exe___5d4ff8ffbe9feeaed67deb317797c1d71a03c359
+8.0.0.35 (2)___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes8/061-5525.20080911.bnj78/iTunes8Setup.exe___09bd8dd0b055f1b63205d5c9c9a00e4d42e38a3e
+8.0.1.11___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes8/061-5555.20081002.5Kij7/iTunes801Setup.exe___7342c1aa7c458db14c67e8635ee475adcc1d38be
+8.0.2.20 (1)___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes8/061-5812.20081120.3mv63/iTunesSetup.exe___96113274f450dfe2893805353663b2436161b15a
+8.0.2.20 (2)___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes8/061-5856.20090121.fvgtr/iTunesSetup.exe___50c0e31eda9ab0a5902d2242ba2fd74ef5be7c99
+8.1.0.51___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes8/061-6166.20090311.znt32/iTunesSetup.exe___562bcc78760c4055f84d53730089a62dfa9c3fcf
+8.1.0.52___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes8/061-6190.20090313.Cf9iK/iTunesSetup.exe___00bd8842cf0f2026cc4590ef434f6846eeca7fa4
+8.1.1.10___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes8/061-6172.20090406.Xdcfr/iTunesSetup.exe___cad92e6882b5fb49d710d342f315d7d6293e2b0a
+8.2.0.23 (1)___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes8/061-6184.20090601.Bhyit/iTunesSetup.exe___16f5b1e787b36aece842ea5ae80bfc6bf2b32b19
+8.2.0.23 (2)___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes8/061-6664.20090608.dfrtg/iTunesSetup.exe___b1fbcba068c32c25d8987b81ce60cc660b90ccd8
+8.2.1.6___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes8/061-6717.20090715.XsE4R/iTunesSetup.exe___797da9711caf87d114e2a5b88523fa825753b530
+9.0.0.70___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes9/061-6351.20090909.Tza9j/iTunesSetup.exe___68c84dd8d910ce6cc1508f41cb86d20de839f2e3
+9.0.1.8___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes9/061-7192.20090922.Mju88/iTunesSetup.exe___25d04ff5a63a808ca56875cdf9a9474b9b845f1d
+9.0.2.25 (1)___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes9/061-7198.20091029.4Ptrf/iTunesSetup.exe___0e1ad1c48ce9354f18efc6b1d02b70c8e7435cfb
+9.0.2.25 (2)___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes9/061-7528.20091118.Ktxz3/iTunesSetup.exe___cc999b74d5b9c4727c458fda78a7646906baed21
+9.0.3.15 (1)___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes9/061-7753.20100201.Jcv4r/iTunesSetup.exe___bfedc440ed45f8ddb3377445df46c8ee8ddb22a0
+9.0.3.15 (2)___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes9/061-7894.20100219.Kgbhy/iTunesSetup.exe___13b1cde538ffd6b89bb876da537e08c8bdcd09fe
+9.1.0.79___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes9/061-7204.20100330.Cdr4T/iTunesSetup.exe___80e64f3222703e5da2d613541170bcd6c300e801
+9.1.1.11___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes9/061-8085.2010.04.27.g8Z5E/iTunesSetup.exe___ad740fb89cef03743e698dba0dd6370b8c4bb677
+9.1.1.12___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes9/061-8203.20100427.1J2kd/iTunesSetup.exe___408a0ecc56b3bedda41c10582eab19b9c10f4119
+9.2.0.61___32___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes9/061-7656.20100616.ZTns2/iTunesSetup.exe___36b0bab6592437bb90d3bf0c8e2475d9f707f20b
+9.2.1.4___32___http://appldnld.apple.com/iTunes9/061-8602.20100719.Tnz92/iTunesSetup.exe___0cf297f0fea951f7eab22d1bd5c34699e5cf756b
+9.2.1.5___32___http://appldnld.apple.com/iTunes9/061-8726.20100722.Vbgth/iTunesSetup.exe___fd86e82bc52dd5a22d922aedf2a6063c224ca48c
+10.0.0.68___32___http://appldnld.apple.com/iTunes10/061-8246.20100901.Zxsew3/iTunesSetup.exe___9bae2670a66e04beb87de7d7a645c9abff2f5b0b
+10.0.1.22___32___http://appldnld.apple.com/iTunes10/061-9186.20100924.nbght/iTunesSetup.exe___8c2441a65bfd46d68d3ffebb89af49afd6af7894
+10.1.0.54___32___http://appldnld.apple.com/iTunes10/061-9531.20101112.Vxes2/iTunesSetup.exe___96b50376ecd8c02eeb5dfb55ab7a25902325d12f
+10.1.0.56___32___http://appldnld.apple.com/iTunes10/061-9842.20101118.Bgyt6/iTunesSetup.exe___3392bfd179d53d86262c848e2f0ab1e465115ed9
+10.1.1.4___32___http://appldnld.apple.com/iTunes10/061-9926.20101215.XdsP6/iTunesSetup.exe___c03925830c2f686917f0bfe89ea13a27f6f1135d
+10.1.2.17___32___http://appldnld.apple.com/iTunes10/061-9992.20110127.WdzxP/iTunesSetup.exe___b3d91fc83c51f2d01c1ff754b46a5ae5e8187642
+10.2.0.34___32___http://appldnld.apple.com/iTunes10/061-9638.20110302.Wnzse/iTunesSetup.exe___1f40939eaca43648e55c137be220fa391bb48c6c
+10.2.1.1___32___http://appldnld.apple.com/iTunes10/041-0471.20110308.Nzxs2/iTunesSetup.exe___a60ffe6f89a487624de722b50638b73401828a91
+10.2.2.12___32___http://appldnld.apple.com/iTunes10/041-0534.20110418.CP4r5/iTunesSetup.exe___30c97f21cb7ec9921b80c7dfd3a9f460b6746045
+10.2.2.14___32___http://appldnld.apple.com/iTunes10/041-0988.20110501.CdEr4/iTunesSetup.exe___e54edf6541cd3448986779c97f13a88f166b5a36
+10.3.0.54___32___http://appldnld.apple.com/iTunes10/041-0272.20110606.Kg0Mc/iTunesSetup.exe___e11f5f13aacd17a3ac36cb18810669a2def1f6e7
+10.3.1.55___32___http://appldnld.apple.com/iTunes10/041-1633.20110607.FvP5t/iTunesSetup.exe___493256bc58f7a3979e1a75b9cc809d82b716f62d
+10.4.0.80___32___http://appldnld.apple.com/iTunes10/041-0718.20110720.YXCZe/iTunesSetup.exe___1f0d4988a688c922fa154850b751353985e01bc6
+10.4.1.10___32___http://appldnld.apple.com/iTunes10/041-2073.20110822.1WoR5/iTunesSetup.exe___ef90132b669162eb61c7d7c4fe3978a6cef3f3e3
+10.5.0.142___32___http://appldnld.apple.com/iTunes10/041-2598.20111011.9Cp3o/iTunesSetup.exe___ab400ad27a537613b3b5306ea026763a93d57fdf
+10.5.1.42___32___http://appldnld.apple.com/iTunes10/041-3428.20111114.Offc3/iTunesSetup.exe___bbe7ed41e62ef1eb345a12a68c1a81d351057952
+10.5.2.11___32___http://appldnld.apple.com/iTunes10/041-3447.20111212.A1pY6/iTunesSetup.exe___a206baa91707a7cf1e9851903bb31c047eb28cbf
+10.5.3.3___32___http://appldnld.apple.com/iTunes10/041-3782.20120119.Ase34/iTunesSetup.exe___533214c2276ce692e96bebbd4080949ea3e877fd
+10.6.0.40___32___http://appldnld.apple.com/iTunes10/041-3541.20120307.Zxr4f/iTunesSetup.exe___6f08434b9c3680c6e583707804838976f7281b70
+7.6.0.29___64___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Win/061-3987.20080115.3D5gF/iTunes64Setup.exe___f26dd0dbd3f4811f13db178d02ac3afadbb9b49f
+7.6.1.9 (1)___64___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Win/061-4269.20080221.Wdwtn/iTunes64Setup.exe___81cfba903a08ab94600c454763c4f75541ded6ad
+7.6.2.9 (2)___64___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Win/061-4479.20080402.BgbhY/iTunes64Setup.exe___b4ffec02d07329ab0053d1aa20626c6007824a97
+7.7.0.43___64___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Win/061-5103.20080710.vfg43/iTunes64Setup.exe___49a02b3f7971b5f988ed4228a11baa04a3e239dd
+7.7.1.11___64___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes7/Win/061-5127.20080731Mlo9i/iTunes64Setup.exe___e951f4f3e49b24aee27993f46a2162c98333a41c
+8.0.0.35 (1)___64___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes8/061-4747.20080909.Crkr2/iTunes864Setup.exe___86df5d9899a8dad82b893309dc18672e3d2cccd0
+8.0.0.35 (2)___64___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes8/061-5526.20080911.gtre4/iTunes864Setup.exe___c321ee8bd0bb7b26bf9ac67aa59b01935cae83a8
+8.0.1.11___64___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes8/061-5556.20081002.Aw234/iTunes80164Setup.exe___55c48f0dd8f694fc1716390435255dc7a2b82f0f
+8.0.2.20 (1)___64___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes8/061-5813.20081120.v8d4k/iTunes64Setup.exe___3c0de1135a6f7324ff691e99a8fefa385219bb0a
+8.0.2.20 (2)___64___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes8/061-5857.20090121.P6yuj/iTunes64Setup.exe___b7a5b654877ddd2d2db8c6fa201000221398bdd9
+8.1.0.51___64___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes8/061-6167.20090311.tnz64/iTunes64Setup.exe___fb07309a0196b424ed434be1143f9e8bcd978d62
+8.1.0.52___64___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes8/061-6191.20090313.Lce45/iTunes64Setup.exe___cd61ef5e5a6fd350d2ac4366a31de5d110defdff
+8.1.1.10___64___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes8/061-6173.20090406.Aidol/iTunes64Setup.exe___40a82ba08885bd8797f70b8199df5526f3f2d409
+8.2.0.23 (1)___64___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes8/061-6185.20060601.Fkje9g/iTunes64Setup.exe___b8739f847f2b66835f4f4b542b3308de96d418ed
+8.2.0.23 (2)___64___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes8/061-6665.20090608.VblP0/iTunes64Setup.exe___48b31f6a24a44637f37c042e8ba225d12733b495
+8.2.1.6___64___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes8/061-6718.20090715.MJwE3/iTunes64Setup.exe___8985afce9ab6d4483c43308cf34e6217e903000a
+9.0.0.70___64___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes9/061-6352.20090909.Zqaw4/iTunes64Setup.exe___9a492dadc7f396bd92bdfc7cb0ff4de15db1b2c2
+9.0.1.8___64___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes9/061-7193.20090922.3456y/iTunes64Setup.exe___85f8c516cb45024292cde1f48e88fd392e25626f
+9.0.2.25 (1)___64___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes9/061-7199.20091029.Zsxw3/iTunes64Setup.exe___8eb6d82638167542a89c3d64a8c7023019137996
+9.0.2.25 (2)___64___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes9/061-7529.20091118.Xdswe/iTunes64Setup.exe___242a25d9edb37f0ed52a6bf4fbffaef3294baa44
+9.0.3.15 (1)___64___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes9/061-7754.20100201.Kft54/iTunes64Setup.exe___9696c68639b320758a56dc8a79d2883e2e2f3df8
+9.0.3.15 (2)___64___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes9/061-7895.20100219.Vpthy/iTunes64Setup.exe___e9735896f80c0dbb5274829b51d6157d14ec48a5
+9.1.0.79___64___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes9/061-7205.20100330,Zxs9p/iTunes64Setup.exe___e6b5ddd1e6f21ddcf7117adec72e47701633b1cb
+9.1.1.11___64___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes9/061-8086.2010.04.27.BVFx2/iTunes64Setup.exe___f33c2ab507844cec611b02202110f50f2baae302
+9.1.1.12___64___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes9/061-8204.20100427.AEueJ/iTunes64Setup.exe___4037b2ca19af90641a1cde7ae9d4d698be94fe4c
+9.2.0.61___64___http://appldnld.apple.com.edgesuite.net/content.info.apple.com/iTunes9/061-7657.20100616.92msz/iTunes64Setup.exe___fee32b82f0f9afbedfe37231b78b65083ca7c024
+9.2.1.4___64___http://appldnld.apple.com/iTunes9/061-8603.20100719.Dcfe4/iTunes64Setup.exe___183f3ce3a543bd3ecba99e4a22a443a6c37f4729
+9.2.1.5___64___http://appldnld.apple.com/iTunes9/061-8727.20100722.Cde32/iTunes64Setup.exe___461d9cb0053d74f8b8d1804be3d4c50176a6036d
+10.0.0.68___64___http://appldnld.apple.com/iTunes10/061-8245.20100901.Pr4rg/iTunes64Setup.exe___8103e9a3da41789f57adcce7ef973e9812c02e6f
+10.0.1.22___64___http://appldnld.apple.com/iTunes10/061-9187.20100924.Bnhju/iTunes64Setup.exe___274420f8131e5e99742092afcb3b89aff88367b6
+10.1.0.54___64___http://appldnld.apple.com/iTunes10/061-9532.20101112.S3tpr/iTunes64Setup.exe___441e061b5d74194cadd8fd7e9f79790f05d6b103
+10.1.0.56___64___http://appldnld.apple.com/iTunes10/061-9843.20101118.Txdse/iTunes64Setup.exe___48f3f327a9654d1b54e958e1a335e1f591382181
+10.1.1.4___64___http://appldnld.apple.com/iTunes10/061-9927.20101215.Txsde/iTunes64Setup.exe___c1eccffc393baefab6962e47a625cc1156c703b9
+10.1.2.17___64___http://appldnld.apple.com/iTunes10/061-9993.20110127.Nju7Y/iTunes64Setup.exe___68d6da0cf38554c451c7914f8ad82003f8d65798
+10.2.0.34___64___http://appldnld.apple.com/iTunes10/061-9639.20110302.XcKgt/iTunes64Setup.exe___efc23fc7d92eb95a1f2588b8a6506d99b726c9ea
+10.2.1.1___64___http://appldnld.apple.com/iTunes10/041-0472.20110308.WnT2z/iTunes64Setup.exe___40281dc78aa4113c239c182b34d471ee0f882dab
+10.2.2.12___64___http://appldnld.apple.com/iTunes10/041-0535.20110410.G43Ut/iTunes64Setup.exe___10d04b03e9733827e69a20bcf46f5e7ea97e0cd3
+10.2.2.14___64___http://appldnld.apple.com/iTunes10/041-0989.20110501.Pr4tg/iTunes64Setup.exe___1691298eece2fb5b1af5b5e960b2cddc7bed628f
+10.3.0.54___64___http://appldnld.apple.com/iTunes10/041-0273.20110606.5YXew/iTunes64Setup.exe___4203125a7bec7d0daeec12d8dd3fbdbd4fc42a43
+10.3.1.55___64___http://appldnld.apple.com/iTunes10/041-1634.20110607.4EPY6/iTunes64Setup.exe___ca6256d385c703e21e3dc6bcbca0aa94276f2c54
+10.4.0.80___64___http://appldnld.apple.com/iTunes10/041-0719.20110720.rE358/iTunes64Setup.exe___2340455c6b8ac0aaaba068ab028c03a9fbec17bb
+10.4.1.10___64___http://appldnld.apple.com/iTunes10/041-2074.20110822.GbpP5/iTunes64Setup.exe___21e302b198b9b4431eb314622be6f4c092151a14
+10.5.0.142___64___http://appldnld.apple.com/iTunes10/041-2599.20111011.rptNg/iTunes64Setup.exe___ab400ad27a537613b3b5306ea026763a93d57fdf
+10.5.1.42___64___http://appldnld.apple.com/iTunes10/041-3430.20111114.Mste5/iTunes64Setup.exe___c3e70eb77ab400470ef9451803c0e411eed6a689
+10.5.2.11___64___http://appldnld.apple.com/iTunes10/041-3448.20111212.3Ee34/iTunes64Setup.exe___247e0910f9af8d1500bde249e6f0d48013c41dc2
+10.5.3.3___64___http://appldnld.apple.com/iTunes10/041-3784.20120119.Qap3E/iTunes64Setup.exe___ce760ef011ad2738da9260349ca0342f1109db58
+10.6.0.40___64___http://appldnld.apple.com/iTunes10/041-3542.20120307.BhH78/iTunes64Setup.exe___de3a2349e88546385f8e028dab2787c3152bd274
+10.6.1.7___0___http://appldnld.apple.com/iTunes10/041-4792.20120328.fRhny/iTunes10.6.1.dmg___e9067bd7b8add8ef6bba0799df1e5a245c6c8187
+10.6.1.7___32___http://appldnld.apple.com/iTunes10/041-4795.20120328.YaCDT/iTunesSetup.exe___343113501555370504d654e7038a2de568d43565
+10.6.1.7___64___http://appldnld.apple.com/iTunes10/041-4797.20120328.Amc16/iTunes64Setup.exe___628e4c8fcfdbced4d1f1d25aba2d3ead1a28fd1a

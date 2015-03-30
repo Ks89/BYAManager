@@ -1,0 +1,45 @@
+/*
+Copyright 2011-2015 Stefano Cappa
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+package logica;
+
+
+import java.nio.file.Path;
+
+import model.CommercialDevice;
+import model.FileWeb;
+
+public class DownloadFirmware extends Download {
+
+	/**
+	 * @uml.property  name="commercialDevice"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private CommercialDevice commercialDevice;
+
+	public DownloadFirmware(Path downloadPath, FileWeb fileWeb) {
+		super(downloadPath, fileWeb);
+		commercialDevice = new CommercialDevice(TableLogic.getDispositivo(this.getUri().toString()));
+	}
+
+	/**
+	 * @return
+	 * @uml.property  name="commercialDevice"
+	 */
+	public CommercialDevice getCommercialDevice() {
+		return commercialDevice;
+	}
+}
