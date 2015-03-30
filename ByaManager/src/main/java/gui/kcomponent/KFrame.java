@@ -20,13 +20,15 @@ import gui.image.ImageLoader;
 
 import javax.swing.JFrame;
 
+import update.Version;
+
 /**
  *	Classe che crea un JFrame personalizzato con icona, dimensione preferita, titolo,
  *	posizione e soprattutto lo sfondo, richiamando il PanelPersonalizzato.
  */
 public class KFrame extends JFrame{
 	private static final long serialVersionUID = 6729366260424934194L;
-	private static final String NOME = "BYAManager - " +  "0.5.5 " + "- by Stefano Cappa";
+	private static final String NOME = "BYAManager - " +  Version.VERSION + " - by Stefano Cappa";
 
 	public KFrame() {
 		setTitle(NOME);

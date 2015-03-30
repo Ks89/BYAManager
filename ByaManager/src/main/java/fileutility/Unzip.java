@@ -31,39 +31,6 @@ public final class Unzip {
 
 	private Unzip(){}
 
-//	public static void extract(Path path, String zipName, boolean isDownloaded) {
-//		//per specificare codifica dello zip usare questo:
-//		// Map<String, String> env = new HashMap<>();
-//		//	env.put("create", "false"); //non creare un zip
-//		//	env.put("encoding", "ISO-8859-1");
-//		// e poi URI uri = URI.create("jar:file:" path + File.seprator + zipName);
-//		//FileSystem fs = FileSystems.newFileSystem(uri, env);
-//
-//		String downloaded;
-//		if(isDownloaded) {
-//			downloaded = "_downloaded.txt";
-//		} else {
-//			downloaded = ".txt";
-//		}
-//
-//		Path zipFileName = path.resolve(zipName);
-//		try (FileSystem zipFs = FileSystems.newFileSystem(zipFileName, null)) {
-//
-//			List<Path> ListaPath  = FileList.getFileList(zipFs.getPath("/"));
-//			//printo listapath
-//			for(Path path1 : ListaPath) {
-//				System.out.println(path1.toString());
-//				System.out.println(path.resolve(path1.getFileName().toString().replace(".txt", downloaded)));
-//			}
-//
-//			for (Path filePath : ListaPath) {
-//				Files.copy(filePath, path.resolve(filePath.getFileName().toString().replace(".txt", downloaded)));
-//			}
-//		} catch (IOException e) {
-//			LOGGER.error("update() - IOException= " + e);
-//		}
-//	}
-
 	public static void extract_with_zip4j (Path dataPath, String zipName, String destination, boolean isDownloaded) {
 		Path sourceZip = dataPath.resolve(zipName);
 

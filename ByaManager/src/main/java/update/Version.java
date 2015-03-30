@@ -20,7 +20,7 @@ import notification.Notification;
 
 public final class Version {
 
-	private static final String VERSION = "0,5,5,0";
+	public static final String VERSION = "0,5,6,0";
 	
 	private static int majorSw;
 	private static int minorSw;

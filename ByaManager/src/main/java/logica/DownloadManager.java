@@ -188,7 +188,6 @@ public final class DownloadManager implements Runnable {
 		(new Restorer()).ripristinaDownload();
 		
 		this.startDownloadCalculator();
-		this.startDownloadGuard();
 
 //		//metodo che registra i listener per ogni elemento della grafica inzializzato in avviaProgramma()
 //		this.registraListener();
@@ -219,12 +218,6 @@ public final class DownloadManager implements Runnable {
 	}
 
 
-	private void startDownloadGuard() {
-		DownloadGuardian cs = new DownloadGuardian();
-		cs.abilitaCalcoloScaricato(true);
-		cs.start();
-	}
-	
 	private void startDownloadCalculator() {
 		DownloadCalculator cs = new DownloadCalculator();
 		cs.abilitaCalcoloScaricato(true);

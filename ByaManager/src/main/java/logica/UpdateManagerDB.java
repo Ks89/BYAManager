@@ -48,7 +48,6 @@ import org.apache.log4j.Logger;
 import time.TimeManager;
 import update.LinkServer;
 import update.database.FirmwareUpdates;
-import update.database.ItunesUpdates;
 
 public final class UpdateManagerDB implements Observer{
 	private static final Logger LOGGER = Logger.getLogger(UpdateManagerDB.class);
@@ -211,7 +210,7 @@ public final class UpdateManagerDB implements Observer{
 	 * @throws IOException 
 	 */
 	public void updateDb() throws IOException {
-		ItunesUpdates itunesUpdates = new ItunesUpdates(dataPath);
+//		ItunesUpdates itunesUpdates = new ItunesUpdates(dataPath);
 		FirmwareUpdates firmwareUpdates = new FirmwareUpdates(dataPath);
 
 		this.checkDbUpdates();
@@ -226,9 +225,9 @@ public final class UpdateManagerDB implements Observer{
 		//Avvio il thread che gestisce il download del xml e la verifica delle versioni di itunes 
 		//ed eventualmente si occupa degli aggiornamenti
 		LOGGER.info("updateDb() - Avvio i thread per l'agg dal server Apple");
-		itunesUpdates.addObserver(this);	
+//		itunesUpdates.addObserver(this);	
 		firmwareUpdates.addObserver(this);
-		itunesUpdates.run();
+//		itunesUpdates.run();
 		firmwareUpdates.run();
 		LOGGER.info("updateDb() - Thread avviato");
 	}
@@ -438,11 +437,11 @@ public final class UpdateManagerDB implements Observer{
 	//passandogli come parametro il riferimento a questa classe qui.
 	@Override
 	public void update(Observable o, Object arg1) {
-		if(o instanceof ItunesUpdates) {
-			ItunesUpdates itunesUpdates = (ItunesUpdates)o;
-			updatedItunesList = itunesUpdates.isAggiorna();
-			itunesUpdates.deleteObserver(this);
-		}
+//		if(o instanceof ItunesUpdates) {
+//			ItunesUpdates itunesUpdates = (ItunesUpdates)o;
+//			updatedItunesList = itunesUpdates.isAggiorna();
+//			itunesUpdates.deleteObserver(this);
+//		}
 		if(o instanceof FirmwareUpdates) {
 			FirmwareUpdates firmwareUpdates = (FirmwareUpdates)o;
 			updatedFirmwareList = firmwareUpdates.isAggiorna();
