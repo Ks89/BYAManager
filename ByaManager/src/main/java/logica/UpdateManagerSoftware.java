@@ -99,9 +99,10 @@ public final class UpdateManagerSoftware implements Observer{
 		//avvio updater
 		try {
 			LOGGER.info("eseguiUpdater() - percorsoUpdater=" + User.getInstance().getJarPath() + System.getProperty("file.separator") + "BYAUpdater.jar");
+			LOGGER.info("eseguiUpdater() - riga comando=" + "java -jar " + User.getInstance().getJarPath().replace(" ", "\\ ") + System.getProperty("file.separator") + "BYAUpdater.jar" + " " + User.getInstance().getJarName());
 
 			//creo la riga di comando inserendo alla fine il parametro che indica i
-			String [] rigaComando = {"java","-jar",User.getInstance().getJarPath() + System.getProperty("file.separator") + "BYAUpdater.jar", User.getInstance().getJarName()};
+			String [] rigaComando = {"java","-jar",User.getInstance().getJarPath().replace(" ", "\\ ") + System.getProperty("file.separator") + "BYAUpdater.jar", User.getInstance().getJarName()};
 			Runtime.getRuntime().exec(rigaComando);
 			//metto tutti i download in pausa prima di eseguire l'updater
 			//			this.mettiPausaPreChiusura(); TODO dovrei far si che durante l'aggiornamento tutto venga messo in pausa

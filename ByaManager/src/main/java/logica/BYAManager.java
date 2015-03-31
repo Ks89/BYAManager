@@ -90,9 +90,9 @@ public class BYAManager {
 		
 		
 //				try {
-//					InputStream bya= new FileInputStream("/Users/Ks89/Desktop/BYAManager.jar");
+//					InputStream bya= new FileInputStream("/Users/Ks89/Desktop/BYA/cartella_senza_titolo/BYAManager.jar");
 //					System.out.println(" sha512 bya " + DigestUtils.sha512Hex(bya));
-//										InputStream bya2= new FileInputStream("/Users/Ks89/Desktop/BYAUpdater.jar");
+//										InputStream bya2= new FileInputStream("/Users/Ks89/Desktop/BYA/cartella_senza_titolo/BYAUpdater.jar");
 //										System.out.println(" sha512 updater " + DigestUtils.sha512Hex(bya2));
 //				} catch (FileNotFoundException e1) {
 //					e1.printStackTrace();
