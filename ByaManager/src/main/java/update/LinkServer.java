@@ -21,24 +21,24 @@ public final class LinkServer {
 	//-----------------------------------------------------------------------------------------------
 	public static final String KS89IT = "http://www.stefanocappa.it/publicfiles/Github_project/byam/";
 	//-----------------------------------------------------------------------------------------------
-	public static final String LINKVERSION_KS = KS89IT + "txt/versionFrom0.5.5.txt";
-	public static final String LINKSHA_KS = KS89IT + "txt/check.txt";
-	public static final String LINKZIP_KS = KS89IT + "txt/lists.zip";
+	public static final String LINKVERSION_KS = KS89IT + "txt-0.5.7/versionFrom0.5.7.txt";
+	public static final String LINKSHA_KS = KS89IT + "txt-0.5.7/check.txt";
+	public static final String LINKZIP_KS = KS89IT + "txt-0.5.7/lists.zip";
 
-	public static final String LINKJAR_KS = KS89IT + "jar/BYAManager.jar";
-	public static final String LINKUPDATER_KS = KS89IT + "jar/BYAUpdater.jar";
+	public static final String LINKJAR_KS = KS89IT + "jar-0.5.7/BYAManager.jar";
+	public static final String LINKUPDATER_KS = KS89IT + "jar-0.5.7/BYAUpdater.jar";
 	//-----------------------------------------------------------------------------------------------
 	
 	
 	//-----------------------------------------------------------------------------------------------
 	public static final String ALTERVISTA = "http://ks89.altervista.org/byam/";
 	//-----------------------------------------------------------------------------------------------
-	public static final String LINKVERSION = ALTERVISTA + "txt/versionFrom0.5.5.txt";
-	public static final String LINKSHA = ALTERVISTA + "txt/check.txt";
-	public static final String LINKZIP = ALTERVISTA + "txt/lists.zip";
+	public static final String LINKVERSION = ALTERVISTA + "txt-0.5.7/versionFrom0.5.7.txt";
+	public static final String LINKSHA = ALTERVISTA + "txt-0.5.7/check.txt";
+	public static final String LINKZIP = ALTERVISTA + "txt-0.5.7/lists.zip";
 
-	public static final String LINKJAR = ALTERVISTA + "jar/BYAManager.jar";
-	public static final String LINKUPDATER = ALTERVISTA + "jar/BYAUpdater.jar";
+	public static final String LINKJAR = ALTERVISTA + "jar-0.5.7/BYAManager.jar";
+	public static final String LINKUPDATER = ALTERVISTA + "jar-0.5.7/BYAUpdater.jar";
 	//-----------------------------------------------------------------------------------------------
 	
 	

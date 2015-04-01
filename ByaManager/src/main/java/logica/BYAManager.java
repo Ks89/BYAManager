@@ -46,8 +46,7 @@ public class BYAManager {
 
 	static {
 		//carico la configurazione del logger che varra' per tutto il programma
-		//senza doverlo fare ogni volta, sia eseguendo da eclipse sia dal Jar
-		//lo stesso per PercorsiOS
+		//senza doverlo fare ogni volta
 		new LoggerManager();
 	}
 
@@ -92,7 +91,7 @@ public class BYAManager {
 //				try {
 //					InputStream bya= new FileInputStream("/Users/Ks89/Desktop/BYA/cartella_senza_titolo/BYAManager.jar");
 //					System.out.println(" sha512 bya " + DigestUtils.sha512Hex(bya));
-//										InputStream bya2= new FileInputStream("/Users/Ks89/Desktop/BYA/cartella_senza_titolo/BYAUpdater.jar");
+//										InputStream bya2= new FileInputStream("/Users/Ks89/Desktop/BYA/BYAUpdater.jar");
 //										System.out.println(" sha512 updater " + DigestUtils.sha512Hex(bya2));
 //				} catch (FileNotFoundException e1) {
 //					e1.printStackTrace();

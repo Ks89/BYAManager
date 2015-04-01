@@ -28,7 +28,7 @@ import update.Version;
  */
 public class KFrame extends JFrame{
 	private static final long serialVersionUID = 6729366260424934194L;
-	private static final String NOME = "BYAManager - " +  "0.5.6" + " - by Stefano Cappa";
+	private static final String NOME = "BYAManager - " +  Version.getGuiFrameVersion() + " - by Stefano Cappa";
 
 	public KFrame() {
 		setTitle(NOME);

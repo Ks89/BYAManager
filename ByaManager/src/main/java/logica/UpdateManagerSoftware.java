@@ -12,7 +12,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-*/
+ */
 
 package logica;
 
@@ -97,24 +97,37 @@ public final class UpdateManagerSoftware implements Observer{
 	 */
 	private void eseguiUpdater() {
 		//avvio updater
-		try {
-			LOGGER.info("eseguiUpdater() - percorsoUpdater=" + User.getInstance().getJarPath() + System.getProperty("file.separator") + "BYAUpdater.jar");
-			LOGGER.info("eseguiUpdater() - riga comando=" + "java -jar " + User.getInstance().getJarPath().replace(" ", "\\ ") + System.getProperty("file.separator") + "BYAUpdater.jar" + " " + User.getInstance().getJarName());
+		String updaterPathAndName = User.getInstance().getJarPath() + 
+				System.getProperty("file.separator") + "BYAUpdater.jar";
+		String managerJarName = User.getInstance().getJarName();
+		String updaterPath = User.getInstance().getJarPath();
 
-			//creo la riga di comando inserendo alla fine il parametro che indica i
-			String [] rigaComando = {"java","-jar",User.getInstance().getJarPath().replace(" ", "\\ ") + System.getProperty("file.separator") + "BYAUpdater.jar", User.getInstance().getJarName()};
-			Runtime.getRuntime().exec(rigaComando);
-			//metto tutti i download in pausa prima di eseguire l'updater
-			//			this.mettiPausaPreChiusura(); TODO dovrei far si che durante l'aggiornamento tutto venga messo in pausa
-			System.exit(1);
-		} catch (MalformedURLException e) {
-			LOGGER.error("eseguiUpdater() - MalformedURLException=", e);
-		} catch (IllegalArgumentException e) {
-			LOGGER.error("eseguiUpdater() - IllegalArgumentException=", e);
-		} catch (SecurityException e) {
-			LOGGER.error("eseguiUpdater() - SecurityException=", e);
-		}  catch (IOException e) {
-			LOGGER.error("eseguiUpdater() - IOException=", e);
+		LOGGER.info("eseguiUpdater() - percorsoUpdater=" + updaterPathAndName);
+		LOGGER.info("eseguiUpdater() - User.getInstance().getJarName() : " + managerJarName);
+		LOGGER.info("eseguiUpdater() - riga comando=" + "java -jar " + updaterPathAndName + " " + managerJarName + " " + updaterPath);
+
+
+		if(updaterPathAndName!=null && managerJarName!=null && updaterPath!=null) {
+			try {
+				//creo la riga di comando inserendo alla fine il parametro che indica i
+				String [] rigaComando = {"java","-jar", updaterPathAndName, managerJarName, updaterPath};
+				ProcessBuilder pb = new ProcessBuilder(rigaComando);
+				pb.start();
+
+				//			this.mettiPausaPreChiusura(); TODO dovrei far si che durante l'aggiornamento tutto venga messo in pausa
+				Runtime.getRuntime().exit(0);
+			} catch (MalformedURLException e) {
+				LOGGER.error("eseguiUpdater() - MalformedURLException=", e);
+			} catch (IllegalArgumentException e) {
+				LOGGER.error("eseguiUpdater() - IllegalArgumentException=", e);
+			} catch (SecurityException e) {
+				LOGGER.error("eseguiUpdater() - SecurityException=", e);
+			}  catch (IOException e) {
+				LOGGER.error("eseguiUpdater() - IOException=", e);
+			}
+		} else {
+			LOGGER.debug("eseguiUpdater() - null arguments. updaterPathAndName=" +
+					updaterPathAndName + ",managerJarName=" + managerJarName + ",updaterPath=" + updaterPath);
 		}
 	}
 

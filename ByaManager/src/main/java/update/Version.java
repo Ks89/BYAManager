@@ -20,7 +20,7 @@ import notification.Notification;
 
 public final class Version {
 
-	public static final String VERSION = "0,5,6,1";
+	public static final String VERSION = "0,5,7,0";
 	
 	private static int majorSw;
 	private static int minorSw;
@@ -95,5 +95,13 @@ public final class Version {
 			return 1;
 		}
 		return -1;
+	}
+	
+	/**
+	 * Get the commercial version number
+	 * @return
+	 */
+	public static String getGuiFrameVersion() {
+		return VERSION.replace(",", ".").substring(0,5);
 	}
 }
