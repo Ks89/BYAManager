@@ -41,6 +41,7 @@ public class KComboBox extends JComboBox<String> {
 	 * Costruttore che carica la freccia da mostrare quando la combobox
 	 * e' chiusa (senza menu aperto) ed imposta l'UI personalizzato.
 	 */
+	@SuppressWarnings("unchecked")
 	public KComboBox() {
 		setDoubleBuffered(true);
 		freccia = ImageLoader.getInstance().getFrecciaComboBox();
@@ -63,6 +64,7 @@ public class KComboBox extends JComboBox<String> {
  *	Classe che estende BasicComboBoxUI per personalizzare il popup e le freccie.
  */
 class UIComboBox extends BasicComboBoxUI {
+	@SuppressWarnings("unchecked")
 	@Override
 	protected ComboPopup createPopup() {
 		return new KComboPopup(comboBox);

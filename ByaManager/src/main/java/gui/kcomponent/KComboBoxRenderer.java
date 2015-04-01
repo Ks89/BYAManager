@@ -45,7 +45,8 @@ public class KComboBoxRenderer extends BasicComboBoxRenderer {
 	}  
 
 	@Override
-	public Component getListCellRendererComponent(JList list,Object value,int index,boolean isSelected,boolean cellHasFocus) {  
+	public Component getListCellRendererComponent(@SuppressWarnings("rawtypes") JList list,
+							Object value,int index,boolean isSelected,boolean cellHasFocus) {  
 		if(value!=null) {
 			setText(value.toString());
 		}

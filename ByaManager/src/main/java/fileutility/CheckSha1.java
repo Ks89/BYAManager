@@ -38,7 +38,7 @@ public final class CheckSha1 {
 		try (
 				InputStream is = new FileInputStream(pathToCheck.toFile().getAbsolutePath())
 				) {
-			return DigestUtils.shaHex(is).toUpperCase();
+			return DigestUtils.sha1Hex(is).toUpperCase();
 		} catch (IOException e) {
 			throw e;
 		}

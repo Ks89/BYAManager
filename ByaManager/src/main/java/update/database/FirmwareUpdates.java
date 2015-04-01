@@ -193,8 +193,8 @@ public final class FirmwareUpdates extends Observable implements Runnable {
 		InputStream newStream = Files.newInputStream(dataPath.resolve(IPSWLISTNEW));
 		InputStream originaleStream = Files.newInputStream(dataPath.resolve(IPSWLIST));
 
-		String newSha1 = DigestUtils.shaHex(newStream);
-		String originaleSha1 = DigestUtils.shaHex(originaleStream);
+		String newSha1 = DigestUtils.sha1Hex(newStream);
+		String originaleSha1 = DigestUtils.sha1Hex(originaleStream);
 
 		newStream.close();
 		originaleStream.close();

@@ -18,10 +18,7 @@ package logica;
 
 import gui.MainFrame;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.Socket;
 
 import javax.swing.SwingUtilities;
@@ -31,7 +28,6 @@ import javax.swing.UnsupportedLookAndFeelException;
 import logger.LoggerManager;
 import notification.Notification;
 
-import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.log4j.Logger;
 
 import preferences.Settings;
@@ -58,7 +54,6 @@ public class BYAManager {
 		//deve essere sempre la prima riga, in modo che questa propieta' venga 
 		//impostata nel thread principale e non in quello di swing.
 		System.setProperty("apple.laf.useScreenMenuBar", "true");
-		System.setProperty("com.apple.mrj.application.apple.menu.about.name", "BYAManager");
 		if(System.getProperty("os.name").contains("Mac")) {
 			System.setProperty("com.apple.mrj.application.apple.menu.about.name", "BYAManager");
 		}

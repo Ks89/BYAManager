@@ -72,6 +72,7 @@ public final class HttpFileDownload {
 					bb.flip();
 					fileChannel.write(bb);
 					lock.release();
+					lock.close();
 					lock = fileChannel.tryLock();
 				}
 				

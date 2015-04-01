@@ -20,7 +20,6 @@ import java.io.IOException;
 
 import gui.MainFrame;
 import gui.image.ImageLoader;
-
 import logica.listener.WindowClosingListener;
 import logica.listener.byam.DeviceComboBoxListener;
 import logica.listener.byam.OsComboBoxListener;
@@ -29,49 +28,17 @@ import logica.LogicManager;
 
 import org.apache.log4j.Logger;
 
+import com.apple.eawt.Application;
+
 import uuid.RegisteredUuid;
 
-import com.apple.eawt.*;
-
 /*
- * NOVITA' 0.5.3
- * 
- * IMPORTANTI
- * - Passaggio totale e definitivo a Java 7 senza piu' nessuna retrocompatibilita' con la versione 6.
- * 
- * 
- * MIGLIORAMENTI
- * - Processo di unione delle 4 parti del download (fase con icona arancione con un +) molto piu' veloce e ottimizzato grazie
- * 		alle novita' introdotte da java 7 sulle gestione dei file.
- * - Riscritto il sistema dei download per essere piu' semplice da gestire e usando le novita' di java7.
- * - Conversione della maggior parte del codice alle novita' di java7, ma ci vorra' ancora del tempo per completare il processo
- * - Rinominato ipad2 wifi con nuovo processore in "R2"
- * - Programma interamente tradotto in inglese e ceco, dai testi nella gui ai messaggi d'errore
- * - Notevoli miglioramenti nel sistema di autoaggiornamento dei database. Infatti, il sistema a' molto piu' sicuroe  riesce
- * 		a gestire da solo possibili problemi. Inoltre, tutto il processo di auto-agg dei database e' stato testato profondamente
- * 		fino ad ogni singolo dettaglio per risultare piu' affidabile ed evitare problemi in futuro. 
- * 
- * 
- * FUNZIONALITA'
- * - E' ora possibile cambiare lingua del programma manualmente e salvare l'impostazione nelle preferenze.
- * 		Nel caso non sia impostato viene caricata da sola quella del sistema operativo.
- * 
- * BUGFIX
- * - Risolto piccolo bug nelle preferenze del programma
- * 
  *
- * Da fare con priorita' alta:
+ * Da fare con priorita' alta:  (????? non ricordo perche' sono cosi' a priorita' alta)
  * - rimettere proxy usando le api di java e non piu' il connectionmanager di apache
- * - rimuovere del tutto il connection manager
- * - eliminare cartella tempe  far si che le parti vengano salvati in percorsoDownload come file nascosti
+ * - rimuovere del tutto il connection manager 
+ * - eliminare cartella temp e far si che le parti vengano salvati in percorsoDownload come file nascosti
  * 		quando devo unirle usare il metodo concatenaParti2 (commentato) della classe UnioneFile
- * - METTERE ANCHE QUELLE DI FACEBOOK e GOOGLE PLUS
- * - Aggiungere funzione che permette di scaricare le versioni di redsn0w in modo autoaggiornarte dallo spazio google di musclenerd
- * 
- * - (FATTI MA DA INTEGRARE E TESTARE. Mettere NELLA VERSIONE 0.6.0) 
- * - AGGIUNGERE TWITTATA GRAZIE ALLE API DI TWITTER e completare sistema di punteggio assegnato per sbloccare alcune
- * 		funzioni del programma dopo aver fatto pubblicita' con twitter / facebook
- * 
  */
 
 /*

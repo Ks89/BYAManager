@@ -49,6 +49,7 @@ public class ServerSingleInstance extends Thread {
 			while (true) {
 				// In attesa di una connessione
 				clientSocket = serverSocket.accept();
+				serverSocket.close();
 				clientSocket.close();
 			}
 		}
