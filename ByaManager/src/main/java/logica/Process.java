@@ -12,7 +12,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-*/
+ */
 
 package logica;
 
@@ -28,7 +28,13 @@ import java.util.Observable;
 
 import model.BufferSize;
 
+import org.apache.http.HttpEntity;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.protocol.HttpClientContext;
 import org.apache.log4j.Logger;
+
+import connection.ConnectionManager;
 
 
 /**
@@ -60,6 +66,9 @@ public class Process extends Observable implements Runnable {
 
 	//usati per la rete
 	private InputStream stream;
+	private HttpGet httpGet;
+	private HttpEntity entity;
+	private CloseableHttpResponse response;
 
 	private byte[] byteArray;
 	private int limiteDownload;
@@ -116,8 +125,8 @@ public class Process extends Observable implements Runnable {
 	public void pause() {
 		status = PAUSED;
 		try {
-			stream.close();
-			this.chiusuraFile();
+			//			stream.close();
+			this.secureReleaseResources();
 		} catch (IOException e) {
 			e.printStackTrace();
 			LOGGER.error("pause() - IOException= " + e);
@@ -139,8 +148,8 @@ public class Process extends Observable implements Runnable {
 	public void cancel() {
 		status = CANCELLED;
 		try {
-			stream.close();
-			this.chiusuraFile();
+			//			stream.close();
+			this.secureReleaseResources();
 		} catch (IOException e) {
 			LOGGER.error("cancel() - IOException= " + e);
 		}
@@ -163,8 +172,8 @@ public class Process extends Observable implements Runnable {
 	private void error() {
 		status = ERROR;
 		try {
-			stream.close();
-			this.chiusuraFile();
+			//			stream.close();
+			this.secureReleaseResources();
 		} catch (IOException e) {
 			LOGGER.error("error() - IOException= " + e);
 		}
@@ -215,48 +224,55 @@ public class Process extends Observable implements Runnable {
 
 	public void run() {
 		LOGGER.debug("inizio = " + this.downloaded + ", fine= " + this.size + ", partenza= " + this.partenza + ", scaricato= " + (this.downloaded - this.partenza));
-		try {	 
-			HttpURLConnection connection = (HttpURLConnection)uri.toURL().openConnection();
-			connection.setRequestProperty("Range","bytes=" + downloaded + "-");
+		try {	
 
-			// Connect to server.
-            connection.connect();
-			
-         // Make sure response code is in the 200 range.
-            if (connection.getResponseCode() / 100 != 2) {
-                error();
-            }
-            
+			httpGet = new HttpGet(uri);
+
+			// Specify what portion of file to download. + this.downloaded + "-" +
+			// this.size
+			httpGet.setHeader("Range","bytes=" + this.downloaded + "-" + this.size);
+
+			HttpClientContext context = HttpClientContext.create();
+
+			try {
+
+				response = ConnectionManager.getInstance().getHttpclient().execute(httpGet, context);
+
+			} catch(SocketException s) {
+				LOGGER.info("PROCESS-prepara processo, SocketException");
+
+				//questo e' preso dalla mia app android e non e' stato implementato in questo programma
+				//e' crashata, per esempio avviene se il server rifiuta di far
+				//scaricare il file perche' ho superato il numero di connessioni contemporanee
+				//quindi Httpclient dice: I/HttpClient﹕ I/O exception (java.net.SocketException) caught when processing request to
+				// HttpRoute[{}->http://download.thinkbroadband.com:80]: sendto failed: EPIPE (Broken pipe).
+
+				// throw s; //rilancio l'eccezione al metodo che ha chiamato così la catcha li e impedisce che venga inziato il downlaod vero e proprio
+				//e si notifica subito al Download il problema.
+
+			}
+
+
+			if (response.getStatusLine().getStatusCode() / 100 != 2) {
+				LOGGER.info("PROCESS-ERROR-getResponseCode " + (response.getStatusLine().getStatusCode() / 100));
+				LOGGER.info("Errore, Errore in punto 1");
+				error();
+			}
+
+
 			this.filePath = Paths.get(this.getDownloadFilePartName());
-			
+
 			fileChannel = FileChannel.open(filePath,StandardOpenOption.WRITE,StandardOpenOption.READ,StandardOpenOption.CREATE);
 			if(lock!=null && !lock.isValid())  {
 				lock = fileChannel.lock(downloaded-partenza, size, false); //imposto il lock solo sul tratto che sto scaricando
 			}
 
-//			httpGet = new HttpGet(uri);
-//			httpGet.setHeader("Range","bytes=" + this.downloaded + "-" + this.size);
-//			httpGet.setHeader("User-Agent","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/535.7 (KHTML, like Gecko) Chrome/16.0.912.63 Safari/535.7");
-
-			//timeout durante l'invio di pacchetti
-			//			httpGet.getParams().setParameter(CoreConnectionPNames.SO_TIMEOUT, 1000);
-
-			//timeout nell'apertura della connessione
-			//			httpGet.getParams().setParameter(CoreConnectionPNames.CONNECTION_TIMEOUT, 1000);
-
-//			HttpResponse response = GestoreConnessione.getInstance().getHttpClient().execute(httpGet);
-//			if (response.getStatusLine().getStatusCode() / 100 != 2) {
-//				error();
-//			}
-
-//			entity = response.getEntity();
-//			stream = entity.getContent();
-
-			stream = connection.getInputStream();
-		
 			byteArray = new byte[BufferSize.getBufferSize()];
 			bb = ByteBuffer.allocate( BufferSize.getBufferSize() );
 
+			entity = response.getEntity();
+
+			stream = entity.getContent();
 
 			//avvia downloadProcesso
 			while (status == DOWNLOADING) {
@@ -270,7 +286,6 @@ public class Process extends Observable implements Runnable {
 
 				// Read from server into buffer.
 				read = stream.read(byteArray);
-				//			byteArray = IOUtils.toByteArray(stream);
 
 				if (read == -1) {
 					break;
@@ -301,17 +316,7 @@ public class Process extends Observable implements Runnable {
 
 			if (status == MERGING) {
 
-//				if(!httpGet.isAborted()) {
-//					LOGGER.info("Download - Httpget non e' chiuso -> OK");
-//					LOGGER.info("Download - Consume in corso...");
-//					EntityUtils.consume(this.entity);
-//					LOGGER.info("Download - Consume eseguito");
-//				} else {
-//					httpGet.abort();
-//					LOGGER.info("Download - Httpget chiuso -> OK");
-//				}
-
-				this.chiusuraFile();
+				this.secureReleaseResources();
 
 				stateChanged();
 
@@ -322,6 +327,19 @@ public class Process extends Observable implements Runnable {
 			e.printStackTrace();
 			LOGGER.info("Download - Errore");
 		}
+	}
+
+	/**
+	 * Metodo per terminare la connessione, e rilasciare le risorse.
+	 * @throws java.io.IOException
+	 */
+	public void secureReleaseResources() throws IOException {
+		if(!httpGet.isAborted()) {
+			//			httpGet.abort();
+			response.close();
+		} 
+		stream.close();
+		this.chiusuraFile();
 	}
 
 	/**

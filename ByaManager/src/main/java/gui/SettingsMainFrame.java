@@ -43,7 +43,6 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 
-
 import localization.Translator;
 import model.User;
 
@@ -59,7 +58,7 @@ public class SettingsMainFrame extends JFrame implements Runnable{
 	private JPanel panelBase;
 	private JPanel panelAdvanced;
 	private JPanel panelNotification;
-	private JPanel panelProxy /*,panelSocial*/;
+	private JPanel panelProxy;
 	private JTextField percorsoTextField;
 	private JComboBox<String> tipoDim;
 	private JComboBox<String> bufferComboBox;

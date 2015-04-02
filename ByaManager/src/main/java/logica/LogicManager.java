@@ -33,8 +33,8 @@ import notification.Notification;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.log4j.Logger;
 
+import connection.ConnectionManager;
 import connection.TestConnection;
-
 import logica.listener.SettingsListener;
 import logica.listener.toolbarbutton.PauseAllListener;
 import logica.listener.toolbarbutton.PauseListener;
@@ -42,7 +42,6 @@ import logica.listener.toolbarbutton.RemoveAllListener;
 import logica.listener.toolbarbutton.RemoveListener;
 import logica.listener.toolbarbutton.ResumeAllListener;
 import logica.listener.toolbarbutton.ResumeListener;
-
 import preferences.Settings;
 
 public final class LogicManager {
@@ -209,8 +208,8 @@ public final class LogicManager {
 		//i valori letti per poi essere usati anche da tutte le altre classi, poiche' usa singleton
 		this.initPreferencesInLogicManager();
 
-		//come prima cosa creo il connectionaManager multiThreadSafe passando come paramentri i dati del proxy
-//		ConnectionManager.getInstance().inizializzaConnectionManager(impostazioni.isProxyActivated(), impostazioni.getProxyServer(), impostazioni.getProxyPort());
+		//come prima cosa creo il connectionaManager inizializzandolo e passando come paramentri i dati del proxy
+		ConnectionManager.getInstance().initConnectionManager(impostazioni.isProxyActivated(), impostazioni.getProxyServer(), impostazioni.getProxyPort());
 
 		//verifico la connetivita' internet tramite richiesta GET a google
 		(new TestConnection()).testConnection();

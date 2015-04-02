@@ -17,7 +17,6 @@ limitations under the License.
 package logica;
 
 import java.io.IOException;
-import java.net.HttpURLConnection;
 import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -32,16 +31,18 @@ import model.DownloadCompatibilityChecker;
 import model.FileWeb;
 import model.Firmware;
 import model.ItunesVersion;
-
 import notification.Notification;
 
+import org.apache.http.HttpEntity;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.log4j.Logger;
 
+import connection.ConnectionManager;
 import preferences.Settings;
 
 
 import model.User;
-
 import fileutility.CheckSha1;
 import fileutility.FilesMerger;
 import gui.state.StateActionTableButton;
@@ -87,6 +88,9 @@ public abstract class Download extends Observable implements Runnable,Observer {
 	private long inizio4;
 	private long fine4;
 
+	private HttpGet httpGet;
+	private HttpEntity entity;
+	private CloseableHttpResponse response;
 
 	/**
 	 * Costruttore che inizializza tutte le variabili globali, dato i firmware associato al download.
@@ -106,27 +110,32 @@ public abstract class Download extends Observable implements Runnable,Observer {
 	@Override
 	public void run() {
 		try {
-			HttpURLConnection connection = (HttpURLConnection)uri.toURL().openConnection();
-			connection.connect();
 			
-			if (connection.getResponseCode() / 100 != 2) {
+			httpGet = new HttpGet(uri);
+
+			response = ConnectionManager.getInstance().getHttpclient().execute(httpGet);
+
+			if (response.getStatusLine().getStatusCode() / 100 != 2) {
 				Notification.showErrorOptionPane("download201", "Server error 201");
 				return;
 			}
-			
-			long contentLength = connection.getContentLengthLong();
+
+			entity = response.getEntity();
+
+			long contentLength = entity.getContentLength();
 
 			if (contentLength < 1) {
 				Notification.showErrorOptionPane("download202", "Server error 202");
 				return;
 			}
-
+			
 			if((downloadTempPath.toFile().getFreeSpace()) < contentLength ) {
 				Notification.showErrorOptionPane("download203", "Server error 203");
 			}
 
+
 			//dealloco scollegandomi
-			connection.disconnect();
+			response.close();
 
 			process = new ArrayList<Process>();
 			totalSize = contentLength;
