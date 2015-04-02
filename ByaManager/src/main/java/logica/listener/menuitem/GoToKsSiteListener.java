@@ -24,7 +24,7 @@ import java.net.URISyntaxException;
 
 import javax.swing.AbstractAction;
 
-import preferences.Links;
+import update.LinkServer;
 
 public class GoToKsSiteListener extends AbstractAction {
 	private static final long serialVersionUID = 1003812130275799754L;
@@ -33,7 +33,7 @@ public class GoToKsSiteListener extends AbstractAction {
 	public void actionPerformed(ActionEvent e) {
 		try {
 			//apre la finestra del browser col sito
-			Desktop.getDesktop().browse(new URI(Links.ksBlogHomePage));
+			Desktop.getDesktop().browse(new URI(LinkServer.KSBLOGHOMEPAGE));
 		} catch (IOException e1) {
 			//					LOGGER.error("avviaProgramma() - IOException= " + e1);
 		} catch (URISyntaxException e1) {

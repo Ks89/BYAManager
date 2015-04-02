@@ -24,7 +24,7 @@ import java.net.URISyntaxException;
 
 import javax.swing.AbstractAction;
 
-import preferences.Links;
+import update.LinkServer;
 
 public class DonateListener extends AbstractAction {
 	private static final long serialVersionUID = 3083756191573703001L;
@@ -33,7 +33,7 @@ public class DonateListener extends AbstractAction {
 	public void actionPerformed(ActionEvent e) {
 		try {
 			//apre la finestra del browser con la pagina col pulsante per le donazioni
-			Desktop.getDesktop().browse(new URI(Links.donatemeLink));
+			Desktop.getDesktop().browse(new URI(LinkServer.DONATEMELINK));
 		} catch (IOException e1) {
 			//					LOGGER.error("avviaProgramma() - IOException= " + e1);
 		} catch (URISyntaxException e1) {

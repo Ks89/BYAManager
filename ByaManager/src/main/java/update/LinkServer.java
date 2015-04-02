@@ -21,27 +21,34 @@ public final class LinkServer {
 	//-----------------------------------------------------------------------------------------------
 	public static final String KS89IT = "http://www.stefanocappa.it/publicfiles/Github_project/byam/";
 	//-----------------------------------------------------------------------------------------------
-	public static final String LINKVERSION_KS = KS89IT + "txt-0.5.7/versionFrom0.5.7.txt";
-	public static final String LINKSHA_KS = KS89IT + "txt-0.5.7/check.txt";
-	public static final String LINKZIP_KS = KS89IT + "txt-0.5.7/lists.zip";
+	public static final String SITEFOLDERVERSION = "0.6.0";
+	//-----------------------------------------------------------------------------------------------
+	public static final String LINKVERSION_KS = KS89IT + SITEFOLDERVERSION + "/" + "txt/version.txt";
+	public static final String LINKSHA_KS = KS89IT + SITEFOLDERVERSION + "/" + "txt/check.txt";
+	public static final String LINKZIP_KS = KS89IT + SITEFOLDERVERSION + "/" + "txt/lists.zip";
 
-	public static final String LINKJAR_KS = KS89IT + "jar-0.5.7/BYAManager.jar";
-	public static final String LINKUPDATER_KS = KS89IT + "jar-0.5.7/BYAUpdater.jar";
+	public static final String LINKJAR_KS = KS89IT + SITEFOLDERVERSION + "/" + "jar/BYAManager.jar";
+	public static final String LINKUPDATER_KS = KS89IT + SITEFOLDERVERSION + "/" + "jar/BYAUpdater.jar";
 	//-----------------------------------------------------------------------------------------------
 	
 	
 	//-----------------------------------------------------------------------------------------------
 	public static final String ALTERVISTA = "http://ks89.altervista.org/byam/";
 	//-----------------------------------------------------------------------------------------------
-	public static final String LINKVERSION = ALTERVISTA + "txt-0.5.7/versionFrom0.5.7.txt";
-	public static final String LINKSHA = ALTERVISTA + "txt-0.5.7/check.txt";
-	public static final String LINKZIP = ALTERVISTA + "txt-0.5.7/lists.zip";
+	public static final String ALTERVISTAFOLDERVERSION = "0.6.0";
+	//-----------------------------------------------------------------------------------------------
+	public static final String LINKVERSION = ALTERVISTA + ALTERVISTAFOLDERVERSION + "/" +  "txt/versionFrom.txt";
+	public static final String LINKSHA = ALTERVISTA + ALTERVISTAFOLDERVERSION + "/" + "txt/check.txt";
+	public static final String LINKZIP = ALTERVISTA + ALTERVISTAFOLDERVERSION + "/" + "txt/lists.zip";
 
-	public static final String LINKJAR = ALTERVISTA + "jar-0.5.7/BYAManager.jar";
-	public static final String LINKUPDATER = ALTERVISTA + "jar-0.5.7/BYAUpdater.jar";
+	public static final String LINKJAR = ALTERVISTA + ALTERVISTAFOLDERVERSION + "/" + "jar/BYAManager.jar";
+	public static final String LINKUPDATER = ALTERVISTA + ALTERVISTAFOLDERVERSION + "/" + "jar/BYAUpdater.jar";
 	//-----------------------------------------------------------------------------------------------
 	
 	
+	
+	public static final String DONATEMELINK = KS89IT + SITEFOLDERVERSION + "/" + "donateme.html";
+	public static final String KSBLOGHOMEPAGE = "http://ks89-jailbreak.blogspot.it/";
 	
 	public static final String LINKXMLAPPLE = "http://www.itunes.com/version";
 	//-----------------------------------------------------------------------------------------------
