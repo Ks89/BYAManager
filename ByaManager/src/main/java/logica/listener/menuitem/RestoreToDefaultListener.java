@@ -45,13 +45,13 @@ public class RestoreToDefaultListener extends AbstractAction {
 	}
 	
 	
-	public void removeDownloadTemp() {
+	private void removeDownloadTemp() {
 		LOGGER.info("resetDownloadTemp() - Avviato");
 		this.deleteFileList(User.getInstance().getDownloadTempPath(),"percorsodownloadtemp");
 		LOGGER.info("resetDownloadTemp() - Terminato");
 	}
 
-	public void removeDb() {
+	private void removeDb() {
 		LOGGER.info("resetDb() - Avviato");
 		
 		this.deleteFileList(User.getInstance().getDataPath(),"percorsodati");
@@ -69,7 +69,7 @@ public class RestoreToDefaultListener extends AbstractAction {
 		this.deleteFileList(User.getInstance().getDownloadPath(),"percorsoDownloadPredefinito");
 		this.deleteFileList(User.getInstance().getDownloadTempPath(),"percorsodownloadtempPredefinito");
 
-		System.exit(1); //termina l'intera virtual machine
+		Runtime.getRuntime().exit(0); //termina l'intera virtual machine
 	}
 
 	/**
