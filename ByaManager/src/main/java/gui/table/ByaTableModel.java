@@ -20,14 +20,15 @@ import gui.kcomponent.KTableButton;
 import gui.state.StateActionTableButton;
 
 import java.util.*;
+
 import javax.swing.*;
 import javax.swing.table.*;
 
 import localization.Translator;
-import logica.Download;
-import logica.DownloadFirmware;
-import logica.DownloadList;
-import logica.TableLogic;
+import logic.Download;
+import logic.DownloadFirmware;
+import logic.DownloadList;
+import logic.TableLogic;
 import model.Firmware;
 import model.ItunesVersion;
 

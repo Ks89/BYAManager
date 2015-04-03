@@ -40,18 +40,17 @@ import gui.table.renderer.RendererColumn7;
 import gui.table.renderer.RendererGeneric;
 import gui.table.renderer.RendererHeader;
 import gui.table.renderer.RendererProgressBar;
-
 import localization.Translator;
-import logica.Download;
-import logica.DownloadList;
-import logica.listener.popupitem.DisableShaCheckListener;
-import logica.listener.popupitem.DownloadInBrowserListener;
-import logica.listener.popupitem.OpenDownloadFolderListener;
-import logica.listener.table.TableActionButtonListener;
-import logica.listener.table.TablePopupListener;
-import logica.listener.toolbarbutton.PauseListener;
-import logica.listener.toolbarbutton.RemoveListener;
-import logica.listener.toolbarbutton.ResumeListener;
+import logic.Download;
+import logic.DownloadList;
+import logic.listener.popupitem.DisableShaCheckListener;
+import logic.listener.popupitem.DownloadInBrowserListener;
+import logic.listener.popupitem.OpenDownloadFolderListener;
+import logic.listener.table.TableActionButtonListener;
+import logic.listener.table.TablePopupListener;
+import logic.listener.toolbarbutton.PauseListener;
+import logic.listener.toolbarbutton.RemoveListener;
+import logic.listener.toolbarbutton.ResumeListener;
 
 public final class TableGui extends JTable implements Observer {
 	private static final long serialVersionUID = -3798208288140176133L;
