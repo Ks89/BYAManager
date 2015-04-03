@@ -31,7 +31,8 @@ import model.User;
 import notification.Notification;
 
 import org.apache.http.client.ClientProtocolException;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import connection.ConnectionManager;
 import connection.TestConnection;
@@ -45,7 +46,7 @@ import logica.listener.toolbarbutton.ResumeListener;
 import preferences.Settings;
 
 public final class LogicManager {
-	private static final Logger LOGGER = Logger.getLogger(LogicManager.class);
+	private static final Logger LOGGER = LogManager.getLogger(LogicManager.class);
 
 	/**
 	 * @uml.property  name="impostazioni"

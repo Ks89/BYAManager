@@ -17,14 +17,14 @@ limitations under the License.
 package logica.listener.menuitem;
 
 import java.awt.event.ActionEvent;
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
 import javax.swing.AbstractAction;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import fileutility.FileList;
 import model.User;
@@ -32,7 +32,7 @@ import notification.Notification;
 
 public class RestoreToDefaultListener extends AbstractAction {
 	private static final long serialVersionUID = 4770036607253381680L;
-	private static final Logger LOGGER = Logger.getLogger(RestoreToDefaultListener.class);
+	private static final Logger LOGGER = LogManager.getLogger(RestoreToDefaultListener.class);
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -53,20 +53,6 @@ public class RestoreToDefaultListener extends AbstractAction {
 
 	public void removeDb() {
 		LOGGER.info("resetDb() - Avviato");
-		
-//		//risolve un bug presente da tempo, e' un fix temporaneo della 0.5.5
-//		File f = new File(User.getInstance().getDataPath() + File.pathSeparator + "__MACOSX");
-//		if(f.exists()) {
-//			Path p = f.toPath();
-//			for(Path path : FileList.getFileList(p)) {
-//				try {
-//					Files.deleteIfExists(path);
-//				} catch (IOException e) {
-//					LOGGER.info("deleteFileList() - Nome operazione: " + "removeDb-quickfix-version.0.5.5" + 
-//							". Eccezione durante cancellazione di " + path.toString() + ". Eccezione = " + e);
-//				}
-//			}
-//		}
 		
 		this.deleteFileList(User.getInstance().getDataPath(),"percorsodati");
 		LOGGER.info("resetDb() - Terminato");

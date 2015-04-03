@@ -19,7 +19,8 @@ package connection;
 
 import notification.Notification;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -30,7 +31,7 @@ import java.net.URI;
  *	prima di avviare il programma.
  */
 public class TestConnection {
-	private static final Logger LOGGER = Logger.getLogger(TestConnection.class);
+	private static final Logger LOGGER = LogManager.getLogger(TestConnection.class);
 
 	/**
 	 * Verifica la connettivita tramite un get http.

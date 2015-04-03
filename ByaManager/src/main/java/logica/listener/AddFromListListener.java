@@ -37,8 +37,8 @@ import model.Firmware;
 import model.ItunesVersion;
 import notification.Notification;
 
-import org.apache.log4j.Logger;
-
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * Classe che contiere l'ActionListener per aggiungere i firmware
@@ -46,7 +46,7 @@ import org.apache.log4j.Logger;
  */
 public class AddFromListListener extends AbstractAction {
 	private static final long serialVersionUID = 4718167301597935681L;
-	private static final Logger LOGGER = Logger.getLogger(Process.class);
+	private static final Logger LOGGER = LogManager.getLogger(Process.class);
 	/**
 	 * @uml.property  name="fileWeb"
 	 * @uml.associationEnd  

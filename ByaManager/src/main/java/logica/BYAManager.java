@@ -25,10 +25,10 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-import logger.LoggerManager;
 import notification.Notification;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import preferences.Settings;
 
@@ -38,13 +38,8 @@ import preferences.Settings;
 public class BYAManager {
 
 	private static int porta = 10378;
-	private static final Logger LOGGER = Logger.getLogger(BYAManager.class);
-
-	static {
-		//carico la configurazione del logger che varra' per tutto il programma
-		//senza doverlo fare ogni volta
-		new LoggerManager();
-	}
+	
+	private static final Logger LOGGER = LogManager.getLogger(BYAManager.class);
 
 	/**
 	 * Metodo main per eseguire il programma.

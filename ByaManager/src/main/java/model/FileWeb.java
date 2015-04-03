@@ -22,37 +22,21 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
- * @author  Ks89
+ * @author  Stefano Cappa
  */
 public abstract class FileWeb {
-	
-	/**
-	 * @uml.property  name="icon"
-	 */
 	private BufferedImage icon;
-	/**
-	 * @uml.property  name="uri"
-	 */
 	private URI uri;
-	/**
-	 * @uml.property  name="hash"
-	 */
 	private String hash; //hash calcolato con SHA1
-	/**
-	 * @uml.property  name="dimension"
-	 */
 	private int dimension;
-	/**
-	 * @uml.property  name="operativeSystem"
-	 * @uml.associationEnd  multiplicity="(0 -1)" elementType="model.OperativeSystem"
-	 */
 	private List<OperativeSystem> operativeSystem; //contiene architettura, os compatibile ecc...
 
 	
-	private static final Logger LOGGER = Logger.getLogger(FileWeb.class);
+	private static final Logger LOGGER = LogManager.getLogger(FileWeb.class);
 
 	public FileWeb() {
 		this.hash = null;
@@ -60,26 +44,14 @@ public abstract class FileWeb {
 		this.operativeSystem = new ArrayList<OperativeSystem>();
 	}
 	
-	/**
-	 * @return
-	 * @uml.property  name="icon"
-	 */
 	public BufferedImage getIcon() {
 		return icon;
 	}
 
-	/**
-	 * @param icon
-	 * @uml.property  name="icon"
-	 */
 	public void setIcon(BufferedImage icon) {
 		this.icon = icon;
 	}
 
-	/**
-	 * @return  percorso URI rappresentante il percorso.
-	 * @uml.property  name="uri"
-	 */
 	public URI getUri() {
 		return uri;
 	}
@@ -101,34 +73,18 @@ public abstract class FileWeb {
 
 	}
 	
-	/**
-	 * @return  hash String rappresentante l'hash.
-	 * @uml.property  name="hash"
-	 */
 	public String getHash() {
 		return hash;
 	}
 
-	/**
-	 * @param hash  Una String rappresentante l'hash.
-	 * @uml.property  name="hash"
-	 */
 	public void setHash(String hash) {
 		this.hash = hash;
 	}
 
-	/**
-	 * @return  dimensione int rappresentante la dimensione.
-	 * @uml.property  name="dimension"
-	 */
 	public int getDimension() {
 		return dimension;
 	}
 
-	/**
-	 * @param dimension  Un int rappresentante la dimensione.
-	 * @uml.property  name="dimension"
-	 */
 	public void setDimension(int dimension) {
 		this.dimension = dimension;
 	}
@@ -141,8 +97,5 @@ public abstract class FileWeb {
 		this.operativeSystem.add(operativeSystem);
 	}
 	
-	/**
-	 * @uml.property  name="fileName"
-	 */
 	public abstract String getFileName();
 }

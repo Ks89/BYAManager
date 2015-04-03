@@ -25,12 +25,12 @@ import javax.swing.AbstractAction;
 
 import model.User;
 
-import org.apache.log4j.Logger;
-
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class OpenDownloadFolderListener extends AbstractAction {
 	private static final long serialVersionUID = 501165480852358688L;
-	private static final Logger LOGGER = Logger.getLogger(OpenDownloadFolderListener.class);
+	private static final Logger LOGGER = LogManager.getLogger(OpenDownloadFolderListener.class);
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

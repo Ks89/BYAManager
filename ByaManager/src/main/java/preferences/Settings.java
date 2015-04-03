@@ -29,7 +29,8 @@ import localization.Translator;
 import model.User;
 import notification.Notification;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import preferences.listener.ChooseFolderListener;
 
@@ -48,7 +49,7 @@ import javax.swing.SwingUtilities;
  *	Classe impostazioni che gestisce il pannello preferenze del programma.
  */
 public final class Settings implements Observer{
-	private static final Logger LOGGER = Logger.getLogger(Settings.class);
+	private static final Logger LOGGER = LogManager.getLogger(Settings.class);
 
 	private String versioneSoftware;
 	private String versione;

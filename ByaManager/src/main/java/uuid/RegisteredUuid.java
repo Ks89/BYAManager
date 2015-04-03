@@ -38,14 +38,14 @@ import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.params.CoreProtocolPNames;
 import org.apache.http.util.EntityUtils;
-import org.apache.log4j.Logger;
-
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * Metodo per registrare l'uuid sul server.
  */
 public class RegisteredUuid extends Uuid {
-	private static final Logger LOGGER = Logger.getLogger(RegisteredUuid.class);
+	private static final Logger LOGGER = LogManager.getLogger(RegisteredUuid.class);
 
 	private static final String LINK = "http://ks89.altervista.org/";
 	/**

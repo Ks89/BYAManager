@@ -18,7 +18,8 @@ package logica;
 
 import java.io.IOException;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import preferences.Settings;
 
@@ -28,7 +29,7 @@ public class CommandLineParser {
 	 */
 	private String comando;
 	private static final int DEFAULTPORT = 10378;
-	private static final Logger LOGGER = Logger.getLogger(CommandLineParser.class);
+	private static final Logger LOGGER = LogManager.getLogger(CommandLineParser.class);
 
 	public CommandLineParser(String comando) {
 		this.comando = comando;

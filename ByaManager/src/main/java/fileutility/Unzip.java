@@ -24,10 +24,11 @@ import java.util.List;
 import net.lingala.zip4j.core.ZipFile;
 import net.lingala.zip4j.exception.ZipException;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public final class Unzip {
-	private static final Logger LOGGER = Logger.getLogger(Unzip.class);
+	private static final Logger LOGGER = LogManager.getLogger(Unzip.class);
 
 	private Unzip(){}
 

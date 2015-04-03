@@ -23,8 +23,8 @@ import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 import java.util.List;
 
-import org.apache.log4j.Logger;
-
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * Classe che si occupa di unire i file .part in un solo .ipsw 
@@ -32,7 +32,7 @@ import org.apache.log4j.Logger;
  * e a cancellare i .part che ora non servono piu'
  */
 public class FilesMerger {
-	private static final Logger LOGGER = Logger.getLogger(FilesMerger.class);
+	private static final Logger LOGGER = LogManager.getLogger(FilesMerger.class);
 	/**
 	 * @uml.property  name="downloadTempPath"
 	 */

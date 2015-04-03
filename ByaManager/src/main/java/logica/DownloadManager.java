@@ -26,7 +26,8 @@ import logica.listener.byam.OsComboBoxListener;
 import logica.listener.macosx.CommandQListener;
 import logica.LogicManager;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import com.apple.eawt.Application;
 
@@ -63,7 +64,7 @@ import uuid.RegisteredUuid;
  */
 
 public final class DownloadManager implements Runnable {
-	private static final Logger LOGGER = Logger.getLogger(DownloadManager.class);
+	private static final Logger LOGGER = LogManager.getLogger(DownloadManager.class);
 
 	private static DownloadManager instance = new DownloadManager();
 

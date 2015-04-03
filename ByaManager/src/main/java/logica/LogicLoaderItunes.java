@@ -36,10 +36,11 @@ import model.MacOsx;
 import model.OperativeSystem;
 import model.Windows;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class LogicLoaderItunes extends LogicLoader {
-	private static final Logger LOGGER = Logger.getLogger(LogicLoaderItunes.class);
+	private static final Logger LOGGER = LogManager.getLogger(LogicLoaderItunes.class);
 	private static final String ITUNESLISTA = "iTunesLista.txt";
 	private static LogicLoaderItunes instance = new LogicLoaderItunes();
 

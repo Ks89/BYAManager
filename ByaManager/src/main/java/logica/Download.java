@@ -36,7 +36,8 @@ import notification.Notification;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import connection.ConnectionManager;
 import preferences.Settings;
@@ -52,7 +53,7 @@ import gui.state.StateButton;
  *	Classe che rappresenta il download, costituito da Processi.
  */
 public abstract class Download extends Observable implements Runnable,Observer {
-	private static final Logger LOGGER = Logger.getLogger(Process.class);
+	private static final Logger LOGGER = LogManager.getLogger(Process.class);
 
 	public static final int DOWNLOADING = 0;
 	public static final int PAUSED = 1;

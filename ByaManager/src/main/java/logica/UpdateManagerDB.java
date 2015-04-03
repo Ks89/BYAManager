@@ -43,14 +43,15 @@ import localization.Translator;
 import model.User;
 import notification.Notification;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import time.TimeManager;
 import update.LinkServer;
 import update.database.FirmwareUpdates;
 
 public final class UpdateManagerDB implements Observer{
-	private static final Logger LOGGER = Logger.getLogger(UpdateManagerDB.class);
+	private static final Logger LOGGER = LogManager.getLogger(UpdateManagerDB.class);
 
 	private static final String ZIPNAME = "lists.zip";
 	private static final String IPSWLISTA = "ipswLista.txt";

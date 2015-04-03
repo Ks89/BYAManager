@@ -26,7 +26,8 @@ import model.FileWeb;
 import model.Firmware;
 import notification.Notification;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import fileutility.CheckSha1;
 import fileutility.FileList;
@@ -34,7 +35,7 @@ import gui.state.StateButton;
 import gui.table.TableGui;
 
 public class Restorer extends LogicLoader{
-	private static final Logger LOGGER = Logger.getLogger(Restorer.class);
+	private static final Logger LOGGER = LogManager.getLogger(Restorer.class);
 	private static final String PART = ".part";
 	private static final String SHA = ".sha";
 

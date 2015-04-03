@@ -20,8 +20,8 @@ import java.io.*;
 import java.net.*;
 
 
-import org.apache.log4j.Logger;
-
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import uuid.RegisteredUuid;
 
 
@@ -31,7 +31,7 @@ import uuid.RegisteredUuid;
  * tramite socket.
  */
 public class ServerSingleInstance extends Thread {
-	private static final Logger LOGGER = Logger.getLogger(RegisteredUuid.class);
+	private static final Logger LOGGER = LogManager.getLogger(RegisteredUuid.class);
 	/**
 	 * @uml.property  name="porta"
 	 */

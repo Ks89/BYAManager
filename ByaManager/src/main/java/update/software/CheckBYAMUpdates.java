@@ -34,8 +34,8 @@ import model.User;
 import notification.Notification;
 
 import org.apache.commons.codec.digest.DigestUtils;
-import org.apache.log4j.Logger;
-
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import update.LinkServer;
 
 
@@ -48,7 +48,7 @@ import fileutility.HttpFileDownload;
  *	inteso come file .JAR.
  */
 public final class CheckBYAMUpdates extends Observable implements Runnable{
-	private static final Logger LOGGER = Logger.getLogger(CheckBYAMUpdates.class);
+	private static final Logger LOGGER = LogManager.getLogger(CheckBYAMUpdates.class);
 	private static final String BYAMANAGERNEW = "BYAManager-new.j_a_r";
 	private static final String BYAUPDATER = "BYAUpdater.jar";
 	private String shaBya;

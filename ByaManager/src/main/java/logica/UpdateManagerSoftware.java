@@ -25,8 +25,8 @@ import java.util.Observer;
 import model.User;
 import notification.Notification;
 
-import org.apache.log4j.Logger;
-
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import update.Version;
 import update.software.CheckBYAMUpdates;
 
@@ -37,7 +37,7 @@ import gui.state.StateButton;
 import gui.state.StateLabel;
 
 public final class UpdateManagerSoftware implements Observer{
-	private static final Logger LOGGER = Logger.getLogger(UpdateManagerSoftware.class);
+	private static final Logger LOGGER = LogManager.getLogger(UpdateManagerSoftware.class);
 	private static UpdateManagerSoftware instance = new UpdateManagerSoftware();
 	/**
 	 * @uml.property  name="checkByamUpdates"

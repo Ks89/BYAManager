@@ -23,13 +23,13 @@ import java.net.URI;
 
 import javax.swing.AbstractAction;
 
-import org.apache.log4j.Logger;
-
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 
 public class DownloadInBrowserListener extends AbstractAction {
 	private static final long serialVersionUID = 8923186438221476133L;
-	private static final Logger LOGGER = Logger.getLogger(DownloadInBrowserListener.class);
+	private static final Logger LOGGER = LogManager.getLogger(DownloadInBrowserListener.class);
 	private URI uri;
 	
 	public DownloadInBrowserListener(URI uri) {

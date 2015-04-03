@@ -25,14 +25,15 @@ import java.util.List;
 
 import model.BufferSize;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import fileutility.FileList;
 
 import preferences.Settings;
 
 public abstract class LogicLoader{
-	private static final Logger LOGGER = Logger.getLogger(LogicLoader.class);
+	private static final Logger LOGGER = LogManager.getLogger(LogicLoader.class);
 	private static final String PART = ".part";
 
 	/**

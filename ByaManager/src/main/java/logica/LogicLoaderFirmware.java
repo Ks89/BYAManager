@@ -32,7 +32,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import model.CommercialDevice;
 import model.Firmware;
@@ -41,7 +42,7 @@ import model.OperativeSystem;
 import model.Windows;
 
 public final class LogicLoaderFirmware extends LogicLoader{
-	private static final Logger LOGGER = Logger.getLogger(LogicLoaderFirmware.class);
+	private static final Logger LOGGER = LogManager.getLogger(LogicLoaderFirmware.class);
 	private static final String IPSWLISTA = "ipswLista.txt";
 	private static LogicLoaderFirmware instance = new LogicLoaderFirmware();
 

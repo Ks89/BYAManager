@@ -26,10 +26,11 @@ import java.nio.channels.FileLock;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public final class HttpFileDownload {
-	private static final Logger LOGGER = Logger.getLogger(HttpFileDownload.class);
+	private static final Logger LOGGER = LogManager.getLogger(HttpFileDownload.class);
 
 	private HttpFileDownload() {}
 	
@@ -58,7 +59,6 @@ public final class HttpFileDownload {
 
 			while (read != -1) {
 				if (read < bufferSize) {
-					LOGGER.debug("httpFileDownload() - Ultimo ciclo prima di terminare download: " + downloadPath.toString());
 					byte[] arrayTemp = byteArray.clone();
 					byteArray = new byte[read];
 					System.arraycopy(arrayTemp, 0, byteArray, 0, read); //consigliato da sonar al posto di un for

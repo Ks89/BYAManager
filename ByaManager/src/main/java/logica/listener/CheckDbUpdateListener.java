@@ -27,14 +27,15 @@ import javax.swing.AbstractAction;
 
 import notification.Notification;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import localization.Translator;
 import logica.UpdateManagerDB;
 
 public class CheckDbUpdateListener extends AbstractAction {
 	private static final long serialVersionUID = -3084400695437339690L;
-	private static final Logger LOGGER = Logger.getLogger(CheckDbUpdateListener.class);
+	private static final Logger LOGGER = LogManager.getLogger(CheckDbUpdateListener.class);
 
 
 	@Override

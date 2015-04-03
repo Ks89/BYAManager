@@ -34,8 +34,8 @@ import model.Firmware;
 import notification.Notification;
 
 import org.apache.commons.codec.digest.DigestUtils;
-import org.apache.log4j.Logger;
-
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import fileutility.HttpFileDownload;
 
 import time.TimeManager;
@@ -57,7 +57,7 @@ public final class FirmwareUpdates extends Observable implements Runnable {
 	private static final String IPSWLISTNEW = "ipswLista_new.txt";
 	private static final String VERSIONXMLNAME = "version.xml";
 
-	private static final Logger LOGGER = Logger.getLogger(FirmwareUpdates.class);
+	private static final Logger LOGGER = LogManager.getLogger(FirmwareUpdates.class);
 
 	/**
 	 * @uml.property  name="firmwareListNew"
