@@ -50,13 +50,16 @@ public class ConnectionManager {
 		poolingConnManager.setMaxTotal(100);
 		poolingConnManager.setDefaultMaxPerRoute(20);
 		
-//		if(proxyActivationState) {
-//			//esempio proxy che funziona "195.246.54.5" 8080 da http://proxylist.hidemyass.com/
-//            proxy = new HttpHost(proxyServer, Integer.parseInt(proxyPort), "http");
-//            httpclient = HttpClients.custom().setConnectionManager(poolingConnManager).setProxy(proxy).build();
-//		} else {
+		if(proxyActivationState) {
+			//esempio proxy che funziona "195.246.54.5" 8080 da http://proxylist.hidemyass.com/
+			//verificare la porta, che sia http, e soprattutto la velocita' che permette.
+			//sceglierne uno veloce e soprattutto, avere pazienza nell'avvio del download, perche' sara' comunque
+			//piu' lento
+            proxy = new HttpHost(proxyServer, Integer.parseInt(proxyPort), "http");
+            httpclient = HttpClients.custom().setConnectionManager(poolingConnManager).setProxy(proxy).build();
+		} else {
 			httpclient = HttpClients.custom().setConnectionManager(poolingConnManager).build();
-//		}
+		}
 	}
 
 	public void closeConnectionManagerResources() throws IOException {

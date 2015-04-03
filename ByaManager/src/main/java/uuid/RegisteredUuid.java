@@ -26,20 +26,22 @@ import notification.Notification;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
-import org.apache.http.HttpVersion;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.mime.MultipartEntity;
+import org.apache.http.entity.ContentType;
+import org.apache.http.entity.mime.HttpMultipartMode;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.entity.mime.content.ContentBody;
 import org.apache.http.entity.mime.content.FileBody;
 import org.apache.http.impl.client.BasicResponseHandler;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.params.CoreProtocolPNames;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
+
+import update.LinkServer;
 
 /**
  * Metodo per registrare l'uuid sul server.
@@ -47,19 +49,14 @@ import org.apache.logging.log4j.LogManager;
 public class RegisteredUuid extends Uuid {
 	private static final Logger LOGGER = LogManager.getLogger(RegisteredUuid.class);
 
-	private static final String LINK = "http://ks89.altervista.org/";
-	/**
-	 * @uml.property  name="httpClient"
-	 * @uml.associationEnd  multiplicity="(1 1)"
-	 */
-	private HttpClient httpClient;
+	private CloseableHttpClient httpClient;
 
 	/**
 	 * Classe che richiama la superclasse, inizializza le variabili e crea l'uuid (dalla superclasse).
 	 */
 	public RegisteredUuid() {
 		super.creaUuid();
-		this.httpClient = new DefaultHttpClient();
+		this.httpClient = HttpClients.createDefault();
 	}
 
 	/**
@@ -109,28 +106,29 @@ public class RegisteredUuid extends Uuid {
 		Path percorso = User.getInstance().getDataPath();
 		LOGGER.info("registraUuid() - PercorsoDati = " + percorso.toString()); 
 		try {
-			verificaPresenzaUuidRegistrato(LINK + super.getUuid() + ".txt");
+			verificaPresenzaUuidRegistrato(LinkServer.UUIDLINKKS89 + super.getUuid() + ".txt");
 		} catch(IOException e) { // perche' UUID ancora non registrato
 			LOGGER.info("registraUuid() - Eccezione catchata, non presente, registro l'uuid");
-			this.httpClient.getParams().setParameter(CoreProtocolPNames.PROTOCOL_VERSION, HttpVersion.HTTP_1_1);
 
-			HttpPost httpPost = new HttpPost("http://ks89.altervista.org/upload.php");
+			HttpPost httpPost = new HttpPost(LinkServer.UUIDLINKKS89 + "upload.php");
 
 			//creo il file uuid per poi uploadarlo (il file e' vuoto)
 			Path filePath = percorso.resolve(super.getUuid() + ".txt");
 			Files.createFile(filePath);
 
-			MultipartEntity mpEntity = new MultipartEntity();
-			ContentBody cbFile = new FileBody(filePath.toFile(), "text/plain");
+			MultipartEntityBuilder mpEntity = MultipartEntityBuilder.create();
+			mpEntity.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
+			ContentBody cbFile = new FileBody(filePath.toFile(), ContentType.TEXT_PLAIN);
 			mpEntity.addPart("userfile", cbFile);
 
-			httpPost.setEntity(mpEntity);
+			httpPost.setEntity(mpEntity.build());
+			
 			HttpResponse response = this.httpClient.execute(httpPost);
 			HttpEntity entity = response.getEntity();
 
 			if (entity != null) {
 				EntityUtils.consume(entity);
-				httpClient.getConnectionManager().shutdown();
+				httpClient.close();
 				filePath = null;
 				LOGGER.info("entity consumata e DefaultConnectionManager terminato per uuidregistrato");
 			}

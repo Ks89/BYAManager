@@ -45,8 +45,8 @@ public final class LinkServer {
 	public static final String LINKUPDATER = ALTERVISTA + ALTERVISTAFOLDERVERSION + "/" + "jar/BYAUpdater.jar";
 	//-----------------------------------------------------------------------------------------------
 	
-	
-	
+
+	public static final String UUIDLINKKS89 = KS89IT + "uuid/";
 	public static final String DONATEMELINK = KS89IT + SITEFOLDERVERSION + "/" + "donateme.html";
 	public static final String KSBLOGHOMEPAGE = "http://ks89-jailbreak.blogspot.it/";
 	
