@@ -335,7 +335,7 @@ public class Process extends Observable implements Runnable {
 	 */
 	public void secureReleaseResources() throws IOException {
 		if(!httpGet.isAborted()) {
-			//			httpGet.abort();
+//			httpGet.abort();
 			response.close();
 		} 
 		stream.close();
