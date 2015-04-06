@@ -31,30 +31,12 @@ public final class User extends Os {
 
 	private static User instance = new User();
 
-	/**
-	 * @uml.property  name="homePath"
-	 */
 	private String homePath;
-
-	/**
-	 * @uml.property  name="dataPath"
-	 */
 	private Path dataPath;
-	/**
-	 * @uml.property  name="downloadPath"
-	 */
 	private Path downloadPath;
-	/**
-	 * @uml.property  name="downloadTempPath"
-	 */
 	private Path downloadTempPath;
-	/**
-	 * @uml.property  name="jarPath"
-	 */
+	private Path downloadTempHttpsPath;
 	private String jarPath;
-	/**
-	 * @uml.property  name="jarName"
-	 */
 	private String jarName;
 
 	/**
@@ -89,6 +71,7 @@ public final class User extends Os {
 		try {
 			Files.createDirectories(dataPath);
 			Files.createDirectories(downloadTempPath);
+			Files.createDirectories(downloadTempHttpsPath);
 		} catch (IOException e) {
 			Notification.showErrorOptionPane("errorCreatingDirectories", "errorCreatingDirectoriesTitle");
 			System.exit(1);
@@ -104,6 +87,7 @@ public final class User extends Os {
 		dataPath = Paths.get(homePath,"Library","ByaManager");
 		downloadPath = Paths.get(homePath, "Downloads", "ByaManager_Downloads");
 		downloadTempPath = Paths.get(downloadPath.toString(), "temp");
+		downloadTempHttpsPath = Paths.get(downloadPath.toString(), "temphttps");
 	}
 
 	/**
@@ -170,16 +154,22 @@ public final class User extends Os {
 	/**
 	 * Ottiene percorso download file temporanei.
 	 * @return  String che rappresenta il percorso downloadTemp.
-	 * @uml.property  name="downloadTempPath"
 	 */
 	public Path getDownloadTempPath() {
 		return downloadTempPath;
+	}
+	
+	/**
+	 * Ottiene percorso download file temporanei https.
+	 * @return  String che rappresenta il percorso downloadTempHttpsPath.
+	 */
+	public Path getDownloadTempHttpsPath() {
+		return downloadTempHttpsPath;
 	}
 
 	/**
 	 * Ottiene percorso download.
 	 * @return  String che rappresenta il percorso download.
-	 * @uml.property  name="downloadPath"
 	 */
 	public Path getDownloadPath() {
 		return downloadPath;
@@ -187,7 +177,6 @@ public final class User extends Os {
 
 	/**
 	 * @return
-	 * @uml.property  name="jarName"
 	 */
 	public String getJarName() {
 		return jarName;

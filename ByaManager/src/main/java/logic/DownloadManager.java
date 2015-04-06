@@ -33,36 +33,6 @@ import com.apple.eawt.Application;
 
 import uuid.RegisteredUuid;
 
-/*
- *
- * Da fare con priorita' alta:  (????? non ricordo perche' sono cosi' a priorita' alta)
- * - rimettere proxy usando le api di java e non piu' il connectionmanager di apache
- * - rimuovere del tutto il connection manager 
- * - eliminare cartella temp e far si che le parti vengano salvati in percorsoDownload come file nascosti
- * 		quando devo unirle usare il metodo concatenaParti2 (commentato) della classe UnioneFile
- */
-
-/*
- * Da fare:
- * - Mettere controllo della sha1 se e' esadeciamale tramite un pattern. Per ora c'e' il codice commentato in CheckDBUpdate
- * - Controllo per far si che sia possibile scaricare un file solo se c'e' lo spazio disponibile nel disco (fatto, ma da testare)
- * - Aggiungere grafica personalizzata al popup nella systemtray
- * - Separare Gui dal download manager per poter avviare il DM dal main e quando si avvia la GUi farlo dal DM con invokelater
- * - Rimuovere la ncessita' di riavviare il programma dopo un aggiornamento dal file xml
- * - creare metodo a parte che valida il percorso inserito nella textfield del pannello preferenze
- * - prevedere 4 stati completed per l'insieme download, in modo da avvisare nella tabella quanti sono i thread in corso (magari solo se abilitata voce in preferenze)
- * - Riscrivere sistema di upload file usando crittografia
- * - Riscrivere sistema di controllo SHA512 criptando il link verso altervista (magari passando per un proxy)
- * - Scrivere la funzione di invio email
- * - Eliminare il bordo nel jwindow
- * - Migliorare aspetto spostando meglio componenti
- * - Creare icone del programma a diverse dimensioni e trasparenti e non.
- * - Rimuovere menu donazioni ed inserire il pulsante nella grafica
- * - Aggiungere pulsanti twitter, facebook, youtube, link al sito ecc.. per ks89 e BYA
- * - Creare in alto a dx un qualche cosa, cliccandoci si apre con animazione nel jframe (magari usando il GlassPane) una finstre arrotondata che non copre tutot il frame
- * -	e mostra i vari link ai siti ecc... (sarebbe una figata farlo, magari anche con animazioni).
- */
-
 public final class DownloadManager implements Runnable {
 	private static final Logger LOGGER = LogManager.getLogger(DownloadManager.class);
 
@@ -153,12 +123,13 @@ public final class DownloadManager implements Runnable {
 
 		//Ripristino i download non terminati e in caso cerco di recuperare queli .sha
 		//sia che siano firmware, sia che siano versioni di itunes
+		//prima quelli http
 		(new Restorer()).ripristinaDownload();
+		//dopo quelli https
+		(new RestorerHttps()).ripristinaDownload();
 		
 		this.startDownloadCalculator();
 
-//		//metodo che registra i listener per ogni elemento della grafica inzializzato in avviaProgramma()
-//		this.registraListener();
 
 		MainFrame.getInstance().addWindowListener(new WindowClosingListener());
 

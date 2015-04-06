@@ -28,10 +28,6 @@ import notification.Notification;
 
 public final class DownloadList {
 
-	/**
-	 * @uml.property  name="downloadList"
-	 * @uml.associationEnd  multiplicity="(0 -1)" elementType="logica.Download"
-	 */
 	private List<Download> downloadList;
 	private static DownloadList instance = new DownloadList();
 

@@ -12,7 +12,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-*/
+ */
 
 package fileutility;
 
@@ -69,13 +69,15 @@ public class FilesMerger {
 				FileChannel writeChannel = FileChannel.open(shaFiledownloadPath,StandardOpenOption.WRITE,StandardOpenOption.CREATE)
 				) {
 			for(Path pathPart : pathPartsList) {	
-				readChannel = FileChannel.open(pathPart,StandardOpenOption.READ);
-				byteTransferred = readChannel.transferTo(0, Files.size(pathPart), writeChannel);
+				if(pathPart!=null) {
+					readChannel = FileChannel.open(pathPart,StandardOpenOption.READ);
+					byteTransferred = readChannel.transferTo(0, Files.size(pathPart), writeChannel);
 
-				readChannel.close();
+					readChannel.close();
 
-				if(byteTransferred!=Files.size(pathPart)) {
-					throw new IOException("Byte da trasferire: " + Files.size(pathPart) + " , trasferiti: " + byteTransferred);
+					if(byteTransferred!=Files.size(pathPart)) {
+						throw new IOException("Byte da trasferire: " + Files.size(pathPart) + " , trasferiti: " + byteTransferred);
+					}
 				}
 			}
 		} catch (IOException e) {
@@ -115,7 +117,7 @@ public class FilesMerger {
 		//cancella le parti del file scaricato
 		List<Path> fileList = FileList.getFileList(downloadTempPath);
 		for(Path partPath : fileList) {
-			if(partPath.endsWith(nomeFile)) {
+			if(partPath!=null && partPath.endsWith(nomeFile)) {
 				try {
 					Files.deleteIfExists(partPath);
 				} catch (IOException e) {
@@ -124,29 +126,4 @@ public class FilesMerger {
 			}
 		}
 	}
-
-
-	//	private void concatenaParti2(File[] listaFileParti) {
-	//	FileChannel readChannel;
-	//	long byteTransferred;
-	//
-	//	try (
-	//			FileChannel writeChannel = FileChannel.open(listaFileParti[0].toPath(),StandardOpenOption.WRITE, StandardOpenOption.APPEND);
-	//	) {
-	//		for(int i=1; i<4; i++) {
-	//			readChannel = FileChannel.open(listaFileParti[i].toPath(),StandardOpenOption.READ);
-	//			byteTransferred = readChannel.transferTo(0, listaFileParti[i].length(), writeChannel);
-	//
-	//			readChannel.close();
-	//
-	//			if(byteTransferred!=listaFileParti[i].length()) {
-	//				throw new IOException("Byte da trasferire: " + listaFileParti[i].length() + " , trasferiti: " + byteTransferred);
-	//			}
-	//		}
-	//	} catch (IOException e) {
-	//		LOGGER.error("concatenaParti() - IOException= " + e);
-	//	}
-	//}
-
-
 }

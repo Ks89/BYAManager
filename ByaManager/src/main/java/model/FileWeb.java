@@ -62,12 +62,9 @@ public abstract class FileWeb {
 	 */
 	public void setPercorso(String percorso) {
 		try {
-			if (percorso.toLowerCase().startsWith("http://")) {
-				this.uri = new URI(percorso);
-			} else {
-				LOGGER.info("setPercorso() - Percorso non http://=" + percorso);
-			}
+			this.uri = new URI(percorso);
 		} catch (URISyntaxException e) {
+			LOGGER.info("setPercorso() - Percorso non http://=" + percorso);
 			LOGGER.error("setPercorso() - URISyntaxException=", e);
 		}
 

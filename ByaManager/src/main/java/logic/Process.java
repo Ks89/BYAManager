@@ -34,6 +34,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.protocol.HttpClientContext;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
+
 import connection.ConnectionManager;
 
 
@@ -226,7 +227,14 @@ public class Process extends Observable implements Runnable {
 		LOGGER.debug("inizio = " + this.downloaded + ", fine= " + this.size + ", partenza= " + this.partenza + ", scaricato= " + (this.downloaded - this.partenza));
 		try {	
 
+			//funziona anche con https://
 			httpGet = new HttpGet(uri);
+			
+//			try {
+//				httpGet = new HttpGet(new URI("https://secure-appldnld.apple.com/itunes12/031-19380.20150128.FcvfF/iTunes12.1.dmg"));
+//			} catch (URISyntaxException e) {
+//				e.printStackTrace();
+//			}
 
 			// Specify what portion of file to download. + this.downloaded + "-" +
 			// this.size
@@ -253,8 +261,9 @@ public class Process extends Observable implements Runnable {
 			}
 
 
+			LOGGER.info("PROCESS-getResponseCode " + (response.getStatusLine().getStatusCode()));
+			
 			if (response.getStatusLine().getStatusCode() / 100 != 2) {
-				LOGGER.info("PROCESS-ERROR-getResponseCode " + (response.getStatusLine().getStatusCode() / 100));
 				LOGGER.info("Errore, Errore in punto 1");
 				error();
 			}
@@ -335,8 +344,8 @@ public class Process extends Observable implements Runnable {
 	 */
 	public void secureReleaseResources() throws IOException {
 		if(!httpGet.isAborted()) {
-//			httpGet.abort();
 			response.close();
+//			httpGet.abort();
 		} 
 		stream.close();
 		this.chiusuraFile();

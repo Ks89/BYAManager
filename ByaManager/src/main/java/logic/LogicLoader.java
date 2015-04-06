@@ -36,18 +36,10 @@ public abstract class LogicLoader{
 	private static final Logger LOGGER = LogManager.getLogger(LogicLoader.class);
 	private static final String PART = ".part";
 
-	/**
-	 * @uml.property  name="percorsoDati"
-	 */
 	private Path percorsoDati;
-	/**
-	 * @uml.property  name="percorsoDownload"
-	 */
 	private Path percorsoDownload;
-	/**
-	 * @uml.property  name="percorsoDownloadTemp"
-	 */
 	private Path percorsoDownloadTemp; 
+	private Path percorsoDownloadHttpsTemp; 
 
 	/**
 	 * Costruttore della classe
@@ -57,6 +49,7 @@ public abstract class LogicLoader{
 
 		this.percorsoDownload = Paths.get(impostazioni.getPercorsoDownload());
 		this.percorsoDownloadTemp = Paths.get(impostazioni.getPercorsoDownloadTemp());
+		this.percorsoDownloadHttpsTemp = Paths.get(impostazioni.getPercorsoDownloadHttpsTemp());
 		this.percorsoDati = Paths.get(impostazioni.getPercorsoDati());
 		BufferSize.setBufferSize(Settings.getInstance().getDimensioneBuffer());
 	}
@@ -95,10 +88,6 @@ public abstract class LogicLoader{
 
 
 	protected List<Path> getValidFileList(Path directoryPath) {
-		if(!Files.isDirectory(directoryPath)) {
-			return null;
-		}
-		
 		List<Path> arrayListOfValidPath = new ArrayList<Path>();
 
 		for(Path path : FileList.getFileList(directoryPath)) {
@@ -122,24 +111,15 @@ public abstract class LogicLoader{
 	public List<Path> getListaFile() {
 		return this.getValidFileList(this.percorsoDownload);
 	}
-	/**
-	 * @return
-	 * @uml.property  name="percorsoDati"
-	 */
 	public Path getPercorsoDati() {
 		return percorsoDati;
 	}
-	/**
-	 * @return
-	 * @uml.property  name="percorsoDownloadTemp"
-	 */
 	protected Path getPercorsoDownloadTemp() {
 		return percorsoDownloadTemp;
 	}
-	/**
-	 * @return
-	 * @uml.property  name="percorsoDownload"
-	 */
+	protected Path getPercorsoDownloadHttpsTemp() {
+		return percorsoDownloadHttpsTemp;
+	}
 	protected Path getPercorsoDownload() {
 		return percorsoDownload;
 	}

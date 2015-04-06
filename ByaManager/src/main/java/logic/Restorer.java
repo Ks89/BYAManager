@@ -39,25 +39,10 @@ public class Restorer extends LogicLoader{
 	private static final String PART = ".part";
 	private static final String SHA = ".sha";
 
-	/**
-	 * @uml.property  name="inizio1"
-	 */
 	private long inizio1;
-	/**
-	 * @uml.property  name="inizio2"
-	 */
 	private long inizio2;
-	/**
-	 * @uml.property  name="inizio3"
-	 */
 	private long inizio3;
-	/**
-	 * @uml.property  name="inizio4"
-	 */
 	private long inizio4;
-	/**
-	 * @uml.property  name="trovati"
-	 */
 	private List<String> trovati;
 
 	private void moveShaFileFromTemp() {
@@ -122,6 +107,10 @@ public class Restorer extends LogicLoader{
 	 */
 	private void rimuoviFileShaRicomponibili(List<Path> shaPathList, List<Path> tempPathList) {
 		List<String> nomiFilePartiString = new ArrayList<String>();
+		if(tempPathList==null) {
+			return;
+		}
+		
 		for(Path tempPath : tempPathList) {
 			nomiFilePartiString.add(tempPath.getFileName().toString().split(".part")[0]);
 		}

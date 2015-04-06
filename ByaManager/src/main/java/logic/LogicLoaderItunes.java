@@ -44,15 +44,7 @@ public class LogicLoaderItunes extends LogicLoader {
 	private static final String ITUNESLISTA = "iTunesLista.txt";
 	private static LogicLoaderItunes instance = new LogicLoaderItunes();
 
-	/**
-	 * @uml.property  name="iTunesMapNomeFile"
-	 * @uml.associationEnd  qualifier="replace:java.lang.String model.ItunesVersion"
-	 */
 	private Map<String,ItunesVersion> iTunesMapNomeFile;
-	/**
-	 * @uml.property  name="iTunesListaNomeFile"
-	 * @uml.associationEnd  multiplicity="(0 -1)" elementType="model.ItunesVersion"
-	 */
 	private List<ItunesVersion> iTunesListaNomeFile;
 
 	public LogicLoaderItunes() {

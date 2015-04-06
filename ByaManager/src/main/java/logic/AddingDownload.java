@@ -24,10 +24,6 @@ import model.FileWeb;
  
 public final class AddingDownload {
 	private static AddingDownload instance = new AddingDownload();
-	/**
-	 * @uml.property  name="addingFileWeb"
-	 * @uml.associationEnd  qualifier="uri:java.net.URI model.FileWeb"
-	 */
 	private Map<URI,FileWeb> addingFileWeb;
 
 	private AddingDownload() {

@@ -18,7 +18,10 @@ package logic;
 
 import gui.MainFrame;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.Socket;
 
 import javax.swing.SwingUtilities;
@@ -27,6 +30,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 import notification.Notification;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
@@ -41,6 +45,28 @@ public class BYAManager {
 	
 	private static final Logger LOGGER = LogManager.getLogger(BYAManager.class);
 
+	/*
+	 * Da fare:
+	 * - Mettere controllo della sha1 se e' esadeciamale tramite un pattern. Per ora c'e' il codice commentato in CheckDBUpdate
+	 * - Controllo per far si che sia possibile scaricare un file solo se c'e' lo spazio disponibile nel disco (fatto, ma da testare)
+	 * - Aggiungere grafica personalizzata al popup nella systemtray
+	 * - Separare Gui dal download manager per poter avviare il DM dal main e quando si avvia la GUi farlo dal DM con invokelater
+	 * - Rimuovere la ncessita' di riavviare il programma dopo un aggiornamento dal file xml
+	 * - creare metodo a parte che valida il percorso inserito nella textfield del pannello preferenze
+	 * - prevedere 4 stati completed per l'insieme download, in modo da avvisare nella tabella quanti sono i thread in corso (magari solo se abilitata voce in preferenze)
+	 * - Riscrivere sistema di upload file usando crittografia
+	 * - Riscrivere sistema di controllo SHA512 criptando il link verso altervista (magari passando per un proxy)
+	 * - Scrivere la funzione di invio email
+	 * - Eliminare il bordo nel jwindow
+	 * - Migliorare aspetto spostando meglio componenti
+	 * - Creare icone del programma a diverse dimensioni e trasparenti e non.
+	 * - Rimuovere menu donazioni ed inserire il pulsante nella grafica
+	 * - Aggiungere pulsanti twitter, facebook, youtube, link al sito ecc.. per ks89 e BYA
+	 * - Creare in alto a dx un qualche cosa, cliccandoci si apre con animazione nel jframe (magari usando il GlassPane) una finstre arrotondata che non copre tutot il frame
+	 * -	e mostra i vari link ai siti ecc... (sarebbe una figata farlo, magari anche con animazioni).
+	 */
+	
+	
 	/**
 	 * Metodo main per eseguire il programma.
 	 * @param args

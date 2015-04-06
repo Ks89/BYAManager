@@ -12,7 +12,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-*/
+ */
 
 package logic;
 
@@ -77,7 +77,7 @@ public abstract class Download extends Observable implements Runnable,Observer {
 	private Path downloadPath;
 	private Path shaFiledownloadPath;
 	private Path renamedFilePathWithoutParts;
-	private Path downloadTempPath;
+	private Path downloadTempPath, downloadTempHttpsPath;
 	private int terminatedCount = 0;
 	private boolean newDownload = true ; //indica se il download e' nuovo o era gia' stato avviato e ora deve essere ripristinato
 	private long inizio1;
@@ -103,6 +103,7 @@ public abstract class Download extends Observable implements Runnable,Observer {
 		this.fileWeb = fileWeb;
 		this.downloadPath = downloadPath;
 		this.downloadTempPath = Paths.get(downloadPath.toString(), "temp");
+		this.downloadTempHttpsPath = Paths.get(downloadPath.toString(), "temphttps");
 
 		this.shaFiledownloadPath = Paths.get(downloadPath.toString(), this.getFileName() + ".sha");
 		this.renamedFilePathWithoutParts = Paths.get(downloadPath.toString(), this.getFileName());
@@ -111,7 +112,7 @@ public abstract class Download extends Observable implements Runnable,Observer {
 	@Override
 	public void run() {
 		try {
-			
+
 			httpGet = new HttpGet(uri);
 
 			response = ConnectionManager.getInstance().getHttpclient().execute(httpGet);
@@ -129,7 +130,7 @@ public abstract class Download extends Observable implements Runnable,Observer {
 				Notification.showErrorOptionPane("download202", "Server error 202");
 				return;
 			}
-			
+
 			if((downloadTempPath.toFile().getFreeSpace()) < contentLength ) {
 				Notification.showErrorOptionPane("download203", "Server error 203");
 			}
@@ -141,6 +142,7 @@ public abstract class Download extends Observable implements Runnable,Observer {
 			process = new ArrayList<Process>();
 			totalSize = contentLength;
 
+			
 			fine1 = contentLength / 4;
 			fine2 = contentLength / 4 + contentLength / 4;
 			fine3 = contentLength / 4 + contentLength / 4 + contentLength / 4;
@@ -149,7 +151,7 @@ public abstract class Download extends Observable implements Runnable,Observer {
 			if(newDownload) {
 				inizio1 = 0;
 				inizio2 = fine1;
-				inizio3 = fine2 ;
+				inizio3 = fine2;
 				inizio4 = fine3;
 			} else { //gli inizi li ho gia' impostati dicendo di continuare il download cosi' ora imposto solo le fini
 				if(inizio1>=BufferSize.getBufferSize()) { 
@@ -164,26 +166,51 @@ public abstract class Download extends Observable implements Runnable,Observer {
 
 			LOGGER.debug(inizio1 + "-" + fine1 +"\n" +  inizio2 +"-" + fine2 +"\n" + inizio3 +"-" + fine3 +"\n" + inizio4 +"-" + fine4);
 
-			this.avviaProcessi();
+			LOGGER.info("URI: " + uri.toString());
+			
+			if(uri.toString().startsWith("https://")) {
+				this.startHttpsProcess();
+			} else {
+				this.avviaProcessi();
+			}
+
 		} catch (IOException e) {
 			LOGGER.error("run() - IOException= " + e);
 		}
 
-		
+
 		DownloadList.getInstance().addDownload(this);
 
-//		stateChanged();
-//		logicManager.rimuoviInAggiunta(this.fileWeb);
-		
+		//		stateChanged();
+		//		logicManager.rimuoviInAggiunta(this.fileWeb);
+
 		//gli passo un valore a caso imporante che non sia null,
 		//cosi' il table model individua questo caso e si comporta in modo diverso
 		//in tutti gli altri casi del stateChanged gli passo null
 		stateChanged(true);
-		
+
 		AddingDownload.getInstance().removeUri(this.getFileWeb().getUri()).getUri();
 
 	}
 	
+
+	/**
+	 * Metodo per inizializzare il processo per https
+	 */
+	private void startHttpsProcess() {
+		Process d1 = new Process(downloadTempHttpsPath, getFileName(), fileWeb.getUri(), 1, inizio1, fine4);
+		d1.addObserver(this);
+
+		process.add(d1);
+
+		if(!newDownload) {
+			d1.setPartenza(0);
+		}
+		d1.riprendi();
+	}
+
+	
+
 	/**
 	 * Metodo per inizializzare i Processi che fanno parte del Download.
 	 */
@@ -230,6 +257,39 @@ public abstract class Download extends Observable implements Runnable,Observer {
 		this.newDownload = false;
 	}
 
+	
+	/**
+	 * Metodo chiamato alla fine del download https, per unire i file e verificare lo SHA1.
+	 * @param parte
+	 */
+	public void setMergingDownloadStateHttps(int parte) {
+		if(process.get(parte-1).getStatus()==Process.MERGING) {
+			this.terminatedCount = this.terminatedCount + 1;
+		}
+
+		LOGGER.info("setMergingDownloadState() - Download: " + this.getFileName() + " -> "+ terminatedCount);
+
+		if(this.terminatedCount==1) {
+			this.status = Process.MERGING;
+			stateChanged(null);
+
+			//quando il download e' in validation aggiorno lo stato dei pulsanti del download selezionato
+			this.setMergingDownload();
+
+			//unisco i file part in uno solo (.ipsw) e li cancello
+			//non creo il riferimento all'oggetto tanto non serve a nulla
+			this.filesMerger = new FilesMerger(downloadPath,this.getFileName());
+
+			filesMerger.createCompleteIpsw();
+
+			this.setValidateDownloadStateHttps();
+
+			//quando il download e' completato aggiorno lo stato dei pulsanti del download selezionato
+			this.completeDownload(this);
+		}
+	}
+	
+	
 	/**
 	 * Metodo chiamato alla fine del download, per unire i file e verificare lo SHA1.
 	 * @param parte
@@ -260,7 +320,7 @@ public abstract class Download extends Observable implements Runnable,Observer {
 			this.completeDownload(this);
 		}
 	}
-	
+
 	/**
 	 * Metodo che aggiorna i pulsanti in caso di download terminato.
 	 * @param download InsiemeDownload selezionato per cui si vuole modificare lo stato dei pulsanti.
@@ -270,7 +330,7 @@ public abstract class Download extends Observable implements Runnable,Observer {
 			StateButton.completaDownloadPulsanti();
 		}
 	}
-	
+
 	/**
 	 * Metodo che aggiorna i pulsanti in cado di download in merging.
 	 * @param download Download selezionato per cui si vuole modificare lo stato dei pulsanti.
@@ -281,6 +341,38 @@ public abstract class Download extends Observable implements Runnable,Observer {
 		}
 	}
 
+	
+	private void setValidateDownloadStateHttps() {
+		try {
+			//verifico lo SHA1 del file appena unito dai file part
+			if(this.needToValidate) { 
+				LOGGER.info("setValidateDownloadState() - Avvio la verifica SHA1");
+				this.status = Process.VALIDATION;
+				this.validationSHA1();
+			} else {
+				LOGGER.info("setValidateDownloadState() - Verifica SHA1 non necessaria, rinomino il file");
+				Files.move(shaFiledownloadPath, renamedFilePathWithoutParts); //rinomina
+				status = COMPLETE;
+			}
+
+			//ora rimuovo le parti perche' il download e' stato completato e verificato e ha dato risultato positivo
+			filesMerger.removeParts(); 
+
+		} catch (Exception e) {
+			LOGGER.error("validationSHA1() - Errore controllo SHA1 _ Exception=", e);
+			Notification.showNormalOptionPane("downloadDamagedFile");
+		}
+
+		this.downloadedBytes = this.totalSize;
+
+
+		//il download e' completato, quindi ora posso attivare il pulsante nella colonna azione della tabella
+		this.activateButtonActionCulomn();
+
+		stateChanged(null);
+	}
+	
+	
 	private void setValidateDownloadState() {
 		try {
 			//verifico lo SHA1 del file appena unito dai file part
@@ -332,11 +424,6 @@ public abstract class Download extends Observable implements Runnable,Observer {
 		if(this.fileWeb instanceof ItunesVersion) {
 			return ((ItunesVersion)this.fileWeb).getFileName();
 		}
-
-		//TODO mettere jailbreak software
-		//		se arrivo qui e' per forza un JailbreakSoftware
-		//		JailbreakSoftware jbSoftware = (JailbreakSoftware)this.fileWeb;
-		//		return jbSoftware.toString(); //il tro string da il formato che ha anche il file scaricato
 		return ""; //da cancellare quando scommento le righe sopra
 	}
 
@@ -409,7 +496,11 @@ public abstract class Download extends Observable implements Runnable,Observer {
 		//chiamo validation facendo casting dell'observable a Processo e ottenendo la parte
 		//il casting e' possibile perche' Processo estende Observable
 		if(o instanceof Process) {
-			this.setMergingDownloadState(((Process)o).getParte());
+			if(uri.toString().startsWith("https://")) {
+				this.setMergingDownloadStateHttps(((Process)o).getParte());
+			} else {
+				this.setMergingDownloadState(((Process)o).getParte());
+			}
 		}
 	}
 

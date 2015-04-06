@@ -20,6 +20,7 @@ import gui.SettingsMainFrame;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -33,7 +34,6 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
 import preferences.listener.ChooseFolderListener;
-
 import update.Version;
 
 import java.util.Locale;
@@ -56,6 +56,7 @@ public final class Settings implements Observer{
 	private String percorsoDati;
 	private String percorsoDownload;
 	private String percorsoDownloadTemp;
+	private String percorsoDownloadHttpsTemp;
 	private String proxyServer;
 	private String proxyPort;
 	private int bufferDimensionIndex;
@@ -107,7 +108,8 @@ public final class Settings implements Observer{
 		//il secondo valore in get e' il valore di default
 		this.percorsoDati = prefs.get("percorsoDati", User.getInstance().getDataPath().toString());
 		this.percorsoDownload = prefs.get("percorsoDownload", User.getInstance().getDownloadPath().toString());
-		this.percorsoDownloadTemp = this.percorsoDownload + "/temp";
+		this.percorsoDownloadTemp = this.percorsoDownload + File.separatorChar + "temp";
+		this.percorsoDownloadHttpsTemp = this.percorsoDownload + File.separatorChar + "temphttps";
 		this.bufferDimensionIndex = prefs.getInt("bufferDownload", 0); // default e' con 2048, cioe' la posizione 0
 		this.languageComboIndex = prefs.getInt("languageCombo", this.getDefaultOsLanguageIndex()); //default e' quelal predefinita del sistema operativo
 		this.dimensionTypeIndex = prefs.getInt("tipoDimensione", 1); //di default e' coi Multipli dei Byte, posizione 1
@@ -122,7 +124,9 @@ public final class Settings implements Observer{
 		try {
 			//da tenere fuori dal loasSettings perche' quel metodo e' chiamato piu' volte, queste righe sotto solo una, all'inizializzazione
 			this.versione = prefs.get("versione", versioneSoftware);
-			if(versione.contains("0,3,") || versione.contains("0,4,") || versione.equals("0,5,0,0") || versione.startsWith("0,5,1,") || versione.startsWith("0,5,2,")) { 
+			if(versione.contains("0,3,") || versione.contains("0,4,") || versione.equals("0,5,0,0") || versione.startsWith("0,5,1,") || versione.startsWith("0,5,2,")
+					 || versione.startsWith("0,5,3,")  || versione.startsWith("0,5,4,") || versione.startsWith("0,5,5,") || versione.startsWith("0,5,6,")
+					 || versione.startsWith("0,6,0,") || versione.startsWith("0,7,0,")) { 
 				prefs.clear(); //cancella preferenze
 			}
 
@@ -180,6 +184,7 @@ public final class Settings implements Observer{
 		LOGGER.info("percorso di dati: " + percorsoDati);
 		LOGGER.info("percorso di download: " + percorsoDownload);
 		LOGGER.info("percorso di downloadTemp: " + percorsoDownloadTemp);
+		LOGGER.info("percorso di downloadHttpsTemp: " + percorsoDownloadHttpsTemp);
 		LOGGER.info("dimensione buffer: " + bufferDimensionIndex);
 		LOGGER.info("unita misura index: " + dimensionTypeIndex);
 		LOGGER.info("lingua index: " + languageComboIndex);
@@ -267,6 +272,7 @@ public final class Settings implements Observer{
 			this.setDownloadPath();
 	
 			this.percorsoDownloadTemp = percorsoDownload + System.getProperty("file.separator") + "temp";
+			this.percorsoDownloadHttpsTemp = percorsoDownload + System.getProperty("file.separator") + "temp";
 
 			settingsMainFrame.getPercorsoTextField().setText(percorsoDownload);
 
@@ -285,6 +291,23 @@ public final class Settings implements Observer{
 					this.logSettings();
 				} else {
 					LOGGER.error("salvaPreferenzeAction - Percorso downloadtemp non valido");
+					Notification.showNormalOptionPane("settingsProblemWithPath");
+				}
+			} catch (IOException e) {
+				LOGGER.error("salvaPreferenzeAction - IOException= " + e);
+				Notification.showNormalOptionPane("settingsProblemWithPath");
+			}
+			
+			try {
+				Path path2 = Paths.get(this.percorsoDownloadHttpsTemp);
+				Files.createDirectories(path2);
+				if(Files.exists(path2)) {
+					this.logSettings();
+					saveSettings();
+					loadSettings();
+					this.logSettings();
+				} else {
+					LOGGER.error("salvaPreferenzeAction - Percorso downloadHttpstemp non valido");
 					Notification.showNormalOptionPane("settingsProblemWithPath");
 				}
 			} catch (IOException e) {
@@ -316,39 +339,41 @@ public final class Settings implements Observer{
 	
 	/**
 	 * @return  String rappresentante la versione.
-	 * @uml.property  name="versione"
 	 */
 	public String getVersione() {
 		return versione;
 	}
 	/**
 	 * @param versione  String per impostare la versione.
-	 * @uml.property  name="versione"
 	 */
 	public void setVersione(String versione) {
 		this.versione = versione;
 	}
 	/**
 	 * @return  String rappresentante il percorsoDati.
-	 * @uml.property  name="percorsoDati"
 	 */
 	public String getPercorsoDati() {
 		return percorsoDati;
 	}
 	/**
 	 * @return  String rappresentante il percorsoDownload.
-	 * @uml.property  name="percorsoDownload"
 	 */
 	public String getPercorsoDownload() {
 		return percorsoDownload;
 	}
 	/**
 	 * @return  String rappresentante il percorsoDownloadTemp.
-	 * @uml.property  name="percorsoDownloadTemp"
 	 */
 	public String getPercorsoDownloadTemp() {
 		return percorsoDownloadTemp;
 	}
+	/**
+	 * @return  String rappresentante il percorsoDownloadHttpsTemp.
+	 */
+	public String getPercorsoDownloadHttpsTemp() {
+		return percorsoDownloadHttpsTemp;
+	}
+	
 	/**
 	 * @return int rappresentante la dimensione buffer.
 	 */
@@ -361,10 +386,7 @@ public final class Settings implements Observer{
 	public int getTipoDimensione() {
 		return dimensionTypeIndex;
 	}
-	/**
-	 * @return
-	 * @uml.property  name="languageComboIndex"
-	 */
+
 	public int getLanguageComboIndex() {
 		return languageComboIndex;
 	}
@@ -381,34 +403,18 @@ public final class Settings implements Observer{
 		return autoUpdateState;
 	}
 
-	/**
-	 * @param systemTrayNotificationState
-	 * @uml.property  name="systemTrayNotificationState"
-	 */
 	public void setSystemTrayNotificationState(boolean systemTrayNotificationState) {
 		this.systemTrayNotificationState = systemTrayNotificationState;
 	}
 
-	/**
-	 * @param autoUpdateState
-	 * @uml.property  name="autoUpdateState"
-	 */
 	public void setAutoUpdateState(boolean autoUpdateState) {
 		this.autoUpdateState = autoUpdateState;
 	}
 
-	/**
-	 * @return
-	 * @uml.property  name="proxyServer"
-	 */
 	public String getProxyServer() {
 		return proxyServer;
 	}
 
-	/**
-	 * @return
-	 * @uml.property  name="proxyPort"
-	 */
 	public String getProxyPort() {
 		return proxyPort;
 	}

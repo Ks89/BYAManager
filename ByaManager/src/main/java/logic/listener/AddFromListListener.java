@@ -47,12 +47,10 @@ import org.apache.logging.log4j.LogManager;
 public class AddFromListListener extends AbstractAction {
 	private static final long serialVersionUID = 4718167301597935681L;
 	private static final Logger LOGGER = LogManager.getLogger(Process.class);
-	/**
-	 * @uml.property  name="fileWeb"
-	 * @uml.associationEnd  
-	 */
-	private transient FileWeb fileWeb; //e' transient perche' la classe FileWeb non e' serializzabile, mentre questa si e quindi bisogna segnalare che questo non verra' serializzato
-
+	
+	//e' transient perche' la classe FileWeb non e' serializzabile, mentre questa si e quindi bisogna segnalare che questo non verra' serializzato
+	private transient FileWeb fileWeb; 
+	
 	private void setGlobalVariables() {
 		switch(MainFrame.getInstance().getTabbedPaneIndex()) {
 		case 0:

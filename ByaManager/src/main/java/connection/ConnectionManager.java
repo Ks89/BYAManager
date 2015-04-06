@@ -17,10 +17,18 @@ package connection;
 
 import java.io.IOException;
 
+import javax.net.ssl.SSLContext;
+
 import org.apache.http.HttpHost;
+import org.apache.http.config.Registry;
+import org.apache.http.config.RegistryBuilder;
+import org.apache.http.conn.socket.ConnectionSocketFactory;
+import org.apache.http.conn.socket.PlainConnectionSocketFactory;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
+import org.apache.http.ssl.SSLContexts;
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 
 /**
  *	Class that represents the connection manager for Downloads and Processes
@@ -43,22 +51,35 @@ public class ConnectionManager {
 	 * Metodo per inizializzare il connectionManager.
 	 */
 	public void initConnectionManager(boolean proxyActivationState, String proxyServer, String proxyPort) {
+		// SSL context for secure connections can be created either based on
+        // system or application specific properties.
+        SSLContext sslcontext = SSLContexts.createSystemDefault();
+
+        // Create a registry of custom connection socket factories for supported
+        // protocol schemes.
+        Registry<ConnectionSocketFactory> socketFactoryRegistry = RegistryBuilder.<ConnectionSocketFactory>create()
+            .register("http", PlainConnectionSocketFactory.INSTANCE)
+            .register("https", new SSLConnectionSocketFactory(sslcontext))
+            .build();
+		
 		// Create an HttpClient with the PoolingHttpClientConnectionManager.
         // This connection manager must be used if more than one thread will
         // be using the HttpClient.
-		poolingConnManager = new PoolingHttpClientConnectionManager();
+		poolingConnManager = new PoolingHttpClientConnectionManager(socketFactoryRegistry);
 		poolingConnManager.setMaxTotal(100);
 		poolingConnManager.setDefaultMaxPerRoute(20);
-		
+
 		if(proxyActivationState) {
 			//esempio proxy che funziona "195.246.54.5" 8080 da http://proxylist.hidemyass.com/
 			//verificare la porta, che sia http, e soprattutto la velocita' che permette.
 			//sceglierne uno veloce e soprattutto, avere pazienza nell'avvio del download, perche' sara' comunque
 			//piu' lento
             proxy = new HttpHost(proxyServer, Integer.parseInt(proxyPort), "http");
-            httpclient = HttpClients.custom().setConnectionManager(poolingConnManager).setProxy(proxy).build();
+            httpclient = HttpClients.custom().setConnectionManager(poolingConnManager)
+            		.setProxy(proxy).build();
 		} else {
-			httpclient = HttpClients.custom().setConnectionManager(poolingConnManager).build();
+			httpclient = HttpClients.custom().setConnectionManager(poolingConnManager)
+					.build();
 		}
 	}
 
