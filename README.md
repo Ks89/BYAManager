@@ -20,7 +20,7 @@ The complete list is available [HERE](LINK A README-CHANGELOG.md)
 ## News
 - 04/06/2015 - **BYAMaager 0.8.0** [DOWNLOAD HERE](https://github.com/Ks89/BYAManager/releases/tag/v0.8.0) and public release [HERE](http://ks89-jailbreak.blogspot.it/2015/04/byamanager-080.html)
 - 04/03/2015 - **BYAMaager 0.7.0** [DOWNLOAD HERE](https://github.com/Ks89/BYAManager/releases/tag/v0.7.0) and public release [HERE](http://ks89-jailbreak.blogspot.it/2015/04/byamanager-070.html)
-- 04/02/2015 - **BYAMaager 0.6.0** [DOWNLOAD HERE](https://github.com/Ks89/BYAManager/releases/tag/v0.6.0) and public release (http://ks89-jailbreak.blogspot.it/2015/04/bya-manager-060.html)
+- 04/02/2015 - **BYAMaager 0.6.0** [DOWNLOAD HERE](https://github.com/Ks89/BYAManager/releases/tag/v0.6.0) and public release [HERE](http://ks89-jailbreak.blogspot.it/2015/04/bya-manager-060.html)
 - 03/30/2015 - **BYAMaager 0.5.6** [DOWNLOAD HERE](https://github.com/Ks89/BYAManager/releases/tag/v0.5.6) and public release [HERE](http://ks89-jailbreak.blogspot.it/2015/03/byamanager-056.html) 
 - 03/29/2015 - **BYAMaager 0.5.5** [DOWNLOAD HERE](https://github.com/Ks89/BYAManager/releases/tag/v0.5.5) and public release [HERE](http://ks89-jailbreak.blogspot.it/2015/03/changelog-0.html)
 - 10/21/2014 - **BYAMaager 0.5.4** public [HERE](http://ks89-jailbreak.blogspot.it/2014/10/changelog-0.html)
