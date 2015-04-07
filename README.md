@@ -18,30 +18,30 @@ The complete list is available [HERE](LINK A README-CHANGELOG.md)
 
 
 ## News
-- 04/06/2015 - **BYAMaager 0.8.0** [DOWNLOAD HERE](https://github.com/Ks89/BYAManager/releases/tag/v0.8.0) and public release [HERE](http://ks89-jailbreak.blogspot.it/2015/04/byamanager-080.html)
-- 04/03/2015 - **BYAMaager 0.7.0** [DOWNLOAD HERE](https://github.com/Ks89/BYAManager/releases/tag/v0.7.0) and public release [HERE](http://ks89-jailbreak.blogspot.it/2015/04/byamanager-070.html)
-- 04/02/2015 - **BYAMaager 0.6.0** [DOWNLOAD HERE](https://github.com/Ks89/BYAManager/releases/tag/v0.6.0) and public release [HERE](http://ks89-jailbreak.blogspot.it/2015/04/bya-manager-060.html)
-- 03/30/2015 - **BYAMaager 0.5.6** [DOWNLOAD HERE](https://github.com/Ks89/BYAManager/releases/tag/v0.5.6) and public release [HERE](http://ks89-jailbreak.blogspot.it/2015/03/byamanager-056.html) 
-- 03/29/2015 - **BYAMaager 0.5.5** [DOWNLOAD HERE](https://github.com/Ks89/BYAManager/releases/tag/v0.5.5) and public release [HERE](http://ks89-jailbreak.blogspot.it/2015/03/changelog-0.html)
-- 10/21/2014 - **BYAMaager 0.5.4** public [HERE](http://ks89-jailbreak.blogspot.it/2014/10/changelog-0.html)
-- 09/29/2014 - **BYAMaager 0.5.3** public [HERE](http://ks89-jailbreak.blogspot.it/2014/09/byamanager-053.html)  
-- 04/06/2012 - **BYAMaager 0.5.2** public [HERE](http://www.biteyourapple.net/2012/05/12/esclusiva-bya-bya-manager-0-5-2/#more-43579) and [HERE](http://ks89-jailbreak.blogspot.it/2012/04/anteprima-byamanager-052.html)
-- 04/05/2012 - **BYAMaager 0.5.2 RC1** public via Twitter and auto-update
-- 03/28/2012 - **BYAMaager 0.5.1** public [HERE](http://www.biteyourapple.net/2012/04/06/esclusiva-bya-bya-manager-0-5-1/#more-43275) and [HERE](http://ks89-jailbreak.blogspot.it/2012/03/anteprima-byamanager-051.html)
-- 03/19/2012 - **BYAMaager 0.5.0.0** public [HERE](http://ks89-jailbreak.blogspot.it/2012/01/anteprima-byamanager-050.html)
-- 03/19/2012 - **BYAMaager 0.5.0 beta 1** only for 3 beta testers. Yep! beta1 after a RC ;)
-- 03/19/2012 - **BYAMaager 0.5.0 RC2** public via Twitter and auto-update
-- 03/19/2012 - **BYAMaager 0.5.0 RC1** public via Twitter and auto-update
-- 03/13/2012 - **BYAMaager 0.5.0.0 Beta5** only for beta testers
-- 03/09/2012 - **BYAMaager 0.5.0.0 Beta3** only for beta testers 
-- 02/24/2012 - **BYAMaager 0.4.1.0 (o 0.5.0.0 Beta2)** only for beta testers
-- 01/06/2012 - **BYAMaager 0.4.0 (o Beta 4)** public [HERE](http://www.biteyourapple.net/2012/01/06/esclusiva-bya-biteyourapple-manager-0-4-0/) and [HERE](http://ks89-jailbreak.blogspot.it/2012/01/anteprima-byamanager-beta4.html)
-- 12/28/2011 - **BYAMaager Beta 3** public [HERE](http://www.biteyourapple.net/2011/12/28/esclusiva-bya-biteyourapple-manager-beta-3/) and [HERE](http://ks89-jailbreak.blogspot.it/2011/10/bya-manager-beta3-preview.html)
-- 10/24/2011 - **BYAMaager Beta 2** public [HERE](http://ks89-jailbreak.blogspot.it/2011/10/bya-manager-beta2.html) 
-- 10/10/2011 - **BYAMaager Beta 1** public [HERE](http://ks89-jailbreak.blogspot.it/2011/10/bya-manager-beta1.html)
-- 10/03/2011 - **BYAMaager Beta 0.3** private
-- 08/04/2011 - **BYAMaager Alpha 4** private
-- 07/31/2011 - **BYAMaager Alpha 3** private
+- 04/06/2015 - **BYAManager 0.8.0** [DOWNLOAD HERE](https://github.com/Ks89/BYAManager/releases/tag/v0.8.0) and public release [HERE](http://ks89-jailbreak.blogspot.it/2015/04/byamanager-080.html)
+- 04/03/2015 - **BYAManager 0.7.0** [DOWNLOAD HERE](https://github.com/Ks89/BYAManager/releases/tag/v0.7.0) and public release [HERE](http://ks89-jailbreak.blogspot.it/2015/04/byamanager-070.html)
+- 04/02/2015 - **BYAManager 0.6.0** [DOWNLOAD HERE](https://github.com/Ks89/BYAManager/releases/tag/v0.6.0) and public release [HERE](http://ks89-jailbreak.blogspot.it/2015/04/bya-manager-060.html)
+- 03/30/2015 - **BYAManager 0.5.6** [DOWNLOAD HERE](https://github.com/Ks89/BYAManager/releases/tag/v0.5.6) and public release [HERE](http://ks89-jailbreak.blogspot.it/2015/03/byamanager-056.html) 
+- 03/29/2015 - **BYAManager 0.5.5** [DOWNLOAD HERE](https://github.com/Ks89/BYAManager/releases/tag/v0.5.5) and public release [HERE](http://ks89-jailbreak.blogspot.it/2015/03/changelog-0.html)
+- 10/21/2014 - **BYAManager 0.5.4** public [HERE](http://ks89-jailbreak.blogspot.it/2014/10/changelog-0.html)
+- 09/29/2014 - **BYAManager 0.5.3** public [HERE](http://ks89-jailbreak.blogspot.it/2014/09/byamanager-053.html)  
+- 04/06/2012 - **BYAManager 0.5.2** public [HERE](http://www.biteyourapple.net/2012/05/12/esclusiva-bya-bya-manager-0-5-2/#more-43579) and [HERE](http://ks89-jailbreak.blogspot.it/2012/04/anteprima-byamanager-052.html)
+- 04/05/2012 - **BYAManager 0.5.2 RC1** public via Twitter and auto-update
+- 03/28/2012 - **BYAManager 0.5.1** public [HERE](http://www.biteyourapple.net/2012/04/06/esclusiva-bya-bya-manager-0-5-1/#more-43275) and [HERE](http://ks89-jailbreak.blogspot.it/2012/03/anteprima-byamanager-051.html)
+- 03/19/2012 - **BYAManager 0.5.0.0** public [HERE](http://ks89-jailbreak.blogspot.it/2012/01/anteprima-byamanager-050.html)
+- 03/19/2012 - **BYAManager 0.5.0 beta 1** only for 3 beta testers. Yep! beta1 after a RC ;)
+- 03/19/2012 - **BYAManager 0.5.0 RC2** public via Twitter and auto-update
+- 03/19/2012 - **BYAManager 0.5.0 RC1** public via Twitter and auto-update
+- 03/13/2012 - **BYAManager 0.5.0.0 Beta5** only for beta testers
+- 03/09/2012 - **BYAManager 0.5.0.0 Beta3** only for beta testers 
+- 02/24/2012 - **BYAManager 0.4.1.0 (o 0.5.0.0 Beta2)** only for beta testers
+- 01/06/2012 - **BYAManager 0.4.0 (o Beta 4)** public [HERE](http://www.biteyourapple.net/2012/01/06/esclusiva-bya-biteyourapple-manager-0-4-0/) and [HERE](http://ks89-jailbreak.blogspot.it/2012/01/anteprima-byamanager-beta4.html)
+- 12/28/2011 - **BYAManager Beta 3** public [HERE](http://www.biteyourapple.net/2011/12/28/esclusiva-bya-biteyourapple-manager-beta-3/) and [HERE](http://ks89-jailbreak.blogspot.it/2011/10/bya-manager-beta3-preview.html)
+- 10/24/2011 - **BYAManager Beta 2** public [HERE](http://ks89-jailbreak.blogspot.it/2011/10/bya-manager-beta2.html) 
+- 10/10/2011 - **BYAManager Beta 1** public [HERE](http://ks89-jailbreak.blogspot.it/2011/10/bya-manager-beta1.html)
+- 10/03/2011 - **BYAManager Beta 0.3** private
+- 08/04/2011 - **BYAManager Alpha 4** private
+- 07/31/2011 - **BYAManager Alpha 3** private
 
 ## Features
 
