@@ -107,7 +107,7 @@ When a download completes, you can move this file directly into the iTunes firmw
 
 ## License
 
-Copyright 2015 Stefano Cappa
+Copyright 2011-2015 Stefano Cappa
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
