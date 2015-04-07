@@ -29,7 +29,7 @@ The complete list is available [HERE](LINK A README-CHANGELOG.md)
 - 04/05/2012 - **BYAMaager 0.5.2 RC1** public via Twitter and auto-update
 - 03/28/2012 - **BYAMaager 0.5.1** public [HERE](http://www.biteyourapple.net/2012/04/06/esclusiva-bya-bya-manager-0-5-1/#more-43275) and [HERE](http://ks89-jailbreak.blogspot.it/2012/03/anteprima-byamanager-051.html)
 - 03/19/2012 - **BYAMaager 0.5.0.0** public [HERE](http://ks89-jailbreak.blogspot.it/2012/01/anteprima-byamanager-050.html)
-- 03/19/2012 - **BYAMaager 0.5.0 beta 1** only for three selected beta testers. Yep! Stupid name, beta1 after a RC ;)
+- 03/19/2012 - **BYAMaager 0.5.0 beta 1** only for 3 beta testers. Yep! beta1 after a RC ;)
 - 03/19/2012 - **BYAMaager 0.5.0 RC2** public via Twitter and auto-update
 - 03/19/2012 - **BYAMaager 0.5.0 RC1** public via Twitter and auto-update
 - 03/13/2012 - **BYAMaager 0.5.0.0 Beta5** only for beta testers
