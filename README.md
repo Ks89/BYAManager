@@ -1,12 +1,13 @@
 # BYAManager
 
-IMMAGINE LOGO
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/0-header.jpg)
+
 
 BYAManager is a personal project that i realized in 2011, and updated more times during the last years. It's a Download Manager dedicated to the Apple World, that i developed for the blog biteyourapple.net.
 This software is a GUI to download iOS firmwares and iTunes versions with some extra features. 
 It's legal, obviously, because all files are on Apple server. BYAManager bring files directly from Apple server for you.
 
-The entire list of features is available [HERE](Link al div features)
+The entire list of features is available [HERE](https://github.com/Ks89/BYAManager#features).
 
 BYAManager uses BYAUpdater to update itself automatically!
 
@@ -14,7 +15,7 @@ BYAManager uses BYAUpdater to update itself automatically!
 
 
 ## Changelogs
-The complete list is available [HERE](LINK A README-CHANGELOG.md)
+The complete list is available [HERE](https://github.com/Ks89/BYAManager/blob/master/README-CHANGELOGS.md)
 
 
 ## News
@@ -69,6 +70,7 @@ The complete list is available [HERE](LINK A README-CHANGELOG.md)
 * Log every actions in a file behind the executable called BYAManager.log
 * 
 * 
+
 
 ## Future extensions
 * Create a database for device's commercial names, to remove the requirement to update the software every new iDevice produced
