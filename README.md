@@ -3,9 +3,11 @@
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/0-header.jpg)
 
 
-BYAManager is a personal project that i realized in 2011, and updated more times during the last years. It's a Download Manager dedicated to the Apple World, that i developed for the blog biteyourapple.net.
+BYAManager is a personal project that i realized in 2011, and updated more times during the last years. It's a Multi-Platform and Multi-Language Download Manager dedicated to the "Apple World", that i developed for the blog biteyourapple.net.
 This software is a GUI to download iOS firmwares and iTunes versions with some extra features. 
 It's legal, obviously, because all files are on Apple server. BYAManager bring files directly from Apple server for you.
+
+It's available in 3 languages: ITALIAN, ENGLISH and CZECH
 
 The entire list of features is available [HERE](https://github.com/Ks89/BYAManager#features).
 
@@ -14,8 +16,12 @@ BYAManager uses BYAUpdater to update itself automatically!
 **This software requires Java 8 or above.**
 
 
+## Thanks to:
+* Endys111 for the Czech translation
+
+
 ## Changelogs
-The complete list is available [HERE](https://github.com/Ks89/BYAManager/blob/master/README-CHANGELOGS.md)
+* The complete list is available [HERE](https://github.com/Ks89/BYAManager/blob/master/README-CHANGELOGS.md)
 
 
 ## News
@@ -47,12 +53,12 @@ The complete list is available [HERE](https://github.com/Ks89/BYAManager/blob/ma
 ## Features
 
 ####You can:
-* download files via http and https
-* download one or more files at the same time at full speed, with multiple processes to bypass server's limitations
+* download files via http and https, also with BYAManager in background (minimized)
+* download one or more files at the same time at full speed (Download Accelerator), with multiple processes to bypass server's limitations
 * play/pause/stop/cancel downloads, using a list of available iOS Firmware and iTunes versions in a local database
-* enable/disable sha1 check
+* enable/disable sha1 check (enabled by default)
 * serach new BYAManager's versions or new database versions
-* change settings, for example: path of the download folder, set a proxy, change measurement unit, and so no
+* change settings, for example: path of the download folder, proxy, measurement unit, language, buffer size, notifications, and so on
 * restore settings to default values
 * open the download folder, directly from BYAManager
 * re-download files in the list directly in the browser, or in other programs
@@ -67,8 +73,7 @@ The complete list is available [HERE](https://github.com/Ks89/BYAManager/blob/ma
 * check the interity os a file with hash algoririthm sha1.
 * during the startup of the program, can try to restore incompleted/damaged files
 * check if a file has been download before
-* Log every actions in a file behind the executable called BYAManager.log
-* 
+* Log every actions in a file called BYAManager.log, near the executable
 * 
 
 
@@ -89,22 +94,23 @@ The complete list is available [HERE](https://github.com/Ks89/BYAManager/blob/ma
 ## Images
 
 
+
 ## Usage
 
 #### Dowload files
-1. Choose the tab if you want to download firmwares or itunes
-2. Chosse che correct version
+1. Choose the tab iOS or iTunes and select the correct version
 3. Click on Download to start
 
 In the menu bar you can choose actions, like play/pause/cancel or the more powerfull versions: pause all/play all/cancel all.
 Clicking on a table line, a popup menu will appear. From thi menu you can select actions, like disable SHA1-check, play/pause/cancel, open in broswer, open downlaoded folder.
 When a download completes, you can move this file directly into the iTunes firmware's folder, clicking on the "Move" button in the table
 
-
-####
-
+#### Change settings
 
 #### Using Command Line Interface (CLI)
+
+
+
 
 
 ## License
