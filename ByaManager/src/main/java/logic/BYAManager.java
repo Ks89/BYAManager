@@ -54,16 +54,10 @@ public class BYAManager {
 	 * - Rimuovere la ncessita' di riavviare il programma dopo un aggiornamento dal file xml
 	 * - creare metodo a parte che valida il percorso inserito nella textfield del pannello preferenze
 	 * - prevedere 4 stati completed per l'insieme download, in modo da avvisare nella tabella quanti sono i thread in corso (magari solo se abilitata voce in preferenze)
-	 * - Riscrivere sistema di upload file usando crittografia
-	 * - Riscrivere sistema di controllo SHA512 criptando il link verso altervista (magari passando per un proxy)
-	 * - Scrivere la funzione di invio email
 	 * - Eliminare il bordo nel jwindow
 	 * - Migliorare aspetto spostando meglio componenti
-	 * - Creare icone del programma a diverse dimensioni e trasparenti e non.
 	 * - Rimuovere menu donazioni ed inserire il pulsante nella grafica
 	 * - Aggiungere pulsanti twitter, facebook, youtube, link al sito ecc.. per ks89 e BYA
-	 * - Creare in alto a dx un qualche cosa, cliccandoci si apre con animazione nel jframe (magari usando il GlassPane) una finstre arrotondata che non copre tutot il frame
-	 * -	e mostra i vari link ai siti ecc... (sarebbe una figata farlo, magari anche con animazioni).
 	 */
 	
 	
@@ -105,10 +99,10 @@ public class BYAManager {
 		
 		
 //				try {
-//					InputStream bya= new FileInputStream("/Users/Ks89/Desktop/BYA/BYAManager.jar");
+//					InputStream bya= new FileInputStream("/Users/Ks89/Desktop/BYA/cartella senza titolo/BYAManager.jar");
 //					System.out.println(" sha512 bya " + DigestUtils.sha512Hex(bya));
-//										InputStream bya2= new FileInputStream("/Users/Ks89/Desktop/BYA/BYAUpdater.jar");
-//										System.out.println(" sha512 updater " + DigestUtils.sha512Hex(bya2));
+//					InputStream bya2= new FileInputStream("/Users/Ks89/Desktop/BYA/BYAUpdater.jar");
+//					System.out.println(" sha512 updater " + DigestUtils.sha512Hex(bya2));
 //				} catch (FileNotFoundException e1) {
 //					e1.printStackTrace();
 //				} catch (IOException e) {

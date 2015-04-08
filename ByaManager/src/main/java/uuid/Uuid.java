@@ -17,38 +17,29 @@ limitations under the License.
 package uuid;
 
 import localization.Translator;
+import lombok.Getter;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
 import update.Version;
 
-
 import com.eaio.uuid.UUIDGen;
 
 
 /**
- * Classe astratta che rappresenta l'uuid, generato richiamando la classe
- * MacAddress.
+ * Class that represents the uuid.
  */
 public abstract class Uuid {
 	
-	/**
-	 * @uml.property  name="uuid"
-	 */
-	private String uuid;
+	@Getter private String uuid;
 
 	/**
-	 * Metodo per creare l'uuid e impostarlo nella variabile globale.
+	 * Method to generate a simple uuid using this informations: 
+	 * BYAManager's version, os version, language of the os, the sha512 of your mac address.<br></br>
+	 * With this operation i can't reverse the sha512 and your identity is safe.
+	 * I use this uuid only for anonymous statistical purposes.
 	 */
-	public void creaUuid() {
+	public void generateUuid() {
 		this.uuid = Version.getVersion() + "_" + System.getProperty("os.version")  + "_" + Translator.getTraduzione() + "_" + DigestUtils.sha512Hex(UUIDGen.getMACAddress().replace(":", "").toUpperCase());
-	}
-
-	/**
-	 * @return  String che rappresenta l'uuid esadecimale.
-	 * @uml.property  name="uuid"
-	 */
-	public String getUuid() {
-		return this.uuid;
 	}
 }
