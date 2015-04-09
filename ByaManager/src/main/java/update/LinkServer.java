@@ -17,7 +17,7 @@ limitations under the License.
 package update;
 
 public final class LinkServer {
-
+ 
 	//-----------------------------------------------------------------------------------------------
 	public static final String KS89IT = "http://www.stefanocappa.it/publicfiles/Github_project/byam/";
 	//-----------------------------------------------------------------------------------------------
