@@ -22,6 +22,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import lombok.Getter;
 import notification.Notification;
 
 /**
@@ -32,12 +33,12 @@ public final class User extends Os {
 	private static User instance = new User();
 
 	private String homePath;
-	private Path dataPath;
-	private Path downloadPath;
-	private Path downloadTempPath;
-	private Path downloadTempHttpsPath;
-	private String jarPath;
-	private String jarName;
+	@Getter private Path dataPath;
+	@Getter private Path downloadPath;
+	@Getter private Path downloadTempPath;
+	@Getter private Path downloadTempHttpsPath;
+	@Getter private String jarPath;
+	@Getter private String jarName;
 
 	/**
 	 * Metodo che permette di ottenere l'istanza della classe.
@@ -131,54 +132,5 @@ public final class User extends Os {
 		}
 		//se e' linux non da nessun percorso perche' su linux non si puo' installare itunes
 		throw new IOException();
-	}
-
-	/**
-	 * Ottiene il percorso di esecuzione del jar.
-	 * @return  String che rappresenta il percorso d'esecuzione jar.
-	 * @uml.property  name="jarPath"
-	 */
-	public String getJarPath() {
-		return jarPath;
-	}
-
-	/**
-	 * Ottiene il percorso dati.
-	 * @return  String che rappresenta il percorso dati.
-	 * @uml.property  name="dataPath"
-	 */
-	public Path getDataPath() {
-		return dataPath;
-	}
-
-	/**
-	 * Ottiene percorso download file temporanei.
-	 * @return  String che rappresenta il percorso downloadTemp.
-	 */
-	public Path getDownloadTempPath() {
-		return downloadTempPath;
-	}
-	
-	/**
-	 * Ottiene percorso download file temporanei https.
-	 * @return  String che rappresenta il percorso downloadTempHttpsPath.
-	 */
-	public Path getDownloadTempHttpsPath() {
-		return downloadTempHttpsPath;
-	}
-
-	/**
-	 * Ottiene percorso download.
-	 * @return  String che rappresenta il percorso download.
-	 */
-	public Path getDownloadPath() {
-		return downloadPath;
-	}
-
-	/**
-	 * @return
-	 */
-	public String getJarName() {
-		return jarName;
 	}
 }

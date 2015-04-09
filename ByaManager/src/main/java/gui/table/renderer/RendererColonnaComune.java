@@ -28,9 +28,6 @@ public class RendererColonnaComune extends DefaultTableCellRenderer {
 	private static final int TUTTO=0;
 	private static final int SOLOICONA=1;
 	private static final int SOLOTESTO=2;
-	/**
-	 * @uml.property  name="isSelected"
-	 */
 	private boolean isSelected;
 	
 	protected void impostaGrafica(int impostazExtra, Object value, Icon icon, boolean isSelected) {

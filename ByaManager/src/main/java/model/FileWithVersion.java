@@ -16,63 +16,21 @@ limitations under the License.
 
 package model;
 
-/**
- * @author  Ks89
- */
+import lombok.Getter;
+import lombok.Setter;
+
 public abstract class FileWithVersion extends FileWeb {
 	
-	/**
-	 * @uml.property  name="version"
-	 */
-	private String version;
-	/**
-	 * @uml.property  name="changelog"
-	 * @uml.associationEnd  
-	 */
-	private Changelog changelog;
+	@Getter @Setter private String version;
+	@Getter @Setter private Changelog changelog;
 
 	public FileWithVersion() {
 		super();
-	}
-	
-	/**
-	 * @return  version String rappresentante la versione.
-	 * @uml.property  name="version"
-	 */
-	public String getVersion() {
-		return version;
-	}
-
-	/**
-	 * @param version  Una String rappresentante la versione.
-	 * @uml.property  name="version"
-	 */
-	public void setVersion(String version) {
-		this.version = version;
-	}
-
-	/**
-	 * @return
-	 * @uml.property  name="changelog"
-	 */
-	public Changelog getChangelog() {
-		return changelog;
-	}
-
-	/**
-	 * @param changelog
-	 * @uml.property  name="changelog"
-	 */
-	public void setChangelog(Changelog changelog) {
-		this.changelog = changelog;
 	}
 	
 	public String getOsName() {
 		return this.getOperativeSystemList().get(0).getShortName(); //TODO sistemare il get(0)
 	}
 	
-	/**
-	 * @uml.property  name="fileName"
-	 */
 	public abstract String getFileName();
 }

@@ -35,10 +35,6 @@ import model.User;
 
 public class TableActionButtonListener extends MouseAdapter {
 
-	/**
-	 * @uml.property  name="table"
-	 * @uml.associationEnd  multiplicity="(1 1)"
-	 */
 	private final JTable table;
 
 	public TableActionButtonListener(JTable table) {

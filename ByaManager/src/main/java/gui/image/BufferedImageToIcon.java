@@ -22,17 +22,8 @@ import java.awt.image.BufferedImage;
 import javax.swing.Icon;
 
 public class BufferedImageToIcon implements Icon {
-	/**
-	 * @uml.property  name="image"
-	 */
 	private BufferedImage image;
-	/**
-	 * @uml.property  name="height"
-	 */
 	private int height;
-	/**
-	 * @uml.property  name="width"
-	 */
 	private int width;
 
 	public BufferedImageToIcon(BufferedImage image) {

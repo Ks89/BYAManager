@@ -28,25 +28,15 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import localization.Translator;
+import lombok.Getter;
 import notification.Notification;
 
 public final class SystemTrayManager {
-	/**
-	 * @uml.property  name="esciTotalmenteItem"
-	 */
-	private MenuItem esciTotalmenteItem;
-	/**
-	 * @uml.property  name="ripristinaItem"
-	 */
-	private MenuItem ripristinaItem;
-	/**
-	 * @uml.property  name="tray"
-	 */
+	@Getter private MenuItem esciTotalmenteItem;
+	@Getter private MenuItem ripristinaItem;
 	private SystemTray tray;
-	/**
-	 * @uml.property  name="trayIcon"
-	 */
 	private TrayIcon trayIcon;
+	
 	private static SystemTrayManager instance = new SystemTrayManager();
 	
 	private SystemTrayManager() {
@@ -101,21 +91,4 @@ public final class SystemTrayManager {
 	public void removeSystemTray() {
 		tray.remove(trayIcon);
 	}
-
-	/**
-	 * @return
-	 * @uml.property  name="esciTotalmenteItem"
-	 */
-	public MenuItem getEsciTotalmenteItem() {
-		return esciTotalmenteItem;
-	}
-
-	/**
-	 * @return
-	 * @uml.property  name="ripristinaItem"
-	 */
-	public MenuItem getRipristinaItem() {
-		return ripristinaItem;
-	}
-	
 }

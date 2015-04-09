@@ -23,18 +23,19 @@ import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
 
 import localization.Translator;
+import lombok.Getter;
 
 /**
  *	Classe che si occupa di creare il PopupMenu cliccando col tasto destro su un download.
  */
 public class StateTablePopupItem {
 
-	private JMenuItem pausaItem;
-	private JMenuItem riprendiItem;
-	private JMenuItem rimuoviItem;
-	private JMenuItem mostraItem;
-	private JMenuItem urlItem;
-	private JMenuItem disableShaCheck;
+	@Getter private JMenuItem pausaItem;
+	@Getter private JMenuItem riprendiItem;
+	@Getter private JMenuItem rimuoviItem;
+	@Getter private JMenuItem mostraItem;
+	@Getter private JMenuItem urlItem;
+	@Getter private JMenuItem disableShaCheck;
 
 	private static final int DOWNLOADING = 0;
 	private static final int PAUSED = 1;
@@ -87,24 +88,5 @@ public class StateTablePopupItem {
 		popup.add(mostraItem);
 		popup.add(urlItem);
 		return popup;
-	}
-
-	public JMenuItem getPausaItem() {
-		return pausaItem;
-	}
-	public JMenuItem getRiprendiItem() {
-		return riprendiItem;
-	}
-	public JMenuItem getRimuoviItem() {
-		return rimuoviItem;
-	}
-	public JMenuItem getDisableShaCheck() {
-		return disableShaCheck;
-	}
-	public JMenuItem getMostraItem() {
-		return mostraItem;
-	}
-	public JMenuItem getUrlItem() {
-		return urlItem;
 	}
 }

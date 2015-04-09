@@ -22,6 +22,9 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
@@ -29,11 +32,11 @@ import org.apache.logging.log4j.LogManager;
  * @author  Stefano Cappa
  */
 public abstract class FileWeb {
-	private BufferedImage icon;
-	private URI uri;
-	private String hash; //hash calcolato con SHA1
-	private int dimension;
-	private List<OperativeSystem> operativeSystem; //contiene architettura, os compatibile ecc...
+	@Getter @Setter private BufferedImage icon;
+	@Getter @Setter private URI uri;
+	@Getter @Setter private String hash; //hash calcolato con SHA1
+	@Getter @Setter private int dimension;
+	@Getter @Setter private List<OperativeSystem> operativeSystemList; //contiene architettura, os compatibile ecc...
 
 	
 	private static final Logger LOGGER = LogManager.getLogger(FileWeb.class);
@@ -41,19 +44,7 @@ public abstract class FileWeb {
 	public FileWeb() {
 		this.hash = null;
 		this.dimension=0;
-		this.operativeSystem = new ArrayList<OperativeSystem>();
-	}
-	
-	public BufferedImage getIcon() {
-		return icon;
-	}
-
-	public void setIcon(BufferedImage icon) {
-		this.icon = icon;
-	}
-
-	public URI getUri() {
-		return uri;
+		this.operativeSystemList = new ArrayList<OperativeSystem>();
 	}
 
 	/**
@@ -70,28 +61,8 @@ public abstract class FileWeb {
 
 	}
 	
-	public String getHash() {
-		return hash;
-	}
-
-	public void setHash(String hash) {
-		this.hash = hash;
-	}
-
-	public int getDimension() {
-		return dimension;
-	}
-
-	public void setDimension(int dimension) {
-		this.dimension = dimension;
-	}
-	
-	public List<OperativeSystem> getOperativeSystemList() {
-		return operativeSystem;
-	}
-
 	public void addOperativeSystem(OperativeSystem operativeSystem) {
-		this.operativeSystem.add(operativeSystem);
+		this.operativeSystemList.add(operativeSystem);
 	}
 	
 	public abstract String getFileName();

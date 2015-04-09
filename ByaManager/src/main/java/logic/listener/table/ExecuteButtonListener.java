@@ -29,9 +29,6 @@ import notification.Notification;
 public class ExecuteButtonListener extends AbstractAction {
 	private static final long serialVersionUID = -3232676091890281738L;
 
-	/**
-	 * @uml.property  name="fileToOpen"
-	 */
 	private File fileToOpen;
 
 	public ExecuteButtonListener(Path pathToOpen) {

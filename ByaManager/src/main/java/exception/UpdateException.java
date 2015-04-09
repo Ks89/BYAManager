@@ -16,6 +16,8 @@ limitations under the License.
 
 package exception;
 
+import lombok.Getter;
+
 /**
  * Classe per gestire le eccezioni sui sistemi di aggiornamento
  */
@@ -23,35 +25,14 @@ public class UpdateException extends Exception {
 
 	private static final long serialVersionUID = 1165041182093008723L;
 
-	/**
-	 * @author   Ks89
-	 */
-	public static enum Reason {/**
-	 * @uml.property  name="cORRUPTED_JAR"
-	 * @uml.associationEnd  
-	 */
-	CORRUPTED_JAR, /**
-	 * @uml.property  name="iTUNESROWPROBLEM"
-	 * @uml.associationEnd  
-	 */
-	ITUNESROWPROBLEM, /**
-	 * @uml.property  name="iTUNESROWFORMAT"
-	 * @uml.associationEnd  
-	 */
-	ITUNESROWFORMAT, /**
-	 * @uml.property  name="iMPOSSIBLETOREADITUNESLOCALDB"
-	 * @uml.associationEnd  
-	 */
-	IMPOSSIBLETOREADITUNESLOCALDB, /**
-	 * @uml.property  name="iMPOSSIBLETOREADNEWITUNESVERSIONFROMAPPLE"
-	 * @uml.associationEnd  
-	 */
+	public static enum Reason {
+	CORRUPTED_JAR,
+	ITUNESROWPROBLEM,
+	ITUNESROWFORMAT,
+	IMPOSSIBLETOREADITUNESLOCALDB, 
 	IMPOSSIBLETOREADNEWITUNESVERSIONFROMAPPLE}; 
-	/**
-	 * @uml.property  name="causa"
-	 * @uml.associationEnd  
-	 */
-	private Reason causa;
+
+	@Getter private Reason causa;
 
 	/**
 	 * Richiama la superclasse.
@@ -92,13 +73,4 @@ public class UpdateException extends Exception {
 	public UpdateException(Reason causa) {
 		this.causa = causa;
 	}
-	
-	/**
-	 * @return  Tipo enumerativo che rappresenta la causa che ha soolevato l'eccezione.
-	 * @uml.property  name="causa"
-	 */
-	public Reason getCausa() {
-		return causa;
-	}
-
 }

@@ -16,17 +16,16 @@ limitations under the License.
 
 package model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * Classe astratta che rappresenta il dispositivo con un nome in codice 
  * (quello usato da Apple nei plist).
  */
 public abstract class Device {
-
-	/**
-	 * @uml.property  name="nomeDispositivo"
-	 * @uml.associationEnd  
-	 */
-	private String nomeDispositivo;
+	
+	@Getter @Setter private String nomeDispositivo;
 
 	/**
 	 * Costruttore che inizializza la classe col nome in codice del dispositivo.
@@ -35,21 +34,4 @@ public abstract class Device {
 	public Device(String nomeDispositivo) {
 		this.nomeDispositivo = nomeDispositivo;
 	}
-	
-	/**
-	 * @return  String che rappresenta il nome in codice del dispositivo.
-	 * @uml.property  name="nomeDispositivo"
-	 */
-	public String getNomeDispositivo() {
-		return this.nomeDispositivo;
-	}
-
-	/**
-	 * @param nomeDispositivo  String che rappresenta il nome in codice del dispositivo.
-	 * @uml.property  name="nomeDispositivo"
-	 */
-	public void setNomeDispositivo(String nomeDispositivo) {
-		this.nomeDispositivo = nomeDispositivo;
-	}
-
 }

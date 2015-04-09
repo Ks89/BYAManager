@@ -27,23 +27,24 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 import localization.Translator;
+import lombok.Getter;
 
 public final class StateMenuItem {
-	private static JMenu fileMenu;
-	private static JMenu eseguiMenu;
-	private static JMenu helpMenu;
-	private static JMenuItem checkDBUpdateMenuItem;
-	private static JMenuItem checkByamUpdateMenuItem;
-	private static JMenuItem fileExitMenuItem;
-	private static JMenuItem fileRiduciMenuItem;
-	private static JMenuItem reinizializzaMenuItem;
-	private static JMenuItem settingsMenuItem;
-	private static JMenuItem aboutMenuItem;
-	private static JMenuItem donazioneMenuItem;
-	private static JMenuItem ksBlogMenuItem;
-	private static JMenuItem byaMenuItem;
+	@Getter private static JMenu fileMenu;
+	@Getter private static JMenu eseguiMenu;
+	@Getter private static JMenu helpMenu;
+	@Getter private static JMenuItem checkDBUpdateMenuItem;
+	@Getter private static JMenuItem checkByamUpdateMenuItem;
+	@Getter private static JMenuItem fileExitMenuItem;
+	@Getter private static JMenuItem fileRiduciMenuItem;
+	@Getter private static JMenuItem reinizializzaMenuItem;
+	@Getter private static JMenuItem settingsMenuItem;
+	@Getter private static JMenuItem aboutMenuItem;
+	@Getter private static JMenuItem donazioneMenuItem;
+	@Getter private static JMenuItem ksBlogMenuItem;
+	@Getter private static JMenuItem byaMenuItem;
 	
-	private static JMenuBar menuBar;
+	@Getter private static JMenuBar menuBar;
 
 	private StateMenuItem() {}
 	
@@ -94,61 +95,5 @@ public final class StateMenuItem {
 		menuBar.add(fileMenu);
 		menuBar.add(eseguiMenu);
 		menuBar.add(helpMenu);
-	}
-
-	public static JMenuItem getCheckDBUpdateMenuItem() {
-		return checkDBUpdateMenuItem;
-	}
-
-	public static JMenuItem getCheckByamUpdateMenuItem() {
-		return checkByamUpdateMenuItem;
-	}
-
-	public static JMenuItem getFileRiduciMenuItem() {
-		return fileRiduciMenuItem;
-	}
-
-	public static JMenu getFileMenu() {
-		return fileMenu;
-	}
-
-	public static JMenu getEseguiMenu() {
-		return eseguiMenu;
-	}
-
-	public static JMenu getHelpMenu() {
-		return helpMenu;
-	}
-
-	public static JMenuItem getFileExitMenuItem() {
-		return fileExitMenuItem;
-	}
-
-	public static JMenuItem getReinizializzaMenuItem() {
-		return reinizializzaMenuItem;
-	}
-
-	public static JMenuItem getSettingsMenuItem() {
-		return settingsMenuItem;
-	}
-
-	public static JMenuItem getAboutMenuItem() {
-		return aboutMenuItem;
-	}
-
-	public static JMenuItem getDonazioneMenuItem() {
-		return donazioneMenuItem;
-	}
-
-	public static JMenuItem getKsBlogMenuItem() {
-		return ksBlogMenuItem;
-	}
-
-	public static JMenuItem getByaMenuItem() {
-		return byaMenuItem;
-	}
-
-	public static JMenuBar getMenuBar() {
-		return menuBar;
 	}
 }

@@ -32,24 +32,13 @@ limitations under the License.
 
 package model;
 
+import lombok.Getter;
+
 public class Os {
-	/**
-	 * @uml.property  name="osName"
-	 */
-	private String osName;
-	/**
-	 * @uml.property  name="osVersion"
-	 */
-	private String osVersion;
-	/**
-	 * @uml.property  name="architecture"
-	 */
-	private String architecture;
-	/**
-	 * @uml.property  name="operativeSystemInstance"
-	 * @uml.associationEnd  multiplicity="(1 1)"
-	 */
-	private OperativeSystem operativeSystemInstance;
+	@Getter private String osName;
+	@Getter private String osVersion;
+	@Getter private String architecture;
+	@Getter private OperativeSystem operativeSystemInstance;
 
 	public Os() {
 		this.osName = System.getProperty("os.name");
@@ -67,38 +56,6 @@ public class Os {
 		} else {
 			return new Linux("l32"); //e' di certo linux
 		}
-	}
-
-	/**
-	 * @return
-	 * @uml.property  name="osName"
-	 */
-	public String getOsName() {
-		return osName;
-	}
-
-	/**
-	 * @return
-	 * @uml.property  name="osVersion"
-	 */
-	public String getOsVersion() {
-		return osVersion;
-	}
-
-	/**
-	 * @return
-	 * @uml.property  name="architecture"
-	 */
-	public String getArchitecture() {
-		return architecture;
-	}
-
-	/**
-	 * @return
-	 * @uml.property  name="operativeSystemInstance"
-	 */
-	public OperativeSystem getOperativeSystemInstance() {
-		return operativeSystemInstance;
 	}
 
 	public boolean is64Bit() {

@@ -16,6 +16,8 @@ limitations under the License.
 
 package model;
 
+import lombok.Getter;
+
 /**
  * Classe che estende Dispositivo aggiugnengo il nome commerciale.
  */
@@ -56,18 +58,9 @@ public class CommercialDevice extends Device{
 		
 		"iPod Touch 1G","iPod Touch 2G","iPod Touch 3G","iPod Touch 4G","iPod Touch 5G"};
 
-	/**
-	 * @uml.property  name="nomeCommerciale"
-	 */
-	private String nomeCommerciale;
-	/**
-	 * @uml.property  name="product"
-	 */
-	private String product;
-	/**
-	 * @uml.property  name="version"
-	 */
-	private String version;
+	@Getter private String nomeCommerciale;
+	@Getter private String product;
+	@Getter private String version;
 
 	/**
 	 * Costruttore che imposta il nome in codice ed assegna il nome Commerciale.
@@ -106,29 +99,5 @@ public class CommercialDevice extends Device{
 			this.product = nomeCommerciale.split(" ")[0];
 			this.version = nomeCommerciale.replace(product + " ", "");
 		}
-	}
-
-	/**
-	 * @return  String che rappresenta il nome commerciale del dispositivo.
-	 * @uml.property  name="nomeCommerciale"
-	 */
-	public String getNomeCommerciale() {
-		return nomeCommerciale;
-	}
-
-	/**
-	 * @return
-	 * @uml.property  name="product"
-	 */
-	public String getProduct() {
-		return product;
-	}
-
-	/**
-	 * @return
-	 * @uml.property  name="version"
-	 */
-	public String getVersion() {
-		return version;
 	}
 }

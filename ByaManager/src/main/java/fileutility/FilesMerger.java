@@ -33,17 +33,8 @@ import org.apache.logging.log4j.LogManager;
  */
 public class FilesMerger {
 	private static final Logger LOGGER = LogManager.getLogger(FilesMerger.class);
-	/**
-	 * @uml.property  name="downloadTempPath"
-	 */
 	private Path downloadTempPath;
-	/**
-	 * @uml.property  name="shaFiledownloadPath"
-	 */
 	private Path shaFiledownloadPath;
-	/**
-	 * @uml.property  name="nomeFile"
-	 */
 	private String nomeFile;
 
 	/**

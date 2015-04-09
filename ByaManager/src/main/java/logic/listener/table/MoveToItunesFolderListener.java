@@ -31,10 +31,6 @@ import notification.Notification;
 
 public class MoveToItunesFolderListener extends AbstractAction {
 	private static final long serialVersionUID = -1973301498954950956L;
-	/**
-	 * @uml.property  name="moveFile"
-	 * @uml.associationEnd  multiplicity="(1 1)"
-	 */
 	private transient MoveFile moveFile;
 
 	public MoveToItunesFolderListener(URI uri, Path sourcePath, String destinationPath) {
@@ -50,17 +46,8 @@ public class MoveToItunesFolderListener extends AbstractAction {
 }
 
 class MoveFile extends Thread {
-	/**
-	 * @uml.property  name="sourcePath"
-	 */
 	private Path sourcePath;
-	/**
-	 * @uml.property  name="destinationPath"
-	 */
 	private Path destinationPath;
-	/**
-	 * @uml.property  name="uri"
-	 */
 	private URI uri;
 
 	public MoveFile(URI uri, Path sourcePath, String destinationPath) {

@@ -16,69 +16,19 @@ limitations under the License.
 
 package model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  *	Classe che rappresenta un singolo firmware con versione, build, dispositivo ecc...
  */
 public class Firmware extends FileWithVersion{
-
-	/**
-	 * @uml.property  name="device"
-	 * @uml.associationEnd  
-	 */
-	private Device device;
-//	private List<JailbreakSoftware> jailbrekTools;
-	/**
-	 * @uml.property  name="build"
-	 */
-	private String build;
+	@Getter @Setter private Device device;
+	@Getter @Setter private String build;
 
 	public Firmware() {
 		super();
 	}
-
-	/**
-	 * @return
-	 * @uml.property  name="device"
-	 */
-	public Device getDevice() {
-		return device;
-	}
-	/**
-	 * @param device
-	 * @uml.property  name="device"
-	 */
-	public void setDevice(Device device) {
-		this.device = device;
-	}
-	
-	
-	/**
-	 * @return  String rappresentante la build.
-	 * @uml.property  name="build"
-	 */
-	public String getBuild() {
-		return build;
-	}
-
-	/**
-	 * @param build  Una String per impostare la build.
-	 * @uml.property  name="build"
-	 */
-	public void setBuild(String build) {
-		this.build = build;
-	}
-	
-//	public void addJailbreakTool(JailbreakSoftware jailbreakSoftware) {
-//		this.jailbrekTools.add(jailbreakSoftware);
-//	}
-//	
-//	public void removeJailbreakTool(JailbreakSoftware jailbreakSoftware) {
-//		this.jailbrekTools.remove(jailbreakSoftware);
-//	}
-//	
-//	public List<JailbreakSoftware> getJailbreakTools() {
-//		return this.jailbrekTools;
-//	}
 	
 	public String getFileName() {
 		return this.getDevice().getNomeDispositivo() + "_" + this.getVersion() + "_" + this.getBuild() + "_Restore.ipsw";

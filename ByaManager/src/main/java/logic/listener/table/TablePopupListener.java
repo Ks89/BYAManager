@@ -23,11 +23,13 @@ import java.util.Observable;
 import javax.swing.JTable;
 import javax.swing.SwingUtilities;
 
+import lombok.Getter;
+
 public class TablePopupListener extends Observable implements MouseListener {
 
-	private int xPos;
-	private int yPos;
-	private int row;
+	@Getter private int xPos;
+	@Getter private int yPos;
+	@Getter private int row;
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
@@ -56,30 +58,6 @@ public class TablePopupListener extends Observable implements MouseListener {
 
 	@Override
 	public void mouseReleased(MouseEvent arg0) {
-	}
-
-	/**
-	 * @return
-	 * @uml.property  name="xPos"
-	 */
-	public int getxPos() {
-		return xPos;
-	}
-
-	/**
-	 * @return
-	 * @uml.property  name="yPos"
-	 */
-	public int getyPos() {
-		return yPos;
-	}
-
-	/**
-	 * @return
-	 * @uml.property  name="row"
-	 */
-	public int getRow() {
-		return row;
 	}
 
 	/**

@@ -57,10 +57,10 @@ public final class StateButton {
 		preferenzeButton = new KPulsanteToolBar(ImageLoader.getInstance().getPreferenze(), ImageLoader.getInstance().getPreferenzeD());
 		pauseButton = new KPulsanteToolBar(ImageLoader.getInstance().getPause(),ImageLoader.getInstance().getPauseD());
 		resumeButton = new KPulsanteToolBar(ImageLoader.getInstance().getPlay(), ImageLoader.getInstance().getPlayD());
-		removeButton = new KPulsanteToolBar(ImageLoader.getInstance().getDelete(), ImageLoader.getInstance().getDeleteD());
+		removeButton = new KPulsanteToolBar(ImageLoader.getInstance().getRemove(), ImageLoader.getInstance().getRemoveD());
 		pauseButtonAll = new KPulsanteToolBar(ImageLoader.getInstance().getPausaAll(), ImageLoader.getInstance().getPausaAllD());
 		resumeButtonAll = new KPulsanteToolBar(ImageLoader.getInstance().getPlayAll(), ImageLoader.getInstance().getPlayAllD());
-		removeButtonAll = new KPulsanteToolBar(ImageLoader.getInstance().getDeleteAll(), ImageLoader.getInstance().getDeleteAllD());
+		removeButtonAll = new KPulsanteToolBar(ImageLoader.getInstance().getRemoveAll(), ImageLoader.getInstance().getRemoveAllD());
 
 		refreshDBButton.setEnabled(false);
 		refreshBYAMButton.setEnabled(false);

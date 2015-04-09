@@ -26,35 +26,11 @@ import javax.swing.JTable;
 
 public class RendererColonna4 extends RendererColonnaComune {
 	private static final long serialVersionUID = -3957055289437000647L;
-	/**
-	 * @uml.property  name="complete"
-	 * @uml.associationEnd  multiplicity="(1 1)"
-	 */
 	private Icon complete;
-	/**
-	 * @uml.property  name="pause"
-	 * @uml.associationEnd  multiplicity="(1 1)"
-	 */
 	private Icon pause;
-	/**
-	 * @uml.property  name="validation"
-	 * @uml.associationEnd  multiplicity="(1 1)"
-	 */
 	private Icon validation;
-	/**
-	 * @uml.property  name="merging"
-	 * @uml.associationEnd  multiplicity="(1 1)"
-	 */
 	private Icon merging;
-	/**
-	 * @uml.property  name="downloading"
-	 * @uml.associationEnd  multiplicity="(1 1)"
-	 */
 	private Icon downloading;
-	/**
-	 * @uml.property  name="error"
-	 * @uml.associationEnd  multiplicity="(1 1)"
-	 */
 	private Icon error;
 	
 	public RendererColonna4() {

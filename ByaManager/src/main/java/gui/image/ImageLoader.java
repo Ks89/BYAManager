@@ -21,171 +21,53 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import lombok.Getter;
+
 /**
  *	Classe che carica le immagini e le imposta in modo da ottenerle in modo statico.
  */
 public final class ImageLoader {
 	private static ImageLoader instance = new ImageLoader();
-	/**
-	 * @uml.property  name="errore"
-	 */
-	private boolean errore;
-	/**
-	 * @uml.property  name="sfondo"
-	 */
-	private BufferedImage sfondo;
-	/**
-	 * @uml.property  name="toolBar"
-	 */
-	private BufferedImage toolBar;
-	/**
-	 * @uml.property  name="pulsanteNormale"
-	 */
-	private BufferedImage pulsanteNormale;
-	/**
-	 * @uml.property  name="pulsanteOver"
-	 */
-	private BufferedImage pulsanteOver;
-	/**
-	 * @uml.property  name="pulsanteCliccato"
-	 */
-	private BufferedImage pulsanteCliccato;
-	/**
-	 * @uml.property  name="pulsanteDonazione"
-	 */
-	private BufferedImage pulsanteDonazione;
-	/**
-	 * @uml.property  name="iconaBya"
-	 */
-	private BufferedImage iconaBya;
-	/**
-	 * @uml.property  name="frecciaComboBox"
-	 */
-	private BufferedImage frecciaComboBox;
-	/**
-	 * @uml.property  name="frecciaComboBoxSu"
-	 */
-	private BufferedImage frecciaComboBoxSu;
-	/**
-	 * @uml.property  name="frecciaComboBoxGiu"
-	 */
-	private BufferedImage frecciaComboBoxGiu;
-	/**
-	 * @uml.property  name="logoGenericoVerde"
-	 */
-	private BufferedImage logoGenericoVerde;
-	/**
-	 * @uml.property  name="logoGenericoNero"
-	 */
-	private BufferedImage logoGenericoNero;
-	/**
-	 * @uml.property  name="refreshDb"
-	 */
-	private BufferedImage refreshDb;
-	/**
-	 * @uml.property  name="refreshByam"
-	 */
-	private BufferedImage refreshByam;
-	/**
-	 * @uml.property  name="preferenze"
-	 */
-	private BufferedImage preferenze;
-	/**
-	 * @uml.property  name="pause"
-	 */
-	private BufferedImage pause;
-	/**
-	 * @uml.property  name="play"
-	 */
-	private BufferedImage play;
-	/**
-	 * @uml.property  name="remove"
-	 */
-	private BufferedImage remove;
-	/**
-	 * @uml.property  name="pausaAll"
-	 */
-	private BufferedImage pausaAll;
-	/**
-	 * @uml.property  name="playAll"
-	 */
-	private BufferedImage playAll;
-	/**
-	 * @uml.property  name="removeAll"
-	 */
-	private BufferedImage removeAll;
-	/**
-	 * @uml.property  name="refreshDbD"
-	 */
-	private BufferedImage refreshDbD;
-	/**
-	 * @uml.property  name="refreshByamD"
-	 */
-	private BufferedImage refreshByamD;
-	/**
-	 * @uml.property  name="preferenzeD"
-	 */
-	private BufferedImage preferenzeD;
-	/**
-	 * @uml.property  name="pauseD"
-	 */
-	private BufferedImage pauseD;
-	/**
-	 * @uml.property  name="playD"
-	 */
-	private BufferedImage playD;
-	/**
-	 * @uml.property  name="removeD"
-	 */
-	private BufferedImage removeD;
-	/**
-	 * @uml.property  name="pausaAllD"
-	 */
-	private BufferedImage pausaAllD;
-	/**
-	 * @uml.property  name="playAllD"
-	 */
-	private BufferedImage playAllD;
-	/**
-	 * @uml.property  name="removeAllD"
-	 */
-	private BufferedImage removeAllD;
-	/**
-	 * @uml.property  name="logoItunes9"
-	 */
-	private BufferedImage logoItunes9;
-	/**
-	 * @uml.property  name="logoItunes10"
-	 */
-	private BufferedImage logoItunes10;
-	/**
-	 * @uml.property  name="logoFirmware"
-	 */
-	private BufferedImage logoFirmware;
-	/**
-	 * @uml.property  name="tableComplete"
-	 */
-	private BufferedImage tableComplete;
-	/**
-	 * @uml.property  name="tablePause"
-	 */
-	private BufferedImage tablePause;
-	/**
-	 * @uml.property  name="tableValidation"
-	 */
-	private BufferedImage tableValidation;
-	/**
-	 * @uml.property  name="tableMerging"
-	 */
-	private BufferedImage tableMerging;
-	/**
-	 * @uml.property  name="tableDownloading"
-	 */
-	private BufferedImage tableDownloading;
-	/**
-	 * @uml.property  name="tableError"
-	 */
-	private BufferedImage tableError;
+	@Getter private boolean errore;
+	@Getter private BufferedImage sfondo;
+	@Getter private BufferedImage toolBar;
+	@Getter private BufferedImage pulsanteNormale;
+	@Getter private BufferedImage pulsanteOver;
+	@Getter private BufferedImage pulsanteCliccato;
+	@Getter private BufferedImage pulsanteDonazione;
+	@Getter private BufferedImage iconaBya;
+	@Getter private BufferedImage frecciaComboBox;
+	@Getter private BufferedImage frecciaComboBoxSu;
+	@Getter private BufferedImage frecciaComboBoxGiu;
+	@Getter private BufferedImage logoGenericoVerde;
+	@Getter private BufferedImage logoGenericoNero;
+	@Getter private BufferedImage refreshDb;
+	@Getter private BufferedImage refreshByam;
+	@Getter private BufferedImage preferenze;
+	@Getter private BufferedImage pause;
+	@Getter private BufferedImage play;
+	@Getter private BufferedImage remove;
+	@Getter private BufferedImage pausaAll;
+	@Getter private BufferedImage playAll;
+	@Getter private BufferedImage removeAll;
+	@Getter private BufferedImage refreshDbD;
+	@Getter private BufferedImage refreshByamD;
+	@Getter private BufferedImage preferenzeD;
+	@Getter private BufferedImage pauseD;
+	@Getter private BufferedImage playD;
+	@Getter private BufferedImage removeD;
+	@Getter private BufferedImage pausaAllD;
+	@Getter private BufferedImage playAllD;
+	@Getter private BufferedImage removeAllD;
+	@Getter private BufferedImage logoItunes9;
+	@Getter private BufferedImage logoItunes10;
+	@Getter private BufferedImage logoFirmware;
+	@Getter private BufferedImage tableComplete;
+	@Getter private BufferedImage tablePause;
+	@Getter private BufferedImage tableValidation;
+	@Getter private BufferedImage tableMerging;
+	@Getter private BufferedImage tableDownloading;
+	@Getter private BufferedImage tableError;
 		
 	/**
 	 * Costruttore privato che legge le immagini e in caso contrario
@@ -245,320 +127,5 @@ public final class ImageLoader {
 	 */
 	public static ImageLoader getInstance() {
 		return instance;
-	}
-
-	/**
-	 * @return  BufferedImage contenente lo sfondo.
-	 * @uml.property  name="sfondo"
-	 */
-	public BufferedImage getSfondo() {
-		return sfondo;
-	}
-	
-	/**
-	 * @return  BufferedImage contenente la toolBar.
-	 * @uml.property  name="toolBar"
-	 */
-	public BufferedImage getToolBar() {
-		return toolBar;
-	}
-	
-	/**
-	 * @return  BufferedImage contenente il pulsante normale.
-	 * @uml.property  name="pulsanteNormale"
-	 */
-	public BufferedImage getPulsanteNormale() {
-		return pulsanteNormale;
-	}
-	
-	/**
-	 * @return  BufferedImage contenente il pulsante cliccato.
-	 * @uml.property  name="pulsanteCliccato"
-	 */
-	public BufferedImage getPulsanteCliccato() {
-		return pulsanteCliccato;
-	}
-	
-	/**
-	 * @return  BufferedImage contenente il pulsante over.
-	 * @uml.property  name="pulsanteOver"
-	 */
-	public BufferedImage getPulsanteOver() {
-		return pulsanteOver;
-	}
-
-	/**
-	 * @return  BufferedImage contenente il pulsante donazione.
-	 * @uml.property  name="pulsanteDonazione"
-	 */
-	public BufferedImage getPulsanteDonazione() {
-		return pulsanteDonazione;
-	}
-	
-	/**
-	 * @return  boolean che rappresenta l'errore, se presente.
-	 * @uml.property  name="errore"
-	 */
-	public boolean isErrore() {
-		return errore;
-	}
-	
-	/**
-	 * @return  BufferedImage contenente l'icona di Bya.
-	 * @uml.property  name="iconaBya"
-	 */
-	public BufferedImage getIconaBya() {
-		return iconaBya;
-	}
-
-	/**
-	 * @return  BufferedImage contenente il logo Apple (dispositivo generico in colonna 0 tabella) verde.
-	 * @uml.property  name="logoGenericoVerde"
-	 */
-	public BufferedImage getLogoGenericoVerde() {
-		return logoGenericoVerde;
-	}
-
-	/**
-	 * @return  BufferedImage contenente il logo Apple (dispositivo generico in colonna 0 tabella) nero.
-	 * @uml.property  name="logoGenericoNero"
-	 */
-	public BufferedImage getLogoGenericoNero() {
-		return logoGenericoNero;
-	}
-
-	/**
-	 * @return  BufferedImage contenente il pulsante refreshDb.
-	 * @uml.property  name="refreshDb"
-	 */
-	public BufferedImage getRefreshDb() {
-		return refreshDb;
-	}
-
-	/**
-	 * @return  BufferedImage contenente il pulsante refreshBya.
-	 * @uml.property  name="refreshByam"
-	 */
-	public BufferedImage getRefreshByam() {
-		return refreshByam;
-	}
-
-	/**
-	 * @return  BufferedImage contenente il pulsante preferenze.
-	 * @uml.property  name="preferenze"
-	 */
-	public BufferedImage getPreferenze() {
-		return preferenze;
-	}
-
-	/**
-	 * @return  BufferedImage contenente il pulsante pause.
-	 * @uml.property  name="pause"
-	 */
-	public BufferedImage getPause() {
-		return pause;
-	}
-
-	/**
-	 * @return  BufferedImage contenente il pulsante play.
-	 * @uml.property  name="play"
-	 */
-	public BufferedImage getPlay() {
-		return play;
-	}
-
-	/**
-	 * @return BufferedImage contenente il pulsante delete.
-	 */
-	public BufferedImage getDelete() {
-		return remove;
-	}
-
-	/**
-	 * @return  BufferedImage contenente il pulsante pauseAll.
-	 * @uml.property  name="pausaAll"
-	 */
-	public BufferedImage getPausaAll() {
-		return pausaAll;
-	}
-
-	/**
-	 * @return  BufferedImage contenente il pulsante playAll.
-	 * @uml.property  name="playAll"
-	 */
-	public BufferedImage getPlayAll() {
-		return playAll;
-	}
-
-	/**
-	 * @return BufferedImage contenente il pulsante deleteAll.
-	 */
-	public BufferedImage getDeleteAll() {
-		return removeAll;
-	}
-
-	/**
-	 * @return  BufferedImage contenente il pulsante refreshDb disattivato.
-	 * @uml.property  name="refreshDbD"
-	 */
-	public BufferedImage getRefreshDbD() {
-		return refreshDbD;
-	}
-
-	/**
-	 * @return  BufferedImage contenente il pulsante refreshBya disattivato.
-	 * @uml.property  name="refreshByamD"
-	 */
-	public BufferedImage getRefreshByamD() {
-		return refreshByamD;
-	}
-
-	/**
-	 * @return  BufferedImage contenente il pulsante preferenze disattivato.
-	 * @uml.property  name="preferenzeD"
-	 */
-	public BufferedImage getPreferenzeD() {
-		return preferenzeD;
-	}
-
-	/**
-	 * @return  BufferedImage contenente il pulsante pause disattivato.
-	 * @uml.property  name="pauseD"
-	 */
-	public BufferedImage getPauseD() {
-		return pauseD;
-	}
-
-	/**
-	 * @return  BufferedImage contenente il pulsante play disattivato.
-	 * @uml.property  name="playD"
-	 */
-	public BufferedImage getPlayD() {
-		return playD;
-	}
-
-	/**
-	 * @return BufferedImage contenente il pulsante delete disattivato.
-	 */
-	public BufferedImage getDeleteD() {
-		return removeD;
-	}
-
-	/**
-	 * @return  BufferedImage contenente il pulsante pauseAll disattivato.
-	 * @uml.property  name="pausaAllD"
-	 */
-	public BufferedImage getPausaAllD() {
-		return pausaAllD;
-	}
-
-	/**
-	 * @return  BufferedImage contenente il pulsante playAll disattivato.
-	 * @uml.property  name="playAllD"
-	 */
-	public BufferedImage getPlayAllD() {
-		return playAllD;
-	}
-
-	/**
-	 * @return BufferedImage contenente il pulsante deleteAll disattivato.
-	 */
-	public BufferedImage getDeleteAllD() {
-		return removeAllD;
-	}
-
-	/**
-	 * @return  BufferedImage contenente frecciaComboBox.
-	 * @uml.property  name="frecciaComboBox"
-	 */
-	public BufferedImage getFrecciaComboBox() {
-		return frecciaComboBox;
-	}
-	/**
-	 * @return  BufferedImage contenente frecciaComboBox su.
-	 * @uml.property  name="frecciaComboBoxSu"
-	 */
-	public BufferedImage getFrecciaComboBoxSu() {
-		return frecciaComboBoxSu;
-	}
-
-	/**
-	 * @return  BufferedImage contenente frecciaComboBox giu.
-	 * @uml.property  name="frecciaComboBoxGiu"
-	 */
-	public BufferedImage getFrecciaComboBoxGiu() {
-		return frecciaComboBoxGiu;
-	}
-
-	/**
-	 * @return
-	 * @uml.property  name="logoItunes9"
-	 */
-	public BufferedImage getLogoItunes9() {
-		return logoItunes9;
-	}
-
-	/**
-	 * @return
-	 * @uml.property  name="logoItunes10"
-	 */
-	public BufferedImage getLogoItunes10() {
-		return logoItunes10;
-	}
-
-	/**
-	 * @return
-	 * @uml.property  name="logoFirmware"
-	 */
-	public BufferedImage getLogoFirmware() {
-		return logoFirmware;
-	}
-
-	/**
-	 * @return
-	 * @uml.property  name="tableComplete"
-	 */
-	public BufferedImage getTableComplete() {
-		return tableComplete;
-	}
-
-	/**
-	 * @return
-	 * @uml.property  name="tablePause"
-	 */
-	public BufferedImage getTablePause() {
-		return tablePause;
-	}
-
-	/**
-	 * @return
-	 * @uml.property  name="tableValidation"
-	 */
-	public BufferedImage getTableValidation() {
-		return tableValidation;
-	}
-
-	/**
-	 * @return
-	 * @uml.property  name="tableMerging"
-	 */
-	public BufferedImage getTableMerging() {
-		return tableMerging;
-	}
-
-	/**
-	 * @return
-	 * @uml.property  name="tableDownloading"
-	 */
-	public BufferedImage getTableDownloading() {
-		return tableDownloading;
-	}
-
-	/**
-	 * @return
-	 * @uml.property  name="tableError"
-	 */
-	public BufferedImage getTableError() {
-		return tableError;
 	}
 }

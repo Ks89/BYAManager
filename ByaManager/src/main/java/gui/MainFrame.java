@@ -34,7 +34,7 @@ import javax.swing.JViewport;
 import javax.swing.SwingConstants;
 
 import localization.Translator;
-
+import lombok.Getter;
 import gui.kcomponent.KColors;
 import gui.kcomponent.KButton;
 import gui.kcomponent.KComboBox;
@@ -52,21 +52,19 @@ import gui.table.TableGui;
 public final class MainFrame extends KFrame implements Runnable {
 	private static final long serialVersionUID = 1865707130950307863L;
 
-	private static MainFrame instance = new MainFrame();
-	private static JButton addLista;
+	@Getter private static JButton addLista;
 	private static JLabel velocitaGlobale;
-	private static JComboBox<String> listaDispositivi;
-
-	private static JComboBox<String> listaFirmware;
-
-	private static JComboBox<String> osList;
-
-	private static JComboBox<String> itunesList;
+	
+	@Getter private static JComboBox<String> listaDispositivi;
+	@Getter private static JComboBox<String> listaFirmware;
+	@Getter private static JComboBox<String> osList;
+	@Getter private static JComboBox<String> itunesList;
+	
 	private static JTabbedPane tabbedPane;
 
-	public MainFrame() {
+	private static MainFrame instance = new MainFrame();
 
-	}
+	public MainFrame() {}
 
 	@Override
 	public void run() {
@@ -189,25 +187,6 @@ public final class MainFrame extends KFrame implements Runnable {
 		return instance;
 	}
 
-	public JButton getAddLista() {
-		return addLista;
-	}
-
-	public JComboBox<String> getListaDispositivi() {
-		return listaDispositivi;
-	}
-
-	public JComboBox<String> getListaFirmware() {
-		return listaFirmware;
-	}
-
-	public JComboBox<String> getOsList() {
-		return osList;
-	}
-
-	public JComboBox<String> getItunesList() {
-		return itunesList;
-	}
 	
 	public int getTabbedPaneIndex() {
 		return tabbedPane.getSelectedIndex();

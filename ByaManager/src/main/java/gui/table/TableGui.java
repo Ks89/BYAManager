@@ -175,7 +175,7 @@ public final class TableGui extends JTable implements Observer {
 			//se il downlaod e' in corso o in pausa permetti di cambiare la verifica dello sha, altrimenti no
 			menuItem.setEnabled(download.getStatus()==Download.DOWNLOADING || download.getStatus()==Download.PAUSED);
 
-			popup.show(this, tpl.getxPos(), tpl.getyPos());
+			popup.show(this, tpl.getXPos(), tpl.getYPos());
 			popup.setVisible(true);
 
 			popupItemState.getPausaItem().removeActionListener(new PauseListener());
