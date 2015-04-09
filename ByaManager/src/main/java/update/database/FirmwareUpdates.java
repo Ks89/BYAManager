@@ -29,6 +29,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Observable;
 
+import lombok.Getter;
 import model.CommercialDevice;
 import model.Firmware;
 import notification.Notification;
@@ -36,51 +37,34 @@ import notification.Notification;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
-import fileutility.HttpFileDownload;
 
+import fileutility.HttpFileDownload;
 import time.TimeManager;
 import update.LinkServer;
 
 
 /**
- * Classe che riga su un altro thread per verificare la presenza di nuovi aggiornamenti dei firmware
- * Si occupa di chiamare il download di version.xml.
- * Dopo scansiona il file con la lista dei firmware e verifica se ci sono nuove versioni.
- * In ogni caso crea un nuovo file _new.txt con dentro tutti i firmware.
- * Se il file e' nuovo allora viene notificata a schermo la presenza di un database firmware aggiornato,
- * altrimenti il file _new.txt viene cancellato.
- * Il controllo avviene tramite SHA1 dei file. Se uguali il file e' lo stesso, altriementi e' cambiato.
+ * Class the runs on a different Thread to check if there are new firmwares.<br></br>
+ * This class downloads version.xml to parse and check if there are new versions available.<br></br>
+ * Anyway, this class creates a new file "_new.txt" with every firmware inside.<br></br>
+ * If exists a new firmware, the user will be advised with a notification, otherwise file _new.txt will be removed.<br></br>
+ * To increase the performance, this class check if the sha1 of the _new.txt is different from the original file.
  */
 public final class FirmwareUpdates extends Observable implements Runnable {
+	private static final Logger LOGGER = LogManager.getLogger(FirmwareUpdates.class);
+
 	private static final String UNDERSCORE3 = "___";
 	private static final String IPSWLIST = "ipswLista.txt";
 	private static final String IPSWLISTNEW = "ipswLista_new.txt";
 	private static final String VERSIONXMLNAME = "version.xml";
 
-	private static final Logger LOGGER = LogManager.getLogger(FirmwareUpdates.class);
-
-	/**
-	 * @uml.property  name="firmwareListNew"
-	 */
 	private List<Firmware> firmwareListNew;
-	/**
-	 * @uml.property  name="firmwareListToWrite"
-	 * @uml.associationEnd  multiplicity="(0 -1)" elementType="model.Firmware"
-	 */
 	private List<Firmware> firmwareListToWrite;
-
-	/**
-	 * @uml.property  name="dataPath"
-	 */
 	private Path dataPath;
-	/**
-	 * @uml.property  name="aggiornatoDatabase"
-	 */
-	private boolean aggiornatoDatabase = false;
+	@Getter private boolean dbUpdated = false;
 
 	/**
-	 * Costruttore della classe che si occupa di inizializzare l'istanza di downloadmanager,
-	 * percorsiOs, la lista di firmware da scrivere ed il logger.
+	 * Constructor of this class.
 	 */
 	public FirmwareUpdates (Path dataPath) {
 		this.firmwareListToWrite = new ArrayList<Firmware>();
@@ -89,106 +73,101 @@ public final class FirmwareUpdates extends Observable implements Runnable {
 
 
 	/**
-	 * Leggo il file ipswLista.txt riga per riga e aggiungo in coda
-	 * alla lista dei firmwareDaScrivere.
-	 * @throws IOException
+	 * Method that reads ipswLista.txt line by line. Every line is added to the list of firmware.
+	 * @throws IOException Exception thrown if there are problems.
 	 */
-	private void leggiTxt() throws IOException {
-		LOGGER.info("leggiTxt() - Avviato metodo");
+	private void readTxt() throws IOException {
+		LOGGER.info("readTxt() - Method started");
 		try (
 				BufferedReader br = Files.newBufferedReader(dataPath.resolve(IPSWLIST), Charset.defaultCharset())
 				) {	
-			String rigaAttuale = br.readLine();
-			String[] letto;
+			String currentLine = br.readLine();
+			String[] read;
 			Firmware firmware;
-			while(rigaAttuale!=null) {
-				if(!rigaAttuale.startsWith(":")) { //ignoro le righe con i ":"
-					letto = rigaAttuale.split(UNDERSCORE3);
-					String[] parziale1 = letto[0].split(",");
-					//se la dimensione della splittata e' 2 e' ok, altrimenti e' l'url particolare dell'iphone 3,1 con 4.0
-					//quindi il programma si bloccherebbe allora uso il length che corregge questo problema in questa situazione
-					String[] parziale2 = parziale1[parziale1.length-1].split("_");
-					String[] parziale3 = parziale1[parziale1.length-2].split("/");
+			while(currentLine!=null) {
+				 //ignore lines with ":"
+				if(!currentLine.startsWith(":")) {
+					read = currentLine.split(UNDERSCORE3);
+					String[] partial1 = read[0].split(",");
+					//if the size is splitted in 2 is ok, otherwise is a strange url, like for iphone 3,1 with iOS 4.0.
+					//i use length to fix this strange situation without throw an Exception.
+					String[] partial2 = partial1[partial1.length-1].split("_");
+					String[] partial3 = partial1[partial1.length-2].split("/");
 
 					firmware = new Firmware();
-					firmware.setDevice(new CommercialDevice(parziale3[parziale3.length-1] + "," + parziale2[0]));
-					firmware.setVersion(parziale2[1]);
-					firmware.setBuild(parziale2[parziale2.length-2]);
-					firmware.setPercorso(letto[0]);
-					firmware.setHash(letto[1].toUpperCase());
+					firmware.setDevice(new CommercialDevice(partial3[partial3.length-1] + "," + partial2[0]));
+					firmware.setVersion(partial2[1]);
+					firmware.setBuild(partial2[partial2.length-2]);
+					firmware.setPercorso(read[0]);
+					firmware.setHash(read[1].toUpperCase());
 					firmware.setDimension(0);
 					firmwareListToWrite.add(firmware);
 				}
-				rigaAttuale = br.readLine();
+				currentLine = br.readLine();
 			}
 		}
-		LOGGER.info("leggiTxt() - Terminato metodo");
+		LOGGER.info("readTxt() - Method completed");
 	}
 
 	/**
-	 * Metodo per caricare il file di testo e caricare nella lista dei firmware 
-	 * da scrivere eventuali nuovi firmware usciti.
-	 * @throws IOException
+	 * Method to load a text file and to load new firmwares in the firwareList.
+	 * @throws IOException Exception thrown if there are problems.
 	 */
-	private void caricaTxt() throws IOException{
-		LOGGER.info("caricaTxt() - Avviato metodo");
+	private void loadTxt() throws IOException{
+		LOGGER.info("loadTxt() - Method started");
 
-		boolean trovato;
-		//listaNuoviFirmware = lista dei firmare presenti nell'xml
-		//listaFirmwareDaScrivere = lista con tutti i firmware attuali gia' caricati
-		//se in listaNuoviFirmware ci sono versioni che non sono gia' in listaFirmwareDaScrivere
-		//allora vengono aggiunti alla listaFirmwareDaScrivere.
+		boolean found;
+		//firmwareListNew = list of new firmwares from version.xml
+		//firmwareToWrite = list with all current firmwares loaded
+		//if in firmwareListNew there are versions not already in firmwareToWrite, this firmware will be added to firmwareToWrite.
 		for(Firmware firmwareN : firmwareListNew) {	
-			trovato=false;
-			for(Firmware firmwareScrivere : firmwareListToWrite) {			
-				if(firmwareN.getUri().equals(firmwareScrivere.getUri())) {
-					trovato=true;
+			found=false;
+			for(Firmware firmwareToWrite : firmwareListToWrite) {			
+				if(firmwareN.getUri().equals(firmwareToWrite.getUri())) {
+					found=true;
 					break;
 				}
 			}
-			//controllo se non ho trovato il firmware nella lista dei firmware da scrivere
-			//vuol dire che e' nuovo e quindi lo aggiungo a questa lista
-			if(!trovato) {
+			//if not found, is a new firmware
+			if(!found) {
 				firmwareListToWrite.add(firmwareN);
 			}
 		}
 
-		LOGGER.info("caricaTxt() - Terminato metodo");
+		LOGGER.info("loadTxt() - Method completed");
 	}
 
 	/**
-	 * Metodo per salvere la lista dei firmware aggiornata su file.
-	 * @throws IOException
+	 * Method to save the updated list on a file (_new.txt).
+	 * @throws IOException Exception thrown if there are problems.
 	 */
-	private void salvaTxt() throws IOException{
-		LOGGER.info("salvaTxt() - Avviato metodo");
-		//ora scrivo tutte la lista di firmware (sotto forma di righe del file) sul nuovo file _new.txt
-
+	private void saveTxt() throws IOException{
+		LOGGER.info("saveTxt() - Method started");
 		try (
 				BufferedWriter out = Files.newBufferedWriter(dataPath.resolve(IPSWLISTNEW), Charset.defaultCharset())
 				) {
 			for(int i=0;i<firmwareListToWrite.size();i++) {
-				//ora leggo il file appena salvato fino alla fine.
+				//now i read the file from the beginning to the end
+				//every line is terminated with ("\n") but not the last line.
 				if(i==firmwareListToWrite.size()-1) {
 					out.write(firmwareListToWrite.get(i).toString());
 				} else {
 					out.write(firmwareListToWrite.get(i).toString()+"\n");
 				}
 			}
-			LOGGER.info("salvaTxt() - Terminato metodo");
+			LOGGER.info("saveTxt() - Method completed");
 		}
 	}
 
 	
 
 	/**
-	 * Verifica lo SHA1 del nuovo database appena scaricato con quello 
-	 * precedente gia' sul pc. 
-	 * @return boolean 'true' indica che non ci sono aggiornamenti, 'false' invece ce ne sono.
-	 * @throws IOException 
+	 * Method to compare the SHA1 of the new db with the previous one, already on the hd.
+	 * @return boolean 'true' indicates that no updates are available, 'false' otherwise.
+	 * @throws IOException Exception thrown if there are problems.
 	 */
-	private boolean verificaSHA1() throws IOException {
-		LOGGER.info("verificaSHA1() - Avviato metodo");
+	private boolean checkSHA1() throws IOException {
+		LOGGER.info("checkSHA1() - Method started");
 
 		InputStream newStream = Files.newInputStream(dataPath.resolve(IPSWLISTNEW));
 		InputStream originaleStream = Files.newInputStream(dataPath.resolve(IPSWLIST));
@@ -199,120 +178,119 @@ public final class FirmwareUpdates extends Observable implements Runnable {
 		newStream.close();
 		originaleStream.close();
 
-		LOGGER.info("verificaSHA1() - Terminato metodo");
+		LOGGER.info("checkSHA1() - Method completed");
 		return !newSha1.equals(originaleSha1);
 	}
 
 
 	/**
-	 * Aggiorna il database richiamando i metodi per scaricare il version.xml,
-	 * analizza l'xml caricando i dati nella lista
-	 * dei nuovi firmware, legge il database sul pc, carica nuovi firmware leggi nella lista,
-	 * salva il nuovo database, lo confronta con quello precedente tramite SHA1 e cancella i vari file
-	 * temporanei usati durante il processo.
-	 * @return boolean
-	 * @throws Exception
+	 * Method to update the db, download the new version.xml, analyzing this xml and loading data into the list.
+	 * After that, this method reads the db on the hd, loads new firmwares obtained from the list, saves the new db,
+	 * compares this news db with the previous one with a sha1 check and removes some temp files.
+	 * @return boolean 'true' if the sha1 check is ok, 'false' otherwise.
+	 * @throws Exception Exception thrown if there are problems.
 	 */
-	private boolean aggiornaDatabaseDaXml() throws Exception {
-		LOGGER.info("aggiornaDatabase() - Avviato metodo");
+	private boolean updateDbFromXml() throws Exception {
+		LOGGER.info("updateDbFromXml() - Method started");
 
-		//scarico ed eseguo il parsing del file version.xml e carico tutti i nuovi firmware nell'arrayList di Firmware.
+		//download and parse version.xml and load every new firmwares in the firmware's ArrayList.
 		ParserPlist parser = new ParserPlist();
-		LOGGER.info("aggiornaDatabaseDaXml() - Download version.xml avviato"); 
+		LOGGER.info("aggiornaDatabaseDaXml() - Download version.xml started"); 
 		HttpFileDownload.httpFileDownload(dataPath.resolve(VERSIONXMLNAME), LinkServer.LINKXMLAPPLE);
+		LOGGER.info("aggiornaDatabaseDaXml() - Download version.xml completed"); 
+		firmwareListNew = parser.startParsing();
 
-		LOGGER.info("aggiornaDatabaseDaXml() - Download version.xml completato"); 
-		firmwareListNew = parser.effettuaParsing();
+		//load and read the txt adding every new firmwares into the ArrayList "firmwareListToWrite"
+		this.readTxt();
+		this.loadTxt();
 
-		//carico e leggo il txt mettendo tutti i firmware nell'arraylist "listaFirmwareDaScrivere"
-		this.leggiTxt();
-		this.caricaTxt();
+		//save line by line "firmwareListToWrite" on the hd
+		this.saveTxt();
 
-		//salvo riga per riga il contenuto di listaFirmwareDaScrivere su file di testo
-		this.salvaTxt();
+		//compare ths SHA1 of the dbs (ipswLista_new and ipswLista)
+		boolean update = this.checkSHA1(); 
 
-		//verifico lo SHA1 dei 2 file IPSW aggiornato dal server e IPSW con i nuovi firmware estratti dall'xml
-		boolean aggiornamenti = this.verificaSHA1(); //NB: non centra a nulla ipswlista_download, qui si parla di ipswLista_new!!!
-
-		LOGGER.info("aggiornaDatabase() - Terminato metodo");
-		return aggiornamenti;
+		LOGGER.info("updateDbFromXml() - Method completed");
+		return update;
 	}
 
+	/**
+	 * Remove every xml and plist files. 
+	 */
 	private void removeXmlAndPlist() {
 		try {
 			Files.deleteIfExists(dataPath.resolve("version_new.plist"));
 			Files.deleteIfExists(dataPath.resolve(VERSIONXMLNAME));
 		} catch (IOException e) {
-			LOGGER.error("removeXmlAndPlist() - IOException = " + e);
+			LOGGER.error("removeXmlAndPlist() - IOException", e);
 		}
 	}
 
 
 	private void updateFirmwareDb() throws Exception {
-		TimeManager dataSistema = TimeManager.getInstance();
+		TimeManager systemDate = TimeManager.getInstance();
 
-		//ottengo la data di ultima modifica del database
+		//get the last modified time of the db
 		Path path = dataPath.resolve(IPSWLIST);
-		Date dataFile = new Date(Files.getLastModifiedTime(path).toMillis());
-		LOGGER.info("run() - DataFile : " + dataFile.toString());
+		Date lastModifiedDate = new Date(Files.getLastModifiedTime(path).toMillis());
+		LOGGER.info("updateFirmwareDb() - LastModifiedTime : " + lastModifiedDate.toString());
 
-		//verifico se la data del sistema e' maggiore della data del db di almeno 24 ore
-		if(dataSistema.isMaggioreDiOre(dataSistema.getDataSistema(), dataFile, 24)) {
-			LOGGER.info("run() - Da aggiornare database perche' : dataSistema>dataFile+1Giorno");
+		//check systemdate > db date + 24h 
+		if(systemDate.isMaggioreDiOre(systemDate.getDataSistema(), lastModifiedDate, 24)) {
+			LOGGER.info("updateFirmwareDb() - Update required, because: systemdate>dbDate+24h");
 
-			//scarico e converto il file version.xml in version.plist con struttura standard
-			//se aggiorna=true eseguo aggiornamento
-			boolean aggiorna = this.aggiornaDatabaseDaXml();
-			if(aggiorna) { 
-				//CI SONO AGGIORNAMENTI!!!!!!
-
-				//avviso l'utente di riavviare il prgoramma
-				//per far si che avvenga lo scambio dei file (non fatto in questa classe,
-				//ma al prossimo avvio del downloadManager nella gestioneAggiornamento)
+			//if update==true starts the update process
+			boolean update = this.updateDbFromXml();
+			if(update) { 
+				//UPDATES AVAILABLE!!!
+				
+				//notifies the user that a reboot is required
 				Notification.showNormalOptionPane("checkDBUpdatesRestartToUpdate");
-				aggiornatoDatabase = true;
+
+				//to be sure that during the next restart, the updated db will be loaded
+				//this function isn't completely implemented here
+				dbUpdated = true;
 			} else {
-				//se sono uguali vuol dire che il file _new.txt (cioe' il database attuale con aggiunti i nuovi firmware estratti dall'xml 
-				//e' inutile, cosi' lo cancello
+				//no updated -> remove the _new.txt file
 				Files.delete(dataPath.resolve(IPSWLISTNEW));
-				LOGGER.info("run() - Rimosso ipswLista_new.txt con successo");
+				LOGGER.info("updateFirmwareDb() - Rimosso ipswLista_new.txt con successo");
 			}			
 
-			//cancello i file version.xml e version_new.plist
+			//remove version.xml and version_new.plist
 			this.removeXmlAndPlist();
 
-			//IMPORTANTISSIMO
+			//***********************IMPORTANT*********************
+			//ENGLISH: 
+			//to be sure that during the next restart, this method won't check updated another time, i change the Last Modified Time
+			//ITALIAN EXTENDED EXPLANATION:
 			//per far si che al prossimo avvio il programma non vada a controllare ancora gli aggiornamenti,
 			//dato che fino a che non si sostituisce ipswLista con il _downloaded la data resta indietro a quella di sistema di almeno 24 ore e quindi per forza
 			//piu' vecchia di 1 giorno di qualunque altra data sensata, modifico la data di ultima modifica del file a mano con quella di sistema
-			Files.setLastModifiedTime(path, FileTime.fromMillis(dataSistema.getTempoSistema()));
+			Files.setLastModifiedTime(path, FileTime.fromMillis(systemDate.getTempoSistema()));
 		} else {
-			LOGGER.info("run() - Non aggiornato database perche' : dataSistema<dataFile+1Giorno");
-			//database non aggiornato, visto che e' piu' recente di 24 ore
+			LOGGER.info("updateFirmwareDb() - Not udated because: systemdate<dbDate+24h");
+			//database not updated, because systemdate<dbDate+24h
 		}
 	}
 
 	@Override
 	public void run() {
-		LOGGER.info("run() - Avviato metodo");
+		LOGGER.info("run() - Method started");
 		try {
-			this.updateFirmwareDb();  //aggiorno firmware db (il try e' individuale perche' non deve crashare anche l'update itunes in caso di problemi)
+			//update firmware db (if you want to add itunes update, create another try-catch.
+			//don't add a method here, because if one of them crashes the other should also executed.
+			this.updateFirmwareDb();  
 		} catch (Exception e) {
-			//se entro qui e' perche' non e' stato possibile aggiornare tramite il database xml
-			//eccezione lanciata da aggiornaDatabaseDaXml()
-			LOGGER.error("run() - Exception=" , e);
+			//if i am here, there was problems during the update process.
+			LOGGER.error("run() - Exception" , e);
 			Notification.showErrorOptionPane("checkDBUpdatesGenericError", "CheckDBUpdates Error");
 		}
 		stateChanged();
-		LOGGER.info("run() - Terminato metodo");
-	}
-
-	public boolean isAggiorna() {
-		return aggiornatoDatabase;
+		LOGGER.info("run() - Method completed");
 	}
 
 	/**
-	 * Metodo per notificare un cambiamento all'observer, cioe' a #UpdateManagerDB.
+	 * Method that notifies to the observer ({@link #UpdateManagerDB}) that the status is changed.
 	 */
 	public void stateChanged() {
 		setChanged();

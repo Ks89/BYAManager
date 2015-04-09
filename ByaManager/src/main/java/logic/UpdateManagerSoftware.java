@@ -60,7 +60,7 @@ public final class UpdateManagerSoftware implements Observer{
 	 * quindi al riavvio successivo risulti c, cancella l'updater.
 	 * @param versione String che rappresenta la versione del programma nel formato x.x.x.x.
 	 */
-	private void aggiornaProgramma(String versione) {	
+	private void updateSoftware(String versione) {	
 		//aggiornamentoDatabase false: il database e' aggiornato, altrimenti no
 		if(Version.verificaEsistenzaVersionePiuRecente(versione)==1) { //se e' true scarico il JAR
 			LOGGER.info("setAggiornamentoProgramma() - riavvia");
@@ -68,7 +68,7 @@ public final class UpdateManagerSoftware implements Observer{
 				StateLabel.getAggProgrammaLabel().setForeground(Color.WHITE);
 				StateLabel.getAggProgrammaLabel().setText("  " + Translator.getText("byamLabelAggiornamento"));
 				SplashScreenManager.setText("updateProgress");
-				checkByamUpdates.ottieniJarDaServer();
+				checkByamUpdates.downloadJarFromServer();
 				this.eseguiUpdater();			
 			} catch (IOException e) {
 				LOGGER.error("setAggiornamentoProgramma() - IOException= " + e);
@@ -136,7 +136,7 @@ public final class UpdateManagerSoftware implements Observer{
 	public void update(Observable o, Object obj) {
 		if(o instanceof CheckBYAMUpdates) {
 			CheckBYAMUpdates vabyam = (CheckBYAMUpdates)o;
-			this.aggiornaProgramma(vabyam.getVersioneDaFile());
+			this.updateSoftware(vabyam.getVersionFromFile());
 			vabyam.deleteObserver(this); //lo tolgo perche' tanto la verifica dell'aggiornamento avviene una sola volta
 		}
 	}

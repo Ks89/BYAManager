@@ -445,7 +445,7 @@ public final class UpdateManagerDB implements Observer{
 //		}
 		if(o instanceof FirmwareUpdates) {
 			FirmwareUpdates firmwareUpdates = (FirmwareUpdates)o;
-			updatedFirmwareList = firmwareUpdates.isAggiorna();
+			updatedFirmwareList = firmwareUpdates.isDbUpdated();
 			firmwareUpdates.deleteObserver(this);
 		}
 		

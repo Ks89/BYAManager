@@ -20,6 +20,9 @@ import javax.swing.JOptionPane;
 
 import localization.Translator;
 
+/**
+ * Class used to show notifications.
+ */
 public final class Notification {
 
 	private Notification() {}

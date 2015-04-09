@@ -29,113 +29,96 @@ import com.dd.plist.*;
 
 
 /**
- *	Classe che si occupa di fare il parsing del file version.plist creato da "VersionXml".
+ *	This is the parser of "version.plist" created from {@link FirmwareUpdates}.
  */
 public final class ParserPlist {
-	/**
-	 * @uml.property  name="listaDispositivi" multiplicity="(0 -1)" dimension="1"
-	 */
-	private String[] listaDispositivi;
-	/**
-	 * @uml.property  name="verificoPresenzaSha1" multiplicity="(0 -1)" dimension="1"
-	 */
+	private String[] devicesList;
 	private String[] verificoPresenzaSha1;
-	/**
-	 * @uml.property  name="listaFirmware"
-	 */
-	private List<Firmware> listaFirmware;
-	/**
-	 * @uml.property  name="dictionary"
-	 * @uml.associationEnd  
-	 */
+	private List<Firmware> firmwaresList;
 	private NSDictionary dictionary;
-	/**
-	 * @uml.property  name="dictionaryFinale"
-	 * @uml.associationEnd  
-	 */
-	private NSDictionary dictionaryFinale;
+	private NSDictionary lastDictionary;
 
 	/**
-	 * Costruttore della classe ParserPlist che inizializza la listaFirmware come un ArrayList.
+	 * Constructor of the class
 	 */
 	public ParserPlist() {
-		listaFirmware = new ArrayList<Firmware>();
-		//i seguenti vengono poi reinizializzati in seguito
-		dictionary = null;
-		dictionaryFinale = null;
-		listaDispositivi = null;
+		this.firmwaresList = new ArrayList<Firmware>();
+		this.dictionary = null;
+		this.lastDictionary = null;
+		this.devicesList = null;
 	}
 	
 	/**
-	 * Esegue il parsing del plist e restituisce la lista dei Firmware.
-	 * @return Una List dei Firmware contenuti nel plist.
-	 * @throws Exception Eccezione generica.
+	 * Method that starts parsing and returns a firmwares list.
+	 * @return A List of firmware available in the plist file.
+	 * @throws Exception Generic Exception.
 	 */
-	public List<Firmware> effettuaParsing() throws Exception {
+	public List<Firmware> startParsing() throws Exception {
 		Path path = User.getInstance().getDataPath().resolve("version.xml");
 		Firmware firmware = null;
-		//ottendo la root
+		//get the root node
 		dictionary = (NSDictionary)PropertyListParser.parse(path.toFile());
 
-		//ottengo l'oggetto con chiave specificata per avere gli aggiornamento
+		//get the object with the specified key
 		dictionary = (NSDictionary)dictionary.objectForKey("MobileDeviceSoftwareVersionsByVersion");
 
-		//ottengo la lista con dentro numeri (String) che identificano il numero dei dispositivi rilasciati
+		//get the list with numbers (String) inside, that represents the number of released devices
 		String[] numeroDispositivi = dictionary.allKeys();
 
-		//vado a prendere sempre l'ultimo numero che identifica la situazione piu' recente con tutti i dispositivi usciti
-		dictionary = (NSDictionary)dictionary.objectForKey(numeroDispositivi[numeroDispositivi.length-1]); //scelta tipo firmare
+		//i go to the last number, because this represent the present (now), with all available devices.
+		dictionary = (NSDictionary)dictionary.objectForKey(numeroDispositivi[numeroDispositivi.length-1]); //choose firmware's type
 
-		//ora devo scegliere tra MobileDeviceSoftwareVersions o RecoverySoftwareVersions
-		//tengo il riferimento per usarlo nel metodo scansionaBuild senza perdere quello iniziale
-		dictionaryFinale = (NSDictionary)dictionary.objectForKey("MobileDeviceSoftwareVersions");
+		//now i need to choose between MobileDeviceSoftwareVersions and RecoverySoftwareVersions.
+		//i choose MobileDeviceSoftwareVersions, and the reference is saved in lastDictionary
+		lastDictionary = (NSDictionary)dictionary.objectForKey("MobileDeviceSoftwareVersions");
 
-		//ora ottengo la lista dei dispositivi
-		listaDispositivi = dictionaryFinale.allKeys();
+		//get the device list
+		devicesList = lastDictionary.allKeys();
 
-		//scansiono tutti i dispositivi andando a prendere i dati del loro firmware piu' recente e lo aggiunto
-		//nella lista da restituire in uscita
-		for(int i=0; i<listaDispositivi.length;i++) {
-			this.entraInRestore(listaDispositivi[i]); //accede al campo Restore del plist mettendo in dictionary l'NSDictionary associato
-			firmware = this.ottieniFirmware(i);
+		//scan all devices, getting data about the latest version of their firmwares.
+		for(int i=0; i<devicesList.length;i++) {
+			//enter in Restore of the plist. In dictionary there is associated NSDictionary
+			this.enterInRestore(devicesList[i]); 
+			firmware = this.obtainFirmware(i);
 			if(firmware!=null) {
-				listaFirmware.add(firmware); //aggiunge firmware alla lista (invocando anche il metodo per crearlo)
+				//add the firmware to the list
+				firmwaresList.add(firmware); 
 			}
 		}
-		return listaFirmware;
+		return firmwaresList;
 	}
 
 	
 	/**
-	 * Metodo che entra nel dictionary "restore" del file plist, dato il dispositivo.
-	 * @param dispositivo String che rappresenta il dispositivo.
+	 * This method enters in dictionary "restore" of the plist's file, using the device.
+	 * @param device String that represents the device.
 	 */
-	private void entraInRestore(String dispositivo) {
-		//riciclo il dictionary usato sopra ad ogni ciclo mantenendo il riferimento a dictionaryFinale
-		dictionary = (NSDictionary)dictionaryFinale.objectForKey(dispositivo);
+	private void enterInRestore(String device) {
+		//I reuse the dictionary used above every cycle, maintaining the reference to lastDictionary
+		dictionary = (NSDictionary)lastDictionary.objectForKey(device);
 
-		//scelgo la build Unknown che e' sempre l'ultima
+		//i choose the build called "Unknown", that it's always the last one.
 		dictionary = (NSDictionary)dictionary.objectForKey("Unknown");
 
-		//accedo a Universal
+		//enter in Universal
 		dictionary = (NSDictionary)dictionary.objectForKey("Universal");
 
-		//accedo a Restore
+		//enter in Restore
 		dictionary = (NSDictionary)dictionary.objectForKey("Restore");
 	}
 
 
 	/**
-	 * Metodo per ottenere un firmware, dato l'indice.
-	 * @param indice int che rappresenta l'indice.
-	 * @return Il Firmware richiesto.
+	 * Method to obtain a {@link Firmware}, using the index.
+	 * @param index int that represents the index.
+	 * @return The requested {@link Firmware}.
 	 */
-	private Firmware ottieniFirmware(int indice) {
+	private Firmware obtainFirmware(int index) {
 		boolean trovato = false;
 		Firmware firmware = null;
 		if(!(dictionary.objectForKey("FirmwareURL").toString().contains("protected"))) {
 			
-			//vuol dire che il link NON e' proibito da apple e quindi  puo' essere usato
+			//if the link is not prohibited by apple, it's can be used.
 			verificoPresenzaSha1 = dictionary.allKeys();
 			for(String firmwareInPlist : verificoPresenzaSha1) {
 				if(firmwareInPlist.equals("FirmwareSHA1")) {
@@ -145,33 +128,34 @@ public final class ParserPlist {
 				}
 			}	 
 			
-			//ora ritorno il firmware che creo col metodo creaFirmware alla lista
-			firmware = this.creaFirmware(indice, trovato);
+			//now i return the firmware, created tiwh the method creareFirmware.
+			firmware = this.creareFirmware(index, trovato);
 		}
 		return firmware;
 	}
 
 	
 	/**
-	 * Metodo per creare un firmware.
-	 * @param indice int che rappresenta l'indice da cui prelevare il dispositivo.
-	 * @param trovato se e' true indica che il firmware ha lo SHA1, altrimenti no.
-	 * @return
+	 * Method to create a {@link Firmware}.
+	 * @param index int that represents the index useful to obtain the device.
+	 * @param found boolean that if it's true, the {@link Firmware} has SHA1, otherwise no.
+	 * @return The created {@link Firmware}.
 	 */
-	private Firmware creaFirmware(int indice, boolean trovato) {
-		//creo il Firmware
+	private Firmware creareFirmware(int index, boolean found) {
+		//create firmware
 		Firmware firmware = new Firmware();
-		firmware.setDevice(new CommercialDevice(listaDispositivi[indice]));
+		firmware.setDevice(new CommercialDevice(devicesList[index]));
 		firmware.setVersion(dictionary.objectForKey("ProductVersion").toString());
 		firmware.setBuild(dictionary.objectForKey("BuildVersion").toString());
 		firmware.setPercorso(dictionary.objectForKey("FirmwareURL").toString());
-		//se nel plist non c'e' lo SHA1 non lo inserisco e ci metto "non presente"
-		if(trovato) {
+		//if the SHA1 exists in the plist
+		if(found) {
 			firmware.setHash(dictionary.objectForKey("FirmwareSHA1").toString().toUpperCase());
 		} else {
+			//otherwise i set "non presente"
 			firmware.setHash("non presente");
 		}
-		//non posso conoscere la dimensione dal file version.xml, quindi la metto sempre a 0
+		//i can't know the size of a firmware obtained from version.xml. For this reason i set this size to 0.
 		firmware.setDimension(0); 
 		return firmware;
 	}

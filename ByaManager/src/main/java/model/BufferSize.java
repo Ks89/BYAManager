@@ -16,20 +16,15 @@ limitations under the License.
 
 package model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
- *	Classe che memorizza la dimensione del buffer per fa si che sia facilmente accessibile dalle altre classi.
+ *	Class with the buffer's size.
  */
 public final class BufferSize {
 
-	private static int bufferSize;
-	
-	public static int getBufferSize() {
-		return bufferSize;
-	}
-
-	public static void setBufferSize(int bufferDimension) {
-		bufferSize = bufferDimension;
-	}
+	@Getter @Setter private static int bufferSize;
 
 	private BufferSize() {}
 }

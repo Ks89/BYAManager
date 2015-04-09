@@ -53,10 +53,5 @@ public final class LinkServer {
 	public static final String LINKXMLAPPLE = "http://www.itunes.com/version";
 	//-----------------------------------------------------------------------------------------------
 	
-	
-	
-//	public static final String LINKPHPITUNES = "http://www.ks89.it/itunes.php";
-	//-----------------------------------------------------------------------------------------------	
-	
 	private LinkServer(){}
 }

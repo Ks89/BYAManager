@@ -26,7 +26,7 @@ public class UpdateException extends Exception {
 	/**
 	 * @author   Ks89
 	 */
-	public static enum Causa {/**
+	public static enum Reason {/**
 	 * @uml.property  name="cORRUPTED_JAR"
 	 * @uml.associationEnd  
 	 */
@@ -51,7 +51,7 @@ public class UpdateException extends Exception {
 	 * @uml.property  name="causa"
 	 * @uml.associationEnd  
 	 */
-	private Causa causa;
+	private Reason causa;
 
 	/**
 	 * Richiama la superclasse.
@@ -89,7 +89,7 @@ public class UpdateException extends Exception {
 	 * Costruttore che inizializza la causa che ha sollevato l'eccezione.
 	 * @param causa Tipo enumerativo che rappresenta la causa che ha sollevato l'eccezione.
 	 */
-	public UpdateException(Causa causa) {
+	public UpdateException(Reason causa) {
 		this.causa = causa;
 	}
 	
@@ -97,7 +97,7 @@ public class UpdateException extends Exception {
 	 * @return  Tipo enumerativo che rappresenta la causa che ha soolevato l'eccezione.
 	 * @uml.property  name="causa"
 	 */
-	public Causa getCausa() {
+	public Reason getCausa() {
 		return causa;
 	}
 
