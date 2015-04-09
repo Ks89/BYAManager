@@ -47,6 +47,7 @@ public class BYAManager {
 
 	/*
 	 * Da fare:
+	 * - RIFARE LA GUI CON JAVAFX E PIU' MODERNA
 	 * - Mettere controllo della sha1 se e' esadeciamale tramite un pattern. Per ora c'e' il codice commentato in CheckDBUpdate
 	 * - Controllo per far si che sia possibile scaricare un file solo se c'e' lo spazio disponibile nel disco (fatto, ma da testare)
 	 * - Aggiungere grafica personalizzata al popup nella systemtray
