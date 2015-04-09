@@ -18,6 +18,8 @@ BYAManager uses BYAUpdater to update itself automatically!
 
 ## Thanks to:
 * Endys111 for the Czech translation
+* Anatoli Nicolae for the Splash Screen and the toolbar
+* Biteyourapple's staff
 
 
 ## Changelogs
