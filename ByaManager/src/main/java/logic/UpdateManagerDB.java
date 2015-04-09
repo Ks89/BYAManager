@@ -61,18 +61,8 @@ public final class UpdateManagerDB implements Observer{
 	private static final String ITUNESLISTANEW = "iTunesLista_new.txt";
 	private static final String ITUNESLISTADOWNLOADED = "iTunesLista_downloaded.txt";
 
-	/**
-	 * @uml.property  name="dataPath"
-	 */
 	private Path dataPath;
-	/**
-	 * @uml.property  name="updatedFirmwareList"
-	 */
 	private boolean updatedFirmwareList;
-
-	/**
-	 * @uml.property  name="updatedItunesList"
-	 */
 	private boolean updatedItunesList;
 
 	private static UpdateManagerDB instance = new UpdateManagerDB();

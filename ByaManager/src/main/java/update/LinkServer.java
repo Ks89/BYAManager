@@ -21,11 +21,12 @@ public final class LinkServer {
 	//-----------------------------------------------------------------------------------------------
 	public static final String KS89IT = "http://www.stefanocappa.it/publicfiles/Github_project/byam/";
 	//-----------------------------------------------------------------------------------------------
-	public static final String SITEFOLDERVERSION = "0.6.0";
+	public static final String SITEFOLDERVERSION = "0.9.0";
 	//-----------------------------------------------------------------------------------------------
 	public static final String LINKVERSION_KS = KS89IT + SITEFOLDERVERSION + "/" + "txt/version.txt";
 	public static final String LINKSHA_KS = KS89IT + SITEFOLDERVERSION + "/" + "txt/check.txt";
 	public static final String LINKZIP_KS = KS89IT + SITEFOLDERVERSION + "/" + "txt/lists.zip";
+	public static final String LINKDEVICE_KS = KS89IT + SITEFOLDERVERSION + "/" + "txt/deviceList.txt";
 
 	public static final String LINKJAR_KS = KS89IT + SITEFOLDERVERSION + "/" + "jar/BYAManager.jar";
 	public static final String LINKUPDATER_KS = KS89IT + SITEFOLDERVERSION + "/" + "jar/BYAUpdater.jar";
@@ -35,11 +36,12 @@ public final class LinkServer {
 	//-----------------------------------------------------------------------------------------------
 	public static final String ALTERVISTA = "http://ks89.altervista.org/byam/";
 	//-----------------------------------------------------------------------------------------------
-	public static final String ALTERVISTAFOLDERVERSION = "0.6.0";
+	public static final String ALTERVISTAFOLDERVERSION = "0.9.0";
 	//-----------------------------------------------------------------------------------------------
 	public static final String LINKVERSION = ALTERVISTA + ALTERVISTAFOLDERVERSION + "/" +  "txt/versionFrom.txt";
 	public static final String LINKSHA = ALTERVISTA + ALTERVISTAFOLDERVERSION + "/" + "txt/check.txt";
 	public static final String LINKZIP = ALTERVISTA + ALTERVISTAFOLDERVERSION + "/" + "txt/lists.zip";
+	public static final String LINKDEVICE = ALTERVISTA + ALTERVISTAFOLDERVERSION + "/" + "txt/deviceList.txt";
 
 	public static final String LINKJAR = ALTERVISTA + ALTERVISTAFOLDERVERSION + "/" + "jar/BYAManager.jar";
 	public static final String LINKUPDATER = ALTERVISTA + ALTERVISTAFOLDERVERSION + "/" + "jar/BYAUpdater.jar";

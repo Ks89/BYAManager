@@ -119,7 +119,8 @@ public final class MainFrame extends KFrame implements Runnable {
 		insGridBagLayout(layout, lim, 0, 7, 2, 1, 0, 0, 1, 0.5, GridBagConstraints.CENTER, GridBagConstraints.BOTH, scroll, null);
 	}
 
-	private void insGridBagLayout(GridBagLayout layoutPanel, GridBagConstraints lim, int x, int y, int lx, int ly, int ipadx, int ipady, double wx, double wy, int anchor, int fill, JComponent elemento, JPanel panel) {
+	private void insGridBagLayout(GridBagLayout layoutPanel, GridBagConstraints lim, int x, int y, int lx, int ly, int ipadx,
+			int ipady, double wx, double wy, int anchor, int fill, JComponent elemento, JPanel panel) {
 		lim.insets = new Insets(4,3,4,3);
 		lim.gridx = x;
 		lim.gridy = y;

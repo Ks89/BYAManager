@@ -30,13 +30,8 @@ import javax.swing.JPanel;
 public class KPanel extends JPanel{
 	private static final long serialVersionUID = 8624047765321094743L;
 	private static final int MAX = 1920;
-	/**
-	 * @uml.property  name="sfondo"
-	 */
+	
 	private transient BufferedImage sfondo;
-	/**
-	 * @uml.property  name="errore"
-	 */
 	private boolean errore = false;
 
 	/**

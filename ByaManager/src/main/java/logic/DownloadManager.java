@@ -31,6 +31,7 @@ import org.apache.logging.log4j.LogManager;
 
 import com.apple.eawt.Application;
 
+import update.commercialdevicename.CommercialNameUpdater;
 import uuid.RegisteredUuid;
 
 public final class DownloadManager implements Runnable {
@@ -111,6 +112,7 @@ public final class DownloadManager implements Runnable {
 		SplashScreenManager.setText("startingadditionalOperations");
 
 		//preparo i menu a tendina (JComboBox) con la lista dei firmware e di itunes
+		CommercialNameUpdater.getInstance().loadDevices();
 		LogicLoaderFirmware.getInstance().loadFirmware();
 		LogicLoaderItunes.getInstance().loadiTunesVersion();
 		

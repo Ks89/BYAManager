@@ -35,7 +35,6 @@ public class KFrame extends JFrame{
 		setIconImage(ImageLoader.getInstance().getIconaBya());
 		getLayeredPane().setOpaque(false);
 		getRootPane().setOpaque(false);
-
 		this.setContentPane(new KPanel());
 	}
 }

@@ -129,7 +129,7 @@ public final class ParserPlist {
 			}	 
 			
 			//now i return the firmware, created tiwh the method creareFirmware.
-			firmware = this.creareFirmware(index, trovato);
+			firmware = this.createFirmware(index, trovato);
 		}
 		return firmware;
 	}
@@ -141,7 +141,7 @@ public final class ParserPlist {
 	 * @param found boolean that if it's true, the {@link Firmware} has SHA1, otherwise no.
 	 * @return The created {@link Firmware}.
 	 */
-	private Firmware creareFirmware(int index, boolean found) {
+	private Firmware createFirmware(int index, boolean found) {
 		//create firmware
 		Firmware firmware = new Firmware();
 		firmware.setDevice(new CommercialDevice(devicesList[index]));

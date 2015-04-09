@@ -16,6 +16,7 @@ limitations under the License.
 
 package model;
 
+import update.commercialdevicename.CommercialNameUpdater;
 import lombok.Getter;
 
 /**
@@ -68,7 +69,7 @@ public class CommercialDevice extends Device{
 	 */
 	public CommercialDevice(String nomeDispositivoInCodice) {
 		super(nomeDispositivoInCodice);
-		this.assegnaNomeCommerciale();
+		this.assegnaNomeCommerciale(nomeDispositivoInCodice);
 		this.setProductAndVersion();
 	}
 
@@ -76,7 +77,7 @@ public class CommercialDevice extends Device{
 	 * Metodo che assegna il nome commerciale al dispositivo fornito, 
 	 * in base a quello in codice.
 	 */
-	public final void assegnaNomeCommerciale() {
+	public final void assegnaNomeCommerciale(String nomeDispositivoInCodice) {
 		for(int i=0; i<NOMICODICE.length; i++) {
 			if(super.getNomeDispositivo().equals("iPhone3,Vfgb5/iPhone3")) {
 				this.nomeCommerciale = "iPhone4";
@@ -88,6 +89,15 @@ public class CommercialDevice extends Device{
 				}
 			}
 		}
+		
+		//if there are no matches, check if in my server there is a match.
+		String commercialNameOfThisNewDevice = CommercialNameUpdater.getInstance().getCodeNameCommecialDeviceMap().get(nomeDispositivoInCodice);
+		if(commercialNameOfThisNewDevice!=null) {
+			this.nomeCommerciale = commercialNameOfThisNewDevice;
+			return;
+		}
+		
+		//else use the codename as commercialname
 		this.nomeCommerciale = super.getNomeDispositivo();
 	}
 	
