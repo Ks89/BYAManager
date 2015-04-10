@@ -81,8 +81,6 @@ BYAManager uses BYAUpdater to update itself automatically!
 
 
 ## Future extensions
-* Create a database for device's commercial names, to remove the requirement to update the software every new iDevice produced
-* Replace the Download button with an improved version
 * Add a pattern to the sha check 
 * Improve the logic to check the free space on the disk
 * Create a custom GUI for the popup in the system tray
