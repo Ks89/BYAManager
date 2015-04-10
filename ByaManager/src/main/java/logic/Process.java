@@ -245,6 +245,7 @@ public class Process extends Observable implements Runnable {
 			try {
 
 				response = ConnectionManager.getInstance().getHttpclient().execute(httpGet, context);
+//				response.getAllHeaders().toString()
 
 			} catch(SocketException s) {
 				LOGGER.info("PROCESS-prepara processo, SocketException");

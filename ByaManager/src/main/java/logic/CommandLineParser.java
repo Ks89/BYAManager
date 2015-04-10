@@ -12,7 +12,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-*/
+ */
 
 package logic;
 
@@ -24,21 +24,18 @@ import org.apache.logging.log4j.LogManager;
 import preferences.Settings;
 
 public class CommandLineParser {
-	/**
-	 * @uml.property  name="comando"
-	 */
-	private String comando;
-	private static final int DEFAULTPORT = 10378;
 	private static final Logger LOGGER = LogManager.getLogger(CommandLineParser.class);
+	private static final int DEFAULTPORT = 10378;
+	private String command;
 
 	public CommandLineParser(String comando) {
-		this.comando = comando;
+		this.command = comando;
 	}
 
 	public Object interpretaComando() {
-		LOGGER.info("Comando ricevuto: "+ comando);
+		LOGGER.info("Comando ricevuto: "+ command);
 
-		if(comando.contains("port-")) {
+		if(command.contains("port-")) {
 			return this.changePort();
 		} else {
 			//carico subito le preferenze per impostare la lingua
@@ -50,36 +47,52 @@ public class CommandLineParser {
 		}
 
 		try {
-			switch(comando) {
+			switch(command) {
 			case "reset-all":
 				this.resetAll();
+				break;
 			case "delete-download-temp":
 				this.deleteDownloadTemp();
+				break;
 			case "update-db":
 				this.updateDb();
+				break;
 			case "update-software":
 				this.updateSoftware();
+				break;
+			case "sort-firmware-db":
+				LOGGER.info("Creo un nuovo file nel dataPath (della classe User) chiamato ipswListSorted.txt.");
+				LOGGER.info("In esso ci sono tutti i dispositivi in ordine di come li ha messi lo sviluppatore.");
+				LOGGER.info("L'ordine dei firmware è crescente scendendo lungo il documento. Quello dei device è decrescente.");
+				LOGGER.info("Questa funzione rimette nella posizione giusta i nuovi firmware usciti e aggiunti dal version.xml.");
+				LOGGER.info("Il file generato lo posso caricare sul server e renderlo disponibile a tutti.");
+				CommandLineDbSorter sorter = new CommandLineDbSorter();
+				sorter.loadFirmwareDbInHashmap();
+				sorter.writeSortedDbOnDisk();
+				LOGGER.info("Operazione eseguita, file ipswListSorted.txt creato");
+				break;
 			case "help":
 				this.showHelp();
+				break;
 			default :
 				LOGGER.info("Non e' stato rilevato un comando aggiuntivo, quindi avvio il programma con i parametri predefiniti");
 				return DEFAULTPORT;
 			}
 		} catch (IOException e) {
 			LOGGER.error("Errore durante l'esecuzione di una delle procedure richieste: " + e);
-			LOGGER.info("Quindi, vvio il programma con i parametri predefiniti");
-			return DEFAULTPORT;
+			LOGGER.info("Quindi, avvio il programma con i parametri predefiniti");
 		}
+		return DEFAULTPORT;
 	}
 
 	private Integer changePort() {
 		LOGGER.info("Operazione eseguita, avvio in corso con porta personalizzata");
-		int porta = Integer.parseInt(comando.replace("port-", ""));
+		int porta = Integer.parseInt(command.replace("port-", ""));
 		if(porta>=10000 && porta<20000) {
-			return Integer.parseInt(comando.replace("port-", "")); //cambio la porta
+			return Integer.parseInt(command.replace("port-", "")); //cambio la porta
 		} else {
 			LOGGER.error("Errore! La porta deve essere >= 10000 e <20000");
-			LOGGER.error("Come conseguenza dell'errore e' stata impostata la porta predefinita");
+			LOGGER.error("Quindi, utilizzo la porta predefinita");
 			return DEFAULTPORT;
 		}
 	}
@@ -131,6 +144,7 @@ public class CommandLineParser {
 				"sia nella cartella predefinita sia in quella personalizzata (se presente)");
 		LOGGER.info("   'update-db' Cancella (per evitare problemi) e installa i nuovi database presenti sul server");
 		LOGGER.info("   'update-software' Verifica e installa l'ultima versione del programma (solo se piu' recente di quella in uso)");
+		LOGGER.info("   'sort-firmware-db' SOLO PER UTENTI ESPERTI: Riordina i link nel database dei firmware *BETA*)");
 		LOGGER.info("   'help' apre questa guida :)");
 	}
 

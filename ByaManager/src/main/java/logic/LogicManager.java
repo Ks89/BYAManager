@@ -48,24 +48,9 @@ import preferences.Settings;
 public final class LogicManager {
 	private static final Logger LOGGER = LogManager.getLogger(LogicManager.class);
 
-	/**
-	 * @uml.property  name="impostazioni"
-	 * @uml.associationEnd  
-	 */
 	private Settings impostazioni;
-	/**
-	 * @uml.property  name="percorsoDownload"
-	 */
 	private Path percorsoDownload;
-
-	/**
-	 * @uml.property  name="percorsoDati"
-	 */
 	private Path percorsoDati;
-
-	/**
-	 * @uml.property  name="percorsoDownloadTemp"
-	 */
 	private Path percorsoDownloadTemp;
 	private static LogicManager instance = new LogicManager();
 
