@@ -46,23 +46,11 @@ public final class LogicLoaderFirmware extends LogicLoader{
 	private static final String IPSWLISTA = "ipswLista.txt";
 	private static LogicLoaderFirmware instance = new LogicLoaderFirmware();
 
-	/**
-	 * @uml.property  name="firmwareMapNomeFile"
-	 * @uml.associationEnd  qualifier="replace:java.lang.String model.Firmware"
-	 */
 	private Map<String,Firmware> firmwareMapNomeFile;
 	public Map<String, Firmware> getFirmwareMapNomeFile() {
 		return firmwareMapNomeFile;
 	}
-	/**
-	 * @uml.property  name="firmwareListaNomeFile"
-	 * @uml.associationEnd  multiplicity="(0 -1)" elementType="model.Firmware"
-	 */
 	private List<Firmware> firmwareListaNomeFile;
-	/**
-	 * @uml.property  name="arrayListDispositivi"
-	 * @uml.associationEnd  multiplicity="(0 -1)" elementType="model.CommercialDevice"
-	 */
 	private List<CommercialDevice> arrayListDispositivi;
 
 	private LogicLoaderFirmware() {
@@ -116,7 +104,7 @@ public final class LogicLoaderFirmware extends LogicLoader{
 
 	public void fillFirmwareComboBox() {
 		for(CommercialDevice dispositivoCom : this.getArrayListDispositivi()) {
-			MainFrame.getInstance().getListaDispositivi().addItem(dispositivoCom.getNomeCommerciale());
+			MainFrame.getListaDispositivi().addItem(dispositivoCom.getNomeCommerciale());
 		}
 
 		//inverto la lista dei firmware in modo tale che i piu' recenti appaiano all'inizio
@@ -124,8 +112,8 @@ public final class LogicLoaderFirmware extends LogicLoader{
 		Collections.reverse(listaFirmwareReverse);
 
 		for(Firmware firmware : listaFirmwareReverse) {
-			if(firmware.getDevice().getNomeDispositivo().equals(this.cercaDispositivo((String)MainFrame.getInstance().getListaDispositivi().getSelectedItem()))) {
-				MainFrame.getInstance().getListaFirmware().addItem(firmware.getVersion() + " (" + firmware.getBuild() + ")"); 
+			if(firmware.getDevice().getNomeDispositivo().equals(this.cercaDispositivo((String)MainFrame.getListaDispositivi().getSelectedItem()))) {
+				MainFrame.getListaFirmware().addItem(firmware.getVersion() + " (" + firmware.getBuild() + ")"); 
 			}
 		}
 	}
@@ -201,11 +189,11 @@ public final class LogicLoaderFirmware extends LogicLoader{
 	}
 
 	public Firmware ottieniFirmwareDaLista() {
-		String nomeDispositivo = this.cercaDispositivo((String)MainFrame.getInstance().getListaDispositivi().getSelectedItem());
-		String build = ((String)MainFrame.getInstance().getListaFirmware().getSelectedItem()).split(" ")[1].replace("(", "");
+		String nomeDispositivo = this.cercaDispositivo((String)MainFrame.getListaDispositivi().getSelectedItem());
+		String build = ((String)MainFrame.getListaFirmware().getSelectedItem()).split(" ")[1].replace("(", "");
 		build = build.replace(")", "");
 		Firmware firmware = firmwareMapNomeFile.get(nomeDispositivo + "_" +
-				((String)MainFrame.getInstance().getListaFirmware().getSelectedItem()).split(" ")[0] + "_" + build + "_Restore.ipsw");
+				((String)MainFrame.getListaFirmware().getSelectedItem()).split(" ")[0] + "_" + build + "_Restore.ipsw");
 		return firmware;
 	}
 

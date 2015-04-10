@@ -24,10 +24,6 @@ import model.FileWeb;
 
 public class DownloadFirmware extends Download {
 
-	/**
-	 * @uml.property  name="commercialDevice"
-	 * @uml.associationEnd  multiplicity="(1 1)"
-	 */
 	private CommercialDevice commercialDevice;
 
 	public DownloadFirmware(Path downloadPath, FileWeb fileWeb) {
@@ -35,10 +31,6 @@ public class DownloadFirmware extends Download {
 		commercialDevice = new CommercialDevice(TableLogic.getDispositivo(this.getUri().toString()));
 	}
 
-	/**
-	 * @return
-	 * @uml.property  name="commercialDevice"
-	 */
 	public CommercialDevice getCommercialDevice() {
 		return commercialDevice;
 	}

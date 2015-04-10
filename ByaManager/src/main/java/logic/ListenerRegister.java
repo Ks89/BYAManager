@@ -60,7 +60,7 @@ public final class ListenerRegister {
 	}
 
 	public void registerListener() {
-		MainFrame.getInstance().getAddLista().addActionListener(new AddFromListListener());
+		MainFrame.getAddLista().addActionListener(new AddFromListListener());
 		StateButton.getRefreshDBButton().addActionListener(new CheckDbUpdateListener());
 		StateButton.getRefreshBYAMButton().addActionListener(new CheckByamUpdateListener());
 	}

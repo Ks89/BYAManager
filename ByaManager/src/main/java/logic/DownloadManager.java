@@ -170,7 +170,7 @@ public final class DownloadManager implements Runnable {
 		ListenerRegister.getInstance().registerListener();
 		ListenerRegister.getInstance().registerListerenSystemTray();
 		LogicManager.getInstance().registerListenerStateButton();
-		MainFrame.getInstance().getListaDispositivi().addActionListener(new DeviceComboBoxListener());
-		MainFrame.getInstance().getOsList().addActionListener(new OsComboBoxListener());
+		MainFrame.getListaDispositivi().addActionListener(new DeviceComboBoxListener());
+		MainFrame.getOsList().addActionListener(new OsComboBoxListener());
 	}
 }

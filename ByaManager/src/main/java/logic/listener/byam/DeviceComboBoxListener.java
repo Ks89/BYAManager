@@ -31,13 +31,13 @@ public class DeviceComboBoxListener extends AbstractAction {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		//rimuovo tutti gli elementi dalla combobox coi firmware
-		MainFrame.getInstance().getListaFirmware().removeAllItems();
+		MainFrame.getListaFirmware().removeAllItems();
 
 		//scansiono la lista dei firmware e dove trovo un Firmware del dispositivo selezionato nel 
 		//menu a tendina lo aggiungo alla combobox dei firmware.
 		for(Firmware firmware : LogicLoaderFirmware.getInstance().getFirmwareListaNomeFile()) {
-			if(firmware.getDevice().getNomeDispositivo().equals(LogicLoaderFirmware.getInstance().cercaDispositivo((String)MainFrame.getInstance().getListaDispositivi().getSelectedItem()))) {
-				MainFrame.getInstance().getListaFirmware().addItem(firmware.getVersion() + " (" + firmware.getBuild() + ")"); 
+			if(firmware.getDevice().getNomeDispositivo().equals(LogicLoaderFirmware.getInstance().cercaDispositivo((String)MainFrame.getListaDispositivi().getSelectedItem()))) {
+				MainFrame.getListaFirmware().addItem(firmware.getVersion() + " (" + firmware.getBuild() + ")"); 
 			}
 		}
 	}

@@ -114,7 +114,7 @@ public class LogicLoaderItunes extends LogicLoader {
 	}
 
 	public ItunesVersion ottieniItunesVersionDaLista() {
-		String platformName = (String)(MainFrame.getInstance().getOsList().getSelectedItem());
+		String platformName = (String)(MainFrame.getOsList().getSelectedItem());
 		String execExtension;
 		if(platformName.contains("Mac")) {
 			platformName = "Mac";
@@ -127,7 +127,7 @@ public class LogicLoaderItunes extends LogicLoader {
 				platformName = "Win64";
 			}
 		}
-		String version = (String)(MainFrame.getInstance().getItunesList().getSelectedItem());
+		String version = (String)(MainFrame.getItunesList().getSelectedItem());
 		return iTunesMapNomeFile.get("iTunes" + "_" + platformName + "_" + version + "." + execExtension);
 	}
 
@@ -137,8 +137,8 @@ public class LogicLoaderItunes extends LogicLoader {
 		Collections.reverse(listaiTunesReverse);
 
 		for(ItunesVersion iTunesVersion : listaiTunesReverse) {
-			if(iTunesVersion.getOperativeSystemList().get(0).getCompleteName().equals((String)(MainFrame.getInstance().getOsList().getSelectedItem()))) {
-				MainFrame.getInstance().getItunesList().addItem(iTunesVersion.getVersion()); 
+			if(iTunesVersion.getOperativeSystemList().get(0).getCompleteName().equals((String)(MainFrame.getOsList().getSelectedItem()))) {
+				MainFrame.getItunesList().addItem(iTunesVersion.getVersion()); 
 			}
 		}
 	}

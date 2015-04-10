@@ -31,13 +31,13 @@ public class OsComboBoxListener extends AbstractAction {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		//rimuovo tutti gli elementi dalla combobox con itunes version
-		MainFrame.getInstance().getItunesList().removeAllItems();
+		MainFrame.getItunesList().removeAllItems();
 
 		//scansiono la lista di itunesVersion e dove trovo un itunesVersion dell'os selezionato nel 
 		//menu a tendina lo aggiungo alla combobox degli itunesVersion.
 		for(ItunesVersion iTunesVersion : LogicLoaderItunes.getInstance().getiTunesListaNomeFile()) {
-			if(iTunesVersion.getOperativeSystemList().get(0).getCompleteName().equals((String)(MainFrame.getInstance().getOsList().getSelectedItem()))) {
-				MainFrame.getInstance().getItunesList().addItem(iTunesVersion.getVersion()); 
+			if(iTunesVersion.getOperativeSystemList().get(0).getCompleteName().equals((String)(MainFrame.getOsList().getSelectedItem()))) {
+				MainFrame.getItunesList().addItem(iTunesVersion.getVersion()); 
 			}
 		}
 	}

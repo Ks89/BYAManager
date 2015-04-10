@@ -12,7 +12,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-*/
+ */
 
 package logic;
 
@@ -37,12 +37,12 @@ import org.apache.logging.log4j.LogManager;
 import preferences.Settings;
 
 /**
- * Classe main
+ * Class main
  */
 public class BYAManager {
 
 	private static int porta = 10378;
-	
+
 	private static final Logger LOGGER = LogManager.getLogger(BYAManager.class);
 
 	/*
@@ -60,8 +60,8 @@ public class BYAManager {
 	 * - Rimuovere menu donazioni ed inserire il pulsante nella grafica
 	 * - Aggiungere pulsanti twitter, facebook, youtube, link al sito ecc.. per ks89 e BYA
 	 */
-	
-	
+
+
 	/**
 	 * Metodo main per eseguire il programma.
 	 * @param args
@@ -97,18 +97,17 @@ public class BYAManager {
 			porta = (Integer) (new CommandLineParser(args[0])).interpretaComando();
 			System.out.println("Porta ricevuta: " + porta);
 		}
-		
-		
-//				try {
-//					InputStream bya= new FileInputStream("/Users/Ks89/Desktop/BYA/cartella senza titolo/BYAManager.jar");
-//					System.out.println(" sha512 bya " + DigestUtils.sha512Hex(bya));
-//					InputStream bya2= new FileInputStream("/Users/Ks89/Desktop/BYA/BYAUpdater.jar");
-//					System.out.println(" sha512 updater " + DigestUtils.sha512Hex(bya2));
-//				} catch (FileNotFoundException e1) {
-//					e1.printStackTrace();
-//				} catch (IOException e) {
-//					e.printStackTrace();
-//				}
+
+//		try {
+//			InputStream bya= new FileInputStream("/Users/Ks89/Desktop/BYA/BYAManager.jar");
+//			System.out.println(" sha512 bya " + DigestUtils.sha512Hex(bya));
+//			InputStream bya2= new FileInputStream("/Users/Ks89/Desktop/BYA/BYAUpdater.jar");
+//			System.out.println(" sha512 updater " + DigestUtils.sha512Hex(bya2));
+//		} catch (FileNotFoundException e1) {
+//			e1.printStackTrace();
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
 
 		ServerSingleInstance ssi = null;
 		try {
