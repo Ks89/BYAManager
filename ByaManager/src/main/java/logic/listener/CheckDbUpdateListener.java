@@ -12,7 +12,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-*/
+ */
 
 package logic.listener;
 
@@ -43,13 +43,27 @@ public class CheckDbUpdateListener extends AbstractAction {
 		StateButton.activateAfterUpdateDb(false);
 		StateLabel.getAggDatabaseLabel().setForeground(KColors.getVerdeChiaro());
 		StateLabel.getAggDatabaseLabel().setText("  " + Translator.getText("databaseLabelVerifica"));
+
 		try {
 			UpdateManagerDB.getInstance().prepareManualDbUpdate();
-			UpdateManagerDB.getInstance().updateDb();
-		} catch (IOException e1) {
-			LOGGER.error("Errore durante l'aggiornamento manuale del database, cioe' " +
-					"su richiesta dell'utente premendo il pulsante della toolbar", e1);
-			Notification.showNormalOptionPane("updateManagerDBIOException");
+		} catch (IOException e2) {
+			LOGGER.error("Error prepareManualDbUpdate", e2);
 		}
+		
+		//i must use a new thread, because i don't want to freeze the GUI during updateDb().
+		Thread thread = new Thread(new Runnable() {
+			@Override
+			public void run() {
+				try {
+					
+					UpdateManagerDB.getInstance().updateDb();
+				} catch (IOException e1) {
+					LOGGER.error("Errore durante l'aggiornamento manuale del database, cioe' " +
+							"su richiesta dell'utente premendo il pulsante della toolbar", e1);
+					Notification.showNormalOptionPane("updateManagerDBIOException");
+				}
+			}
+		});
+		thread.start();
 	}
 }

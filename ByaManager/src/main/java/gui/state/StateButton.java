@@ -24,20 +24,21 @@ import javax.swing.JButton;
 import javax.swing.JToolBar;
 
 import localization.Translator;
+import lombok.Getter;
 
 /**
  * Classe che si occupa della creazione e gestione dello stato dei pulsanti.
  */
 public final class StateButton {
-	private static JButton refreshDBButton;
-	private static JButton refreshBYAMButton;
-	private static JButton preferenzeButton;
-	private static JButton pauseButton;
-	private static JButton resumeButton;
-	private static JButton removeButton;
-	private static JButton removeButtonAll;
-	private static JButton pauseButtonAll;
-	private static JButton resumeButtonAll;
+	@Getter private static JButton refreshDBButton;
+	@Getter private static JButton refreshBYAMButton;
+	@Getter private static JButton preferenzeButton;
+	@Getter private static JButton pauseButton;
+	@Getter private static JButton resumeButton;
+	@Getter private static JButton removeButton;
+	@Getter private static JButton removeButtonAll;
+	@Getter private static JButton pauseButtonAll;
+	@Getter private static JButton resumeButtonAll;
 
 	public static final int DOWNLOADING = 0;
 	public static final int PAUSED = 1;
@@ -238,68 +239,5 @@ public final class StateButton {
 		pauseButtonAll.setEnabled(true);
 		resumeButtonAll.setEnabled(false);
 		removeButtonAll.setEnabled(true);
-	}
-
-	/**
-	 * @return JButton che aggiorna il database.
-	 */
-	public static JButton getRefreshDBButton() {
-		return refreshDBButton;
-	}
-
-	/**
-	 * @return JButton che aggiorna il programma.
-	 */
-	public static JButton getRefreshBYAMButton() {
-		return refreshBYAMButton;
-	}
-
-	/**
-	 * @return JButton per aprire il pannello preferenze.
-	 */
-	public static JButton getPreferenzeButton() {
-		return preferenzeButton;
-	}
-
-	/**
-	 * @return JButton per mettere in pausa un download.
-	 */
-	public static JButton getPauseButton() {
-		return pauseButton;
-	}
-
-	/**
-	 * @return JButton per riprendere un download.
-	 */
-	public static JButton getResumeButton() {
-		return resumeButton;
-	}
-
-	/**
-	 * @return JButton per cancellare un download.
-	 */
-	public static JButton getRemoveButton() {
-		return removeButton;
-	}
-
-	/**
-	 * @return JButton per mettere in pausa tutti i download.
-	 */
-	public static JButton getPauseButtonAll() {
-		return pauseButtonAll;
-	}
-
-	/**
-	 * @return JButton per riprendere tutti i download.
-	 */
-	public static JButton getResumeButtonAll() {
-		return resumeButtonAll;
-	}
-
-	/**
-	 * @return JButton per rimuovere tutti i download.
-	 */
-	public static JButton getRemoveButtonAll() {
-		return removeButtonAll;
 	}
 }

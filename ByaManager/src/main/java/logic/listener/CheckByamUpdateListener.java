@@ -12,7 +12,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-*/
+ */
 
 package logic.listener;
 
@@ -35,7 +35,16 @@ public class CheckByamUpdateListener extends AbstractAction {
 		StateButton.activateAfterUpdateSoftware(false);
 		StateLabel.getAggProgrammaLabel().setForeground(KColors.getVerdeChiaro());
 		StateLabel.getAggProgrammaLabel().setText("  " + Translator.getText("byamLabelVerifica"));
-		UpdateManagerSoftware.getInstance().checkSoftwareUpdates();
+
+		//i must use a new thread, because i don't want to freeze the GUI during checkSoftwareUpdates().
+		Thread thread = new Thread(new Runnable() {
+			@Override
+			public void run() {
+				UpdateManagerSoftware.getInstance().checkSoftwareUpdates();
+			}
+		});
+		thread.start();
+
 	}
 
 }
