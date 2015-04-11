@@ -27,6 +27,7 @@ BYAManager uses BYAUpdater to update itself automatically!
 
 
 ## News
+- 11/04/2015 - **BYAManager 1.0.0** [DOWNLOAD HERE](https://github.com/Ks89/BYAManager/releases/tag/v1.0.0) and public release [HERE](http://ks89-jailbreak.blogspot.it/2015/04/byamanager-100.html)
 - 10/04/2015 - **BYAManager 0.9.0** [DOWNLOAD HERE](https://github.com/Ks89/BYAManager/releases/tag/v0.9.0) and public release [HERE](http://ks89-jailbreak.blogspot.it/2015/04/byamanager-090.html)
 - 06/04/2015 - **BYAManager 0.8.0** [DOWNLOAD HERE](https://github.com/Ks89/BYAManager/releases/tag/v0.8.0) and public release [HERE](http://ks89-jailbreak.blogspot.it/2015/04/byamanager-080.html)
 - 03/04/2015 - **BYAManager 0.7.0** [DOWNLOAD HERE](https://github.com/Ks89/BYAManager/releases/tag/v0.7.0) and public release [HERE](http://ks89-jailbreak.blogspot.it/2015/04/byamanager-070.html)
