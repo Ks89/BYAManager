@@ -21,7 +21,7 @@ ATTENTION: I'll never fix issues about the Graphical Interface, because i want t
 [GO HERE](https://github.com/Ks89/BYAManager/issues)
 
 ## Changelogs
-* The complete list is available [HERE](https://github.com/Ks89/BYAManager/blob/master/README-CHANGELOGS.md)
+The complete list is available [HERE](https://github.com/Ks89/BYAManager/blob/master/README-CHANGELOGS.md)
 
 
 ## News
