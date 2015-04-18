@@ -216,7 +216,7 @@ To close definetly BYAManager you can choose from the menu, File -> Exit or from
 
 
 #### Move a firmware to iTunes folder
-When you are on MAC OS X or Windows, you can move downloaded files directly in the firmware folder of iTunes.
+When you are on MAC OS X or Windows, you can move downloaded files directly in the firmware folder of iTunes by clicking on the "Move" button in the table's row.
 In this way, iTunes doen't require to download this file, because it's appear to itself that it were download this file previously.
 
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/file-da-spostare.png)<br/>
@@ -225,15 +225,18 @@ In this way, iTunes doen't require to download this file, because it's appear to
 
 
 #### Execute an iTunes file to install 
+If you are downloading an iTunes setup file for your operative system, when download's process will complete, you can clic on the "Execute" button in the table's row to start the installation process.
+
+This function is available only for Windows and MAC OS X, because iTunes for Linux is not available.
+
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/cliccato-esegui.png)
 
 
-#### BYA update available
+#### Updates available
+BYAManager update or DB update are notified in this section of the GUI, if you check manually updates
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/parts-updated.png)
 
-
-#### DB update available
-
-
+But, everytime tht you start BYAManager, it check if there are new version. If yes, BYAManager apply automatically this updates, but after this process you must restart this software to apply.
 
 
 
@@ -265,8 +268,8 @@ In this way, iTunes doen't require to download this file, because it's appear to
 
 
 ## Work in progress...
+- HTTPS support: at the moment, this is only an expetimental feature. There are some problems. I'll fix bugs and missing functionalities in the future.
 
-#### HTTPS support
 
 
 
