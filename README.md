@@ -91,6 +91,19 @@ ATTENTION: I'll never fix issues about the Graphical Interface, because i want t
 * Add in the GUI some informations to help the user to understand the state of every process
 * Add the donate button in the GUI
 
+## Cross-platform and multi-language
+
+#### MAC OS X
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/home-ios.png)
+
+#### Windows
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/home-windows.png)
+
+#### Linux
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/home-linux.png)
+
+
+
 
 ## Usage
 
@@ -200,7 +213,7 @@ If you close BYAManager, a dialog like this will appear:
 
 If you choose to remove future notifications, this dialog won't appear.
 
-![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/trayicon-mac-osx.png)
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/trayicon-mac-osx.png)         ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/trayicon-windows.png)
 
 To close definitively BYAManager, you can choose from the menu "File" -> "Exit", or from the tray icon the item "Close"
 
