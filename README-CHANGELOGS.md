@@ -181,3 +181,17 @@ CHANGELOG
 - Diversi bug (ALCUNI RILEVANTI) corretti in tutto il programma
 - PULIZIA del codice e miglioramenti vari
 - Possibilità di scegliere come visualizzare la dimensione dei file nella tabella tra Byte, Multipli del Byte (tiene conto del fattore 1000) [PREDEFINITO per comodità] o Multipli del Binary Byte (tiene conto del fattore 1024). Quindi, aggiunto menu' a tendina del pannello delle preferenze.
+
+
+
+# Beta 2 - 10/22/2011
+- Migliorata la grafica aggiungendo icone nella tabella, riducendo la dimensione della toolbar (impedendone anche lo spostamento), riprogrettando il pannello impostazioni con l'uso di schede.
+- Dimensione del download nella tabella non viene mostrata in byte ma in KB, MB o GB. E' comunque possibile ripristinare la visione precedente tramite il pannello "impostazioni" e riavviando il programma.
+- Su mac OSX ora l'app nella dock appare con l'icona corretta e col nome giusto
+- Aggiunta la data di ultimo aggiornamento database
+- Completamente rivisito e corretto il sistema di aggiornamento database automatico ogni 24ore o manuale cliccando sul pulsante apposito...ora funziona e non presenta più i bug riscontrati nella versione beta1 con l'uscita di iOS5
+- Il sistema di auto-aggiornamento ora verificherà anche la correttezza dell'updater e della nuova versione del programma tramite SHA, per evitare di eseguire applicazioni pericolose.
+- Moltissimi bugfix in tutto il programma e in tutte le funzionalità
+- Migliorate le prestazioni
+- Inserito sistema totalmente anonimo per scopi statistici sull'uso del programma
+- e altre modifiche che ora non mi vengono in mente ma che ci sono di certo... XD
