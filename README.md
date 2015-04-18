@@ -246,19 +246,19 @@ If you start BYAManager via Command Line/Terminal in this way: java -jar BYAMana
 
 
 #### Explore data folder
-MAC OS X: /Users/<user folder>/Library/ByaManager
-Windows: C:\Users\<user folder>\Library\ByaManager
-Linux:  /Users/<user folder>/Library/ByaManager
+- MAC OS X: /Users/<user folder>/Library/ByaManager
+- Windows: C:\Users\<user folder>\Library\ByaManager
+- Linux:  /Users/<user folder>/Library/ByaManager
 
 #### Explore the default download's temp folder 
-MAC OS X: /Users/<user folder>/Downloads/ByaManager_Downloads/temp
-Windows: C:\Users\<user folder>\Downloads\ByaManager_Downloads\temp
-Linux: /Users/<user folder>/Downloads/ByaManager_Downloads/temp
+- MAC OS X: /Users/<user folder>/Downloads/ByaManager_Downloads/temp
+- Windows: C:\Users\<user folder>\Downloads\ByaManager_Downloads\temp
+- Linux: /Users/<user folder>/Downloads/ByaManager_Downloads/temp
 
 #### Explore the default download's temphttps folder
-MAC OS X: /Users/<user folder>/Downloads/ByaManager_Downloads/temphttps
-Windows: C:\Users\<user folder>\Downloads\ByaManager_Downloads\temphttps
-Linux: /Users/<user folder>/Downloads/ByaManager_Downloads/temphttps
+- MAC OS X: /Users/<user folder>/Downloads/ByaManager_Downloads/temphttps
+- Windows: C:\Users\<user folder>\Downloads\ByaManager_Downloads\temphttps
+- Linux: /Users/<user folder>/Downloads/ByaManager_Downloads/temphttps
 
 ## Possibile errors
 
