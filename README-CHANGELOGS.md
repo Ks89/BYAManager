@@ -184,7 +184,7 @@ CHANGELOG
 
 
 
-# Beta 2 - 10/22/2011
+# Beta 2 - 10/24/2011
 - Migliorata la grafica aggiungendo icone nella tabella, riducendo la dimensione della toolbar (impedendone anche lo spostamento), riprogrettando il pannello impostazioni con l'uso di schede.
 - Dimensione del download nella tabella non viene mostrata in byte ma in KB, MB o GB. E' comunque possibile ripristinare la visione precedente tramite il pannello "impostazioni" e riavviando il programma.
 - Su mac OSX ora l'app nella dock appare con l'icona corretta e col nome giusto
