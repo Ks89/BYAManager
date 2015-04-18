@@ -27,6 +27,7 @@ BYAManager uses BYAUpdater to update itself automatically!
 
 
 ## News
+- 11/04/2015 - **BYAManager 1.0.0** [DOWNLOAD HERE](https://github.com/Ks89/BYAManager/releases/tag/v1.0.0) and public release [HERE](http://ks89-jailbreak.blogspot.it/2015/04/byamanager-100.html)
 - 10/04/2015 - **BYAManager 0.9.0** [DOWNLOAD HERE](https://github.com/Ks89/BYAManager/releases/tag/v0.9.0) and public release [HERE](http://ks89-jailbreak.blogspot.it/2015/04/byamanager-090.html)
 - 06/04/2015 - **BYAManager 0.8.0** [DOWNLOAD HERE](https://github.com/Ks89/BYAManager/releases/tag/v0.8.0) and public release [HERE](http://ks89-jailbreak.blogspot.it/2015/04/byamanager-080.html)
 - 03/04/2015 - **BYAManager 0.7.0** [DOWNLOAD HERE](https://github.com/Ks89/BYAManager/releases/tag/v0.7.0) and public release [HERE](http://ks89-jailbreak.blogspot.it/2015/04/byamanager-070.html)
@@ -81,15 +82,18 @@ BYAManager uses BYAUpdater to update itself automatically!
 
 
 ## Future extensions
+
+####Functionalities
 * Add a pattern to the sha check 
 * Improve the logic to check the free space on the disk
+* Dinamically update the list of available firmwares and itunes version, without request to restart BYAManager
+* Add social networks integration: twitter, facebook and so on
+
+####GUI
+* Create a new modern GUI to release BYAManager 2.0 (NOT IN SWING, but with another framework, like JavaFX)
 * Create a custom GUI for the popup in the system tray
-* Dinamically update the list of available firmwares and itunes version, without restart BYAManager
 * Add in the GUI some informations to help the user to understand the state of every process
-* Remove borders in the JWindow
-* Create a new modern GUI to release BYAManager 1.0
 * Add the donate button in the GUI
-* Add social newtorks integration: twitter, facebook and so on
 
 
 ## Images
@@ -98,19 +102,80 @@ BYAManager uses BYAUpdater to update itself automatically!
 
 ## Usage
 
-#### Dowload files
-1. Choose the tab iOS or iTunes and select the correct version
+#### Starting
+
+##### Possibile errors
+
+Errore connessione assente
+Errore versione disattivata
+Errore imprevisto conttare sviluppatore
+
+
+#### Download files (with status)
+1. Choose the tab "iOS" or "iTunes" and select the correct version
 3. Click on Download to start
 
-In the menu bar you can choose actions, like play/pause/cancel or the more powerfull versions: pause all/play all/cancel all.
-Clicking on a table line, a popup menu will appear. From thi menu you can select actions, like disable SHA1-check, play/pause/cancel, open in broswer, open downlaoded folder.
+In the menu bar you can choose actions, like play/pause/cancel or the more powerful versions: pause all/play all/cancel all.
+Clicking on a table line, a popup menu will appear. From this menu you can select actions, like disable SHA1-check, play/pause/cancel, open in browser, open downloaded folder.
 When a download completes, you can move this file directly into the iTunes firmware's folder, clicking on the "Move" button in the table
+
+
+#### Menu
+
+
+#### Actions in menu bar or popup
+
+##### Actions on multiple downloads
+
+
+#### Disable Sha-1
+
 
 #### Change settings
 
-#### Using Command Line Interface (CLI)
+##### Standard
+
+##### Advanced
+
+##### Notifications
+
+##### Proxy
 
 
+#### Tray Icon
+
+
+#### Move a firmware to iTunes folder
+
+
+#### Execute an iTunes file to install 
+
+
+#### BYA update available
+
+
+#### DB update available
+
+
+
+
+
+## Advanced Usage
+
+#### Command Line Interface (CLI)
+
+#### Explore data folder
+
+#### Explore download's temp folder
+
+#### Explore download's temphttps folder
+
+
+
+
+## Work in progress...
+
+#### HTTPS support
 
 
 
