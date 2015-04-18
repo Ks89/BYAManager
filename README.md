@@ -13,14 +13,12 @@ The entire list of features is available [HERE](https://github.com/Ks89/BYAManag
 
 BYAManager uses BYAUpdater to update itself automatically!
 
-**This software requires Java 8 or above.**
+**This software requires Java 8 or above and an internet connection**
 
 
-## Thanks to:
-* Endys111 for the Czech translation
-* Anatoli Nicolae for the Splash Screen and the toolbar
-* Biteyourapple's staff
-
+## Bug reports
+ATTENTION: I'll never fix issues about the Graphical Interface, because i want to recreate the entire GUI with different technologies in the future.
+[GO HERE](https://github.com/Ks89/BYAManager/issues)
 
 ## Changelogs
 * The complete list is available [HERE](https://github.com/Ks89/BYAManager/blob/master/README-CHANGELOGS.md)
@@ -66,9 +64,8 @@ BYAManager uses BYAUpdater to update itself automatically!
 * restore settings to default values
 * open the download folder, directly from BYAManager
 * re-download files in the list directly in the browser, or in other programs
-* control some important features esecuting BYAManager via Command Line with a complete tutorial esecuting BYAManager.jar --help
+* control some important features esecuting BYAManager via Command Line with a complete tutorial esecuting BYAManager.jar help
 * move a completed download into the iTunes folder (only on Mac and Windows) to be able to update/restore your device from iTunes without re-download the ipsw.
-*
 
 ####BYAManager does:
 * automatically check and update itself every 24 hours, with BYAUpdater
@@ -78,7 +75,6 @@ BYAManager uses BYAUpdater to update itself automatically!
 * during the startup of the program, can try to restore incompleted/damaged files
 * check if a file has been download before
 * Log every actions in a file called BYAManager.log, near the executable
-* 
 
 
 ## Future extensions
@@ -86,18 +82,14 @@ BYAManager uses BYAUpdater to update itself automatically!
 ####Functionalities
 * Add a pattern to the sha check 
 * Improve the logic to check the free space on the disk
-* Dinamically update the list of available firmwares and itunes version, without request to restart BYAManager
+* Dinamically update the list of available firmwares and iTunes version, without the requirement of "restart BYAManager to apply".
 * Add social networks integration: twitter, facebook and so on
 
 ####GUI
-* Create a new modern GUI to release BYAManager 2.0 (NOT IN SWING, but with another framework, like JavaFX)
+* Create a new modern GUI to release BYAManager 2.0 (NOT IN SWING, but with other framework, like JavaFX)
 * Create a custom GUI for the popup in the system tray
 * Add in the GUI some informations to help the user to understand the state of every process
 * Add the donate button in the GUI
-
-
-## Images
-
 
 
 ## Usage
@@ -116,16 +108,16 @@ BYAManager splash screen<br/>
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/home-ios.png)    
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/home-itunes.png)
 
-2. Click on Download to start (this action will create 4 different temp files in a directory, because every file represents a connection to accelerate download's process<br/>
+2. Click on "Download" to start (this action will create 4 different temp files in a directory, because every file represents a connection to accelerate download's process)<br/>
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/downloding-download.png)
 
-3. When downloading process will complete, BYAManager merges all parts in one file<br/>
+3. When this process will complete, BYAManager merges all parts in one file<br/>
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/merging-download.png)
 
 4. When merging process will complete, BYAManager starts to check the SHA1<br/>
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/validating-download.png)
 
-5. If the SHA1 of the downloaded file is equal with the SHA1 in the DB, the download will complete<br/>
+5. If the SHA1 of the downloaded file is equal to the SHA1 in the DB, this download will complete and his file will be available<br/>
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/completed-download.png)
 
 
@@ -138,12 +130,6 @@ You can download multiple files at the same time using the entire bandwidth:
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/downloading-multiple-files.png)
 
 
-
-In the menu bar you can choose actions, like play/pause/cancel or the more powerful versions: pause all/play all/cancel all.
-Clicking on a table line, a popup menu will appear. From this menu you can select actions, like disable SHA1-check, play/pause/cancel, open in browser, open downloaded folder.
-When a download completes, you can move this file directly into the iTunes firmware's folder, clicking on the "Move" button in the table
-
-
 #### Menu
 
 ##### Update BYAManager and Database
@@ -151,13 +137,12 @@ You can use the menu bar to check if there are new versions of this software or 
 
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/parts-update-menu.png)
 
-
 ##### Actions in menu bar or popup
-You can use the menu bar to pause/resume or cancel a selected download in the table
+You can use the menu bar to pause/resume/cancel a selected download in the table
 
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/parts-normal-buttons.png)
 
-Or, you can click with the secondary mouse button on the table row and choose pause/resume/remove.
+Or, you can click with the secondary button of the mouse on the table's row to choose pause/resume/remove's items.
 
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/popup-download-tabella.png)
 
@@ -168,17 +153,17 @@ If you're downloading multiple files, you can pause/resume/stop all this files w
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/parts-all-buttons.png)
 
 
-
 #### Disable Sha-1
-SHA1 check is realle important to check the integrity of the downloaded file, but if you want to disable this feature, you can 
-click with the secondary mouse button on the table row and choose "Disable SHA-Check".
+SHA1 check is very important to check the integrity of the downloaded file, but if you want to disable this feature, you can 
+click with the secondary button of the mouse on the table's row to choose "Disable SHA-Check".
 
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/popup-download-tabella.png)
 
+In the popup menu on the table's row, there are other options, like an item to download a file in the browser or to show the download's folder.
 
 
 #### Change settings
-If you click on the third button in the menu bar the settings windows will appear.
+If you click on the third button in the menu bar you can change BYAManager's settings.
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/parts-menu-settings.png)
 
 If you change something, you must restart BYAManager.
@@ -188,36 +173,36 @@ If you change something, you must restart BYAManager.
 
 
 ##### Advanced
-You can change the language without problems, but to modify the buffer size you shuld be an expert user.
+You can change the language without problems, but to modify the buffer size you should be an expert user.
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/settings-avanzate.png)
 
 
 ##### Notifications
-Please don't change these options, beause are very useful ;)
+Please don't change these options, because are very useful ;)
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/settings-notifiche.png)
 
 
 ##### Proxy
 In this section you can set a proxy to download files.
-Attention, you must use a server with port 8080, and you shuld check the speed of this server, because, BYAManager requires a very large bandwidth to download files.
-This is an advanced options, only for expert users.
+Attention, you must use a server with port 8080. Also, you shuld check the speed of this server, because BYAManager requires a very large bandwidth to download files. This is an advanced options, only for expert users.
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/settings-proxy.png)
 
 
 #### Tray Icon
-I you close BYAManager a dialog will appear
+If you close BYAManager, a dialog like this will appear:
 
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/riduzione-icona.png)
 
-If you choose to remove future notifications this dialog won't appear.
+If you choose to remove future notifications, this dialog won't appear.
+
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/trayicon-mac-osx.png)
 
-To close definetly BYAManager you can choose from the menu, File -> Exit or from the tray icon the item "Close"
+To close definitively BYAManager, you can choose from the menu "File" -> "Exit", or from the tray icon the item "Close"
 
 
 #### Move a firmware to iTunes folder
 When you are on MAC OS X or Windows, you can move downloaded files directly in the firmware folder of iTunes by clicking on the "Move" button in the table's row.
-In this way, iTunes doen't require to download this file, because it's appear to itself that it were download this file previously.
+In this way, iTunes doen't require to download this file another time.
 
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/file-da-spostare.png)<br/>
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/muovi-firmware.png)<br/>
@@ -233,11 +218,10 @@ This function is available only for Windows and MAC OS X, because iTunes for Lin
 
 
 #### Updates available
-BYAManager update or DB update are notified in this section of the GUI, if you check manually updates
+BYAManager update or DB update are notified in this section of the GUI.
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/parts-updated.png)
 
-But, everytime tht you start BYAManager, it check if there are new version. If yes, BYAManager apply automatically this updates, but after this process you must restart this software to apply.
-
+But, everytime that you start BYAManager, it checks if there are new versions. If yes, BYAManager apply automatically this updates, but after this process you must restart this software.
 
 
 ## Advanced Usage
@@ -266,11 +250,13 @@ But, everytime tht you start BYAManager, it check if there are new version. If y
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/versione-disattivata.png)
 
 
-
 ## Work in progress...
 - HTTPS support: at the moment, this is only an expetimental feature. There are some problems. I'll fix bugs and missing functionalities in the future.
 
-
+## Thanks to:
+* Endys111 for the Czech translation
+* Anatoli Nicolae for the Splash Screen and the toolbar
+* BYA staff
 
 
 ## License
