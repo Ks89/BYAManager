@@ -99,10 +99,11 @@ The complete list IN ITALIAN is available [HERE](https://github.com/Ks89/BYAMana
 #### Windows
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/home-windows.png)
 
-#### Linux
+#### Linux (Ubuntu)
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/home-linux.png)
 
-
+#### Linux (Ubuntu - Gnome)
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/home-linux-gnome.png)
 
 
 ## Usage
