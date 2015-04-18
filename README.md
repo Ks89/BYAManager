@@ -18,6 +18,7 @@ BYAManager uses BYAUpdater to update itself automatically!
 
 ## Bug reports
 ATTENTION: I'll never fix issues about the Graphical Interface, because i want to recreate the entire GUI with different technologies in the future.
+<br/>
 [GO HERE](https://github.com/Ks89/BYAManager/issues)
 
 ## Changelogs
