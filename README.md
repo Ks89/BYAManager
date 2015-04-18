@@ -164,27 +164,32 @@ In the popup menu on the table's row, there are other options, like an item to d
 
 #### Change settings
 If you click on the third button in the menu bar you can change BYAManager's settings.
+
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/parts-menu-settings.png)
 
 If you change something, you must restart BYAManager.
 
 ##### Standard
+
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/settings-base.png)
 
 
 ##### Advanced
 You can change the language without problems, but to modify the buffer size you should be an expert user.
+
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/settings-avanzate.png)
 
 
 ##### Notifications
 Please don't change these options, because are very useful ;)
+
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/settings-notifiche.png)
 
 
 ##### Proxy
 In this section you can set a proxy to download files.
 Attention, you must use a server with port 8080. Also, you shuld check the speed of this server, because BYAManager requires a very large bandwidth to download files. This is an advanced options, only for expert users.
+
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/settings-proxy.png)
 
 
@@ -205,7 +210,9 @@ When you are on MAC OS X or Windows, you can move downloaded files directly in t
 In this way, iTunes doen't require to download this file another time.
 
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/file-da-spostare.png)<br/>
+<br/>
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/muovi-firmware.png)<br/>
+<br/>
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/file-spostato.png)
 
 
@@ -219,6 +226,7 @@ This function is available only for Windows and MAC OS X, because iTunes for Lin
 
 #### Updates available
 BYAManager update or DB update are notified in this section of the GUI.
+
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/parts-updated.png)
 
 But, everytime that you start BYAManager, it checks if there are new versions. If yes, BYAManager apply automatically this updates, but after this process you must restart this software.
@@ -227,13 +235,30 @@ But, everytime that you start BYAManager, it checks if there are new versions. I
 ## Advanced Usage
 
 #### Command Line Interface (CLI)
+If you start BYAManager via Command Line/Terminal in this way: java -jar BYAManager.jar <parameter>, you can pass parameters like these:
+- 'help' to open the help
+- 'port-xxxxx' to change the network port. Use an integer >=10000 and <20000
+- 'reset-all' to factory reset this software
+- 'delete-download-temp' to remove only temp files
+- 'update-db' to remove the database
+- 'update-software' to check and install the latest version of BYAManager
+- 'sort-firmware-db' sorts links in the firmware's database *BETA* (ONLY FOR EXPERT USERS)
+
 
 #### Explore data folder
+MAC OS X: /Users/<user folder>/Library/ByaManager
+Windows: C:\Users\<user folder>\Library\ByaManager
+Linux:  /Users/<user folder>/Library/ByaManager
 
-#### Explore download's temp folder
+#### Explore the default download's temp folder 
+MAC OS X: /Users/<user folder>/Downloads/ByaManager_Downloads/temp
+Windows: C:\Users\<user folder>\Downloads\ByaManager_Downloads\temp
+Linux: /Users/<user folder>/Downloads/ByaManager_Downloads/temp
 
-#### Explore download's temphttps folder
-
+#### Explore the default download's temphttps folder
+MAC OS X: /Users/<user folder>/Downloads/ByaManager_Downloads/temphttps
+Windows: C:\Users\<user folder>\Downloads\ByaManager_Downloads\temphttps
+Linux: /Users/<user folder>/Downloads/ByaManager_Downloads/temphttps
 
 ## Possibile errors
 
