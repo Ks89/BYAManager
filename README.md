@@ -257,23 +257,23 @@ If you start BYAManager via Command Line/Terminal in this way: java -jar BYAMana
 - 'delete-download-temp' to remove only temp files
 - 'update-db' to remove the database
 - 'update-software' to check and install the latest version of BYAManager
-- 'sort-firmware-db' sorts links in the firmware's database *BETA* (ONLY FOR EXPERT USERS)
+- 'sort-firmware-db' sorts links in the firmware's database **BETA** (ONLY FOR EXPERT USERS)
 
 
 #### Explore data folder
-- MAC OS X: /Users/<user folder>/Library/ByaManager
-- Windows: C:\Users\<user folder>\Library\ByaManager
-- Linux:  /Users/<user folder>/Library/ByaManager
+- MAC OS X: /Users/"user folder"/Library/ByaManager
+- Windows: C:\Users\"user folder"\Library\ByaManager
+- Linux:  /Users/"user folder"/Library/ByaManager
 
 #### Explore the default download's temp folder 
-- MAC OS X: /Users/<user folder>/Downloads/ByaManager_Downloads/temp
-- Windows: C:\Users\<user folder>\Downloads\ByaManager_Downloads\temp
-- Linux: /Users/<user folder>/Downloads/ByaManager_Downloads/temp
+- MAC OS X: /Users/"user folder"/Downloads/ByaManager_Downloads/temp
+- Windows: C:\Users\"user folder"\Downloads\ByaManager_Downloads\temp
+- Linux: /Users/"user folder"/Downloads/ByaManager_Downloads/temp
 
 #### Explore the default download's temphttps folder
-- MAC OS X: /Users/<user folder>/Downloads/ByaManager_Downloads/temphttps
-- Windows: C:\Users\<user folder>\Downloads\ByaManager_Downloads\temphttps
-- Linux: /Users/<user folder>/Downloads/ByaManager_Downloads/temphttps
+- MAC OS X: /Users/"user folder"/Downloads/ByaManager_Downloads/temphttps
+- Windows: C:\Users\"user folder"\Downloads\ByaManager_Downloads\temphttps
+- Linux: /Users/"user folder"/Downloads/ByaManager_Downloads/temphttps
 
 ## Possibile errors
 
