@@ -3,7 +3,7 @@
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/0-header.jpg)
 
 
-BYAManager is a personal project that i realized in 2011, and updated more times during the last years. It's a Multi-Platform and Multi-Language Download Manager dedicated to the "Apple World", that i developed for the blog biteyourapple.net.
+BYAManager is a personal project that i realized in 2011, and updated more times during the last years. It's a Multi-Platform and Multi-Language In the menu bar you can c Manager dedicated to the "Apple World", that i developed for the blog biteyourapple.net.
 This software is a GUI to download iOS firmwares and iTunes versions with some extra features. 
 It's legal, obviously, because all files are on Apple server. BYAManager bring files directly from Apple server for you.
 
@@ -109,20 +109,6 @@ BYAManager splash screen<br/>
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/screenshots.png)
 
 
-##### Possibile errors
-
-**No connection**<br/>
-
-![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/connessione-assente.png)
-
-**Unknown error, probably the connection with the server isn't working**<br/>
-
-![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/errore-disattivato.png)
-
-**This version is no longer supported, please download the latest version**<br/>
-
-![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/versione-disattivata.png)
-
 
 #### Download a file
 
@@ -146,11 +132,11 @@ BYAManager splash screen<br/>
 #### Download multiple files
 
 You can download multiple files at the same time using the entire bandwidth:
+
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/downloading.png)
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/download-completati-e-in-pausa.png)
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/downloading-multiple-files.png)
 
-![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/parts-update-menu.png)
 
 
 In the menu bar you can choose actions, like play/pause/cancel or the more powerful versions: pause all/play all/cancel all.
@@ -160,34 +146,82 @@ When a download completes, you can move this file directly into the iTunes firmw
 
 #### Menu
 
+##### Update BYAManager and Database
+You can use the menu bar to check if there are new versions of this software or the db
 
-#### Actions in menu bar or popup
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/parts-update-menu.png)
+
+
+##### Actions in menu bar or popup
+You can use the menu bar to pause/resume or cancel a selected download in the table
+
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/parts-normal-buttons.png)
 
+Or, you can click with the secondary mouse button on the table row and choose pause/resume/remove.
+
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/popup-download-tabella.png)
+
+
 ##### Actions on multiple downloads
+If you're downloading multiple files, you can pause/resume/stop all this files with only one click on the button in the menu bar.
+
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/parts-all-buttons.png)
 
 
+
 #### Disable Sha-1
+SHA1 check is realle important to check the integrity of the downloaded file, but if you want to disable this feature, you can 
+click with the secondary mouse button on the table row and choose "Disable SHA-Check".
+
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/popup-download-tabella.png)
+
 
 
 #### Change settings
+If you click on the third button in the menu bar the settings windows will appear.
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/parts-menu-settings.png)
 
+If you change something, you must restart BYAManager.
 
 ##### Standard
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/settings-base.png)
+
 
 ##### Advanced
+You can change the language without problems, but to modify the buffer size you shuld be an expert user.
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/settings-avanzate.png)
+
 
 ##### Notifications
+Please don't change these options, beause are very useful ;)
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/settings-notifiche.png)
+
 
 ##### Proxy
+In this section you can set a proxy to download files.
+Attention, you must use a server with port 8080, and you shuld check the speed of this server, because, BYAManager requires a very large bandwidth to download files.
+This is an advanced options, only for expert users.
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/settings-proxy.png)
 
 
 #### Tray Icon
+I you close BYAManager a dialog will appear
+
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/riduzione-icona.png)
+
+If you choose to remove future notifications this dialog won't appear.
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/trayicon-mac-osx.png)
+
+To close definetly BYAManager you can choose from the menu, File -> Exit or from the tray icon the item "Close"
 
 
 #### Move a firmware to iTunes folder
+When you are on MAC OS X or Windows, you can move downloaded files directly in the firmware folder of iTunes.
+In this way, iTunes doen't require to download this file, because it's appear to itself that it were download this file previously.
+
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/file-da-spostare.png)<br/>
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/muovi-firmware.png)<br/>
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/file-spostato.png)
 
 
 #### Execute an iTunes file to install 
@@ -213,6 +247,20 @@ When a download completes, you can move this file directly into the iTunes firmw
 
 #### Explore download's temphttps folder
 
+
+## Possibile errors
+
+**No connection**<br/>
+
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/connessione-assente.png)
+
+**Unknown error, probably the connection with the server isn't working**<br/>
+
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/errore-disattivato.png)
+
+**This version is no longer supported, please download the latest version**<br/>
+
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/versione-disattivata.png)
 
 
 
