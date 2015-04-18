@@ -104,16 +104,54 @@ BYAManager uses BYAUpdater to update itself automatically!
 
 #### Starting
 
+BYAManager splash screen<br/>
+
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/screenshots.png)
+
+
 ##### Possibile errors
 
-Errore connessione assente
-Errore versione disattivata
-Errore imprevisto conttare sviluppatore
+**No connection**<br/>
+
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/connessione-assente.png)
+
+**Unknown error, probably the connection with the server isn't working**<br/>
+
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/errore-disattivato.png)
+
+**This version is no longer supported, please download the latest version**<br/>
+
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/versione-disattivata.png)
 
 
-#### Download files (with status)
-1. Choose the tab "iOS" or "iTunes" and select the correct version
-3. Click on Download to start
+#### Download a file
+
+1. Choose the tab "iOS" or "iTunes" and select the correct version<br/>
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/home-ios.png)    
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/home-itunes.png)
+
+2. Click on Download to start (this action will create 4 different temp files in a directory, because every file represents a connection to accelerate download's process<br/>
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/downloding-download.png)
+
+3. When downloading process will complete, BYAManager merges all parts in one file<br/>
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/merging-download.png)
+
+4. When merging process will complete, BYAManager starts to check the SHA1<br/>
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/validating-download.png)
+
+5. If the SHA1 of the downloaded file is equal with the SHA1 in the DB, the download will complete<br/>
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/completed-download.png)
+
+
+#### Download multiple files
+
+You can download multiple files at the same time using the entire bandwidth:
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/downloading.png)
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/download-completati-e-in-pausa.png)
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/downloading-multiple-files.png)
+
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/parts-update-menu.png)
+
 
 In the menu bar you can choose actions, like play/pause/cancel or the more powerful versions: pause all/play all/cancel all.
 Clicking on a table line, a popup menu will appear. From this menu you can select actions, like disable SHA1-check, play/pause/cancel, open in browser, open downloaded folder.
@@ -124,14 +162,18 @@ When a download completes, you can move this file directly into the iTunes firmw
 
 
 #### Actions in menu bar or popup
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/parts-normal-buttons.png)
 
 ##### Actions on multiple downloads
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/parts-all-buttons.png)
 
 
 #### Disable Sha-1
 
 
 #### Change settings
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/parts-menu-settings.png)
+
 
 ##### Standard
 
@@ -152,6 +194,7 @@ When a download completes, you can move this file directly into the iTunes firmw
 
 
 #### BYA update available
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/parts-updated.png)
 
 
 #### DB update available
