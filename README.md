@@ -3,9 +3,9 @@
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/0-header.jpg)
 
 
-BYAManager is a personal project that i realized in 2011, and updated more times during the last years. It's a Multi-Platform and Multi-Language software dedicated to the "Apple World", that i developed for the blog biteyourapple.
-This software is a GUI to download iOS firmwares and iTunes versions with some extra features. 
-It's legal, obviously, because all files are on Apple server. BYAManager bring files directly from Apple server for you.
+BYAManager is a personal project that i realized in 2011, and updated more times during the last years. It's a Multi-Platform and Multi-Language software dedicated to the "Apple World", that i developed for the blog biteyourapple.<br/>
+This software is a GUI to download iOS firmwares and iTunes versions with some extra features.<br/>
+It's legal, obviously, because all files are on Apple server. BYAManager brings files directly from Apple server to you.<br/>
 
 It's available in 3 languages: ITALIAN, ENGLISH and CZECH
 
