@@ -62,7 +62,7 @@ The complete list IN ITALIAN is available [HERE](https://github.com/Ks89/BYAMana
 * download one or more files at the same time at full speed (Download Accelerator), with multiple processes to bypass server's limitations
 * play/pause/stop/cancel downloads, using a list of available iOS Firmware and iTunes versions in a local database
 * enable/disable sha1 check (enabled by default)
-* search new BYAManager's versions or new database versions
+* search new BYAManager's versions or new database's versions
 * change settings, for example: path of the download folder, proxy, measurement unit, language, buffer size, notifications, and so on
 * restore settings to default values
 * open the download folder, directly from BYAManager
@@ -74,9 +74,9 @@ The complete list IN ITALIAN is available [HERE](https://github.com/Ks89/BYAMana
 * automatically check and update itself every 24 hours, with BYAUpdater
 * automatically check and update the databse every 24 hours
 * download files at full speed using multiple process
-* check the interity os a file with hash algoririthm sha1.
+* check the integrity os a file with hash algoririthm sha1.
 * during the startup of the program, can try to restore incompleted/damaged files
-* check if a file has been download before
+* check if a file has been downloaded before
 * Log every actions in a file called BYAManager.log, near the executable
 
 
@@ -247,6 +247,14 @@ BYAManager update or DB update are notified in this section of the GUI.
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/parts-updated.png)
 
 But, everytime that you start BYAManager, it checks if there are new versions. If yes, BYAManager apply automatically this updates, but after this process you must restart this software.
+
+To update itself, BYAManager uses a software called BYAUpdater, available [HERE](https://github.com/Ks89/BYAUpdater)
+
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAUpdater/2-byaupdater.png)
+<br>
+
+![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAUpdater/3-updated.png)
+
 
 
 ## Advanced Usage
