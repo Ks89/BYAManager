@@ -13,6 +13,8 @@ The entire list of features is available [HERE](https://github.com/Ks89/BYAManag
 
 BYAManager uses BYAUpdater to update itself automatically!
 
+I presented this sofware in 2011 [HERE](http://www.biteyourapple.net/2011/12/28/esclusiva-bya-biteyourapple-manager-beta-3/)
+
 **This software requires Java 8 or above and an internet connection**
 
 
