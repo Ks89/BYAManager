@@ -60,7 +60,7 @@ The complete list IN ITALIAN is available [HERE](https://github.com/Ks89/BYAMana
 * download one or more files at the same time at full speed (Download Accelerator), with multiple processes to bypass server's limitations
 * play/pause/stop/cancel downloads, using a list of available iOS Firmware and iTunes versions in a local database
 * enable/disable sha1 check (enabled by default)
-* serach new BYAManager's versions or new database versions
+* search new BYAManager's versions or new database versions
 * change settings, for example: path of the download folder, proxy, measurement unit, language, buffer size, notifications, and so on
 * restore settings to default values
 * open the download folder, directly from BYAManager
