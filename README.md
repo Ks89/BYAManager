@@ -11,7 +11,7 @@ It's available in 3 languages: ITALIAN, ENGLISH and CZECH
 
 The entire list of features is available [HERE](https://github.com/Ks89/BYAManager#features).
 
-BYAManager uses BYAUpdater to update itself automatically!
+BYAManager uses [BYAUpdater](https://github.com/Ks89/BYAUpdater) to update itself automatically!
 
 I presented this software in 2011 [HERE](http://www.biteyourapple.net/2011/12/28/esclusiva-bya-biteyourapple-manager-beta-3/)
 
