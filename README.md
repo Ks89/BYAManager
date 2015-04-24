@@ -2,10 +2,9 @@
 
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/0-header.jpg)
 
-
-BYAManager is a personal project that i realized in 2011, and updated more times during the last years. It's a Multi-Platform and Multi-Language software dedicated to the "Apple World", that i developed for the blog biteyourapple.<br/>
+BYAManager is a personal project that i realized in 2011 and updated more times during the years. It's a Multi-Platform and Multi-Language software dedicated to the "Apple World", that i developed for the blog called BiteYourApple.<br/>
 This software is a GUI to download iOS firmwares and iTunes versions with some extra features.<br/>
-It's legal, obviously, because all files are on Apple server. BYAManager brings files directly from Apple server to you.<br/>
+It's legal, obviously, because all files are on Apple server. BYAManager gets files directly from Apple server to you.<br/>
 
 It's available in 3 languages: ITALIAN, ENGLISH and CZECH
 
@@ -41,9 +40,9 @@ The complete list IN ITALIAN is available [HERE](https://github.com/Ks89/BYAMana
 - 04/05/2012 - **BYAManager 0.5.2 RC1** public via Twitter and auto-update
 - 03/28/2012 - **BYAManager 0.5.1** public [HERE](http://www.biteyourapple.net/2012/04/06/esclusiva-bya-bya-manager-0-5-1/#more-43275) and [HERE](http://ks89-jailbreak.blogspot.it/2012/03/anteprima-byamanager-051.html)
 - 03/19/2012 - **BYAManager 0.5.0.0** public [HERE](http://ks89-jailbreak.blogspot.it/2012/01/anteprima-byamanager-050.html)
-- 03/19/2012 - **BYAManager 0.5.0 beta 1** only for 3 beta testers. Yep! beta1 after a RC ;)
 - 03/19/2012 - **BYAManager 0.5.0 RC2** public via Twitter and auto-update
 - 03/19/2012 - **BYAManager 0.5.0 RC1** public via Twitter and auto-update
+- 03/19/2012 - **BYAManager 0.5.0 beta 1** only for 3 beta testers
 - 03/13/2012 - **BYAManager 0.5.0.0 Beta5** only for beta testers
 - 03/09/2012 - **BYAManager 0.5.0.0 Beta3** only for beta testers 
 - 02/24/2012 - **BYAManager 0.4.1.0 (or 0.5.0.0 Beta2)** only for beta testers
@@ -67,17 +66,17 @@ The complete list IN ITALIAN is available [HERE](https://github.com/Ks89/BYAMana
 * restore settings to default values
 * open the download folder, directly from BYAManager
 * re-download files in the list directly in the browser, or in other programs
-* control some important features esecuting BYAManager via Command Line with a complete tutorial esecuting BYAManager.jar help
-* move a completed download into the iTunes folder (only on Mac and Windows) to be able to update/restore your device from iTunes without re-download the ipsw.
+* control some important features running BYAManager via Command Line with a complete tutorial executing "BYAManager.jar help"
+* move a completed download into the iTunes folder (only on Mac and Windows) to be able to update/restore your device from iTunes without re-download the file ".ipsw".
 
-####BYAManager does:
-* automatically check and update itself every 24 hours, with BYAUpdater
-* automatically check and update the databse every 24 hours
-* download files at full speed using multiple process
-* check the integrity os a file with hash algoririthm sha1.
-* during the startup of the program, can try to restore incompleted/damaged files
-* check if a file has been downloaded before
-* Log every actions in a file called BYAManager.log, near the executable
+####BYAManager:
+* checks and updates itself automatically every 24 hours, with BYAUpdater
+* checks and updates automatically the databse every 24 hours
+* downloads files at full speed using multiple process
+* checks the integrity os a file with hash algoririthm (SHA1).
+* tries to restore incompleted/damaged files, during the startup of the program
+* checks if a file has been downloaded before
+* logs every actions in a file called BYAManager.log, near the executable
 
 
 ## Future extensions
@@ -85,11 +84,11 @@ The complete list IN ITALIAN is available [HERE](https://github.com/Ks89/BYAMana
 ####Functionalities
 * Add a pattern to the sha check 
 * Improve the logic to check the free space on the disk
-* Dinamically update the list of available firmwares and iTunes version, without the requirement of "restart BYAManager to apply".
-* Add social networks integration: twitter, facebook and so on
+* Dinamically update the list of available firmwares and iTunes versions, without the requirement of "restart BYAManager to apply".
+* Add social networks integration: Twitter, Facebook and so on
 
 ####GUI
-* Create a new modern GUI to release BYAManager 2.0 (NOT IN SWING, but with other framework, like JavaFX)
+* Create a new modern GUI to release BYAManager 2.0 (NOT IN SWING, but with other frameworks, like JavaFX)
 * Create a custom GUI for the popup in the system tray
 * Add in the GUI some informations to help the user to understand the state of every process
 * Add the donate button in the GUI
@@ -165,7 +164,7 @@ Or, you can click with the secondary button of the mouse on the table's row to c
 
 
 ##### Actions on multiple downloads
-If you're downloading multiple files, you can pause/resume/stop all this files with only one click on the button in the menu bar.
+If you're downloading multiple files, you can pause/resume/stop all this files with only one click on buttons in the menu bar.
 
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/parts-all-buttons.png)
 
@@ -205,7 +204,7 @@ Please don't change these options, because are very useful ;)
 
 ##### Proxy
 In this section you can set a proxy to download files.
-Attention, you must use a server with port 8080. Also, you shuld check the speed of this server, because BYAManager requires a very large bandwidth to download files. This is an advanced options, only for expert users.
+Attention, you must use a server with port 8080. Also, you should check the speed of this server, because BYAManager requires a very large bandwidth to download files. This is an advanced options, only for expert users.
 
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/settings-proxy.png)
 
@@ -219,12 +218,12 @@ If you choose to remove future notifications, this dialog won't appear.
 
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/trayicon-mac-osx.png)         ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/trayicon-windows.png)
 
-To close definitively BYAManager, you can choose from the menu "File" -> "Exit", or from the tray icon the item "Close"
+To close definitively BYAManager, you can choose from the menu "File" -> "Exit", or from the tray icon using the item "Close"
 
 
 #### Move a firmware to iTunes folder
 When you are on MAC OS X or Windows, you can move downloaded files directly in the firmware folder of iTunes by clicking on the "Move" button in the table's row.
-In this way, iTunes doen't require to download this file another time.
+In this way, iTunes doesn't require to download this file another time.
 
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/file-da-spostare.png)<br/>
 <br/>
@@ -234,15 +233,15 @@ In this way, iTunes doen't require to download this file another time.
 
 
 #### Execute an iTunes file to install 
-If you are downloading an iTunes setup file for your operative system, when download's process will complete, you can clic on the "Execute" button in the table's row to start the installation process.
+If you are downloading an iTunes setup file for your operative system, when download's process will complete, you can click on the "Execute" button in the table's row to start the installation process.
 
-This function is available only for Windows and MAC OS X, because iTunes for Linux is not available.
+This function is available only for Windows and MAC OS X, because iTunes for Linux isn't available.
 
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/cliccato-esegui.png)
 
 
 #### Updates available
-BYAManager update or DB update are notified in this section of the GUI.
+BYAManager's update or DB's update are notified in this section of the GUI.
 
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/parts-updated.png)
 
@@ -267,7 +266,7 @@ If you start BYAManager via Command Line/Terminal in this way: java -jar BYAMana
 - 'delete-download-temp' to remove only temp files
 - 'update-db' to remove the database
 - 'update-software' to check and install the latest version of BYAManager
-- 'sort-firmware-db' sorts links in the firmware's database **BETA** (ONLY FOR EXPERT USERS)
+- 'sort-firmware-db' sorts links in the firmware's database - **BETA** (ONLY FOR EXPERT USERS)
 
 
 #### Explore data folder
@@ -305,8 +304,8 @@ If you start BYAManager via Command Line/Terminal in this way: java -jar BYAMana
 
 ## Thanks to:
 * Endys111 for the Czech translation
-* Anatoli Nicolae for the Splash Screen and the toolbar
-* BYA staff
+* Anatoli Nicolae for GUI of the Splash Screen and the toolbar
+* BYA staff for the support
 
 
 ## License
