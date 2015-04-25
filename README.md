@@ -14,6 +14,8 @@ BYAManager uses [BYAUpdater](https://github.com/Ks89/BYAUpdater) to update itsel
 
 I presented this software in 2011 [HERE](http://www.biteyourapple.net/2011/12/28/esclusiva-bya-biteyourapple-manager-beta-3/)
 
+Attention!!! I started this project on assembla.com with SVN. The source code and the commit's list are in Assembla in a private repository. This isn't important, because the code here on GitHub is better.
+
 **This software requires Java 8 or above and an internet connection**
 
 
