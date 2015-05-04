@@ -16,7 +16,9 @@ I presented this software in 2011 [HERE](http://www.biteyourapple.net/2011/12/28
 
 Attention!!! I started this project on assembla.com with SVN. The source code and the commit's list are in Assembla in a private repository. This isn't important, because the code here on GitHub is better.
 
-I'm working on a Python script to sort the ipsw's links in the database. This project is available [HERE](https://github.com/Ks89/BYAMSorter).
+
+I'm working on a Python script to sort the ipsw's links in the database.<br/>
+This project is available [HERE](https://github.com/Ks89/BYAMSorter). <br/>
 In the future, i want to integrate this script in BYAManager.
 
 **This software requires Java 8 or above and an internet connection**
