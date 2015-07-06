@@ -1,3 +1,10 @@
+[![License Apache 2](https://img.shields.io/badge/license-Apache%202-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
+![](https://reposs.herokuapp.com/?path=Ks89/BYAManager)
+
+[![Issue Stats](http://issuestats.com/github/Ks89/BYAManager/badge/pr?style=flat)](http://issuestats.com/github/Ks89/BYAManager)
+[![Issue Stats](http://issuestats.com/github/Ks89/BYAManager/badge/issue?style=flat)](http://issuestats.com/github/Ks89/BYAManager)
+
+
 # BYAManager
 
 ![alt tag](http://www.stefanocappa.it/publicfiles/Github_repositories_images/BYAManager/0-header.jpg)
