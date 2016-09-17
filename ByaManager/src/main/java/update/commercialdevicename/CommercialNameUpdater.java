@@ -29,7 +29,6 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
 import update.LinkServer;
-import lombok.Getter;
 
 /**
  * Class to load devices from primary/secondary server in {@link LinkServer}
@@ -39,7 +38,7 @@ public final class CommercialNameUpdater {
 
 	private static CommercialNameUpdater instance = new CommercialNameUpdater();
 
-	@Getter private Map<String,String> codeNameCommecialDeviceMap;
+	private Map<String,String> codeNameCommecialDeviceMap;
 
 	private CommercialNameUpdater() {
 		this.codeNameCommecialDeviceMap = new HashMap<String,String>();
@@ -100,5 +99,9 @@ public final class CommercialNameUpdater {
 			}
 
 		}
+	}
+
+	public Map<String, String> getCodeNameCommecialDeviceMap() {
+		return codeNameCommecialDeviceMap;
 	}
 }

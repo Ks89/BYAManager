@@ -17,7 +17,6 @@ limitations under the License.
 package model;
 
 import update.commercialdevicename.CommercialNameUpdater;
-import lombok.Getter;
 
 /**
  * Classe che estende Dispositivo aggiugnengo il nome commerciale.
@@ -59,9 +58,21 @@ public class CommercialDevice extends Device{
 		
 		"iPod Touch 1G","iPod Touch 2G","iPod Touch 3G","iPod Touch 4G","iPod Touch 5G"};
 
-	@Getter private String nomeCommerciale;
-	@Getter private String product;
-	@Getter private String version;
+	private String nomeCommerciale;
+	private String product;
+	private String version;
+
+	public String getNomeCommerciale() {
+		return nomeCommerciale;
+	}
+
+	public String getProduct() {
+		return product;
+	}
+
+	public String getVersion() {
+		return version;
+	}
 
 	/**
 	 * Costruttore che imposta il nome in codice ed assegna il nome Commerciale.

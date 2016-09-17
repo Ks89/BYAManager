@@ -17,7 +17,6 @@ limitations under the License.
 package uuid;
 
 import localization.Translator;
-import lombok.Getter;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
@@ -31,7 +30,7 @@ import com.eaio.uuid.UUIDGen;
  */
 public abstract class Uuid {
 	
-	@Getter private String uuid;
+	private String uuid;
 
 	/**
 	 * Method to generate a simple uuid using this informations: 
@@ -41,5 +40,13 @@ public abstract class Uuid {
 	 */
 	public void generateUuid() {
 		this.uuid = Version.getVersion() + "_" + System.getProperty("os.version")  + "_" + Translator.getTraduzione() + "_" + DigestUtils.sha512Hex(UUIDGen.getMACAddress().replace(":", "").toUpperCase());
+	}
+
+	public String getUuid() {
+		return uuid;
+	}
+
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
 	}
 }

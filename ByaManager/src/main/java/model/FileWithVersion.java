@@ -16,13 +16,11 @@ limitations under the License.
 
 package model;
 
-import lombok.Getter;
-import lombok.Setter;
 
 public abstract class FileWithVersion extends FileWeb {
 	
-	@Getter @Setter private String version;
-	@Getter @Setter private Changelog changelog;
+	private String version;
+	private Changelog changelog;
 
 	public FileWithVersion() {
 		super();
@@ -33,4 +31,20 @@ public abstract class FileWithVersion extends FileWeb {
 	}
 	
 	public abstract String getFileName();
+
+	public String getVersion() {
+		return version;
+	}
+
+	public Changelog getChangelog() {
+		return changelog;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
+	}
+
+	public void setChangelog(Changelog changelog) {
+		this.changelog = changelog;
+	}
 }

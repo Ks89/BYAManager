@@ -29,7 +29,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Observable;
 
-import lombok.Getter;
 import model.CommercialDevice;
 import model.Firmware;
 import notification.Notification;
@@ -61,7 +60,7 @@ public final class FirmwareUpdates extends Observable implements Runnable {
 	private List<Firmware> firmwareListNew;
 	private List<Firmware> firmwareListToWrite;
 	private Path dataPath;
-	@Getter private boolean dbUpdated = false;
+	private boolean dbUpdated = false;
 
 	/**
 	 * Constructor of this class.
@@ -100,7 +99,7 @@ public final class FirmwareUpdates extends Observable implements Runnable {
 					firmware.setBuild(partial2[partial2.length-2]);
 					firmware.setPercorso(read[0]);
 					firmware.setHash(read[1].toUpperCase());
-					firmware.setDimension(0);
+					firmware.setSize(0);
 					firmwareListToWrite.add(firmware);
 				}
 				currentLine = br.readLine();
@@ -295,5 +294,10 @@ public final class FirmwareUpdates extends Observable implements Runnable {
 	public void stateChanged() {
 		setChanged();
 		notifyObservers();
+	}
+
+
+	public boolean isDbUpdated() {
+		return dbUpdated;
 	}
 }

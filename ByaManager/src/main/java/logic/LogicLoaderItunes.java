@@ -100,7 +100,7 @@ public class LogicLoaderItunes extends LogicLoader {
 					itunesVersion.addOperativeSystem(this.getCorrectInstanceOfOperativeSystem(letto[1]));
 					itunesVersion.setPercorso(letto[2]);
 					itunesVersion.setHash(letto[3].toUpperCase());
-					itunesVersion.setDimension(0);
+					itunesVersion.setSize(0);
 					iTunesMapNomeFile.put("iTunes" + "_" + itunesVersion.getOperativeSystemList().get(0).getShortName() + "_" + 
 											itunesVersion.getVersion() + itunesVersion.getOperativeSystemList().get(0).getExecExtension(), itunesVersion);
 					iTunesListaNomeFile.add(itunesVersion);

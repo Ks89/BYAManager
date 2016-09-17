@@ -22,7 +22,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import lombok.Getter;
 import notification.Notification;
 
 /**
@@ -33,12 +32,12 @@ public final class User extends Os {
 	private static User instance = new User();
 
 	private String homePath;
-	@Getter private Path dataPath;
-	@Getter private Path downloadPath;
-	@Getter private Path downloadTempPath;
-	@Getter private Path downloadTempHttpsPath;
-	@Getter private String jarPath;
-	@Getter private String jarName;
+	private Path dataPath;
+	private Path downloadPath;
+	private Path downloadTempPath;
+	private Path downloadTempHttpsPath;
+	private String jarPath;
+	private String jarName;
 
 	/**
 	 * Metodo che permette di ottenere l'istanza della classe.
@@ -132,5 +131,80 @@ public final class User extends Os {
 		}
 		//se e' linux non da nessun percorso perche' su linux non si puo' installare itunes
 		throw new IOException();
+	}
+
+
+	public String getHomePath() {
+		return homePath;
+	}
+
+
+	public Path getDataPath() {
+		return dataPath;
+	}
+
+
+	public Path getDownloadPath() {
+		return downloadPath;
+	}
+
+
+	public Path getDownloadTempPath() {
+		return downloadTempPath;
+	}
+
+
+	public Path getDownloadTempHttpsPath() {
+		return downloadTempHttpsPath;
+	}
+
+
+	public String getJarPath() {
+		return jarPath;
+	}
+
+
+	public String getJarName() {
+		return jarName;
+	}
+
+
+	public static void setInstance(User instance) {
+		User.instance = instance;
+	}
+
+
+	public void setHomePath(String homePath) {
+		this.homePath = homePath;
+	}
+
+
+	public void setDataPath(Path dataPath) {
+		this.dataPath = dataPath;
+	}
+
+
+	public void setDownloadPath(Path downloadPath) {
+		this.downloadPath = downloadPath;
+	}
+
+
+	public void setDownloadTempPath(Path downloadTempPath) {
+		this.downloadTempPath = downloadTempPath;
+	}
+
+
+	public void setDownloadTempHttpsPath(Path downloadTempHttpsPath) {
+		this.downloadTempHttpsPath = downloadTempHttpsPath;
+	}
+
+
+	public void setJarPath(String jarPath) {
+		this.jarPath = jarPath;
+	}
+
+
+	public void setJarName(String jarName) {
+		this.jarName = jarName;
 	}
 }

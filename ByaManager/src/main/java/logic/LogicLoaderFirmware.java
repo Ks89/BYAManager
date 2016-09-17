@@ -154,28 +154,62 @@ public final class LogicLoaderFirmware extends LogicLoader{
 			String[] letto;
 			while(rigaFile!=null) {
 				letto = rigaFile.split("___");
+		
 				if(letto.length>0) {
 					Firmware firmware = new Firmware();
-					String[] parziale1 = letto[0].split(",");
-					//se la dimensione della splittata e' 2 e' ok, altrimenti e' l'url particolare dell'iphone 3,1 con 4.0
-					//quindi il programma si bloccherebbe allora uso il length che corregge questo problema in questa situazione
-					String[] parziale2 = parziale1[parziale1.length-1].split("_");
-					String[] parziale3 = parziale1[parziale1.length-2].split("/");
-					firmware.addOperativeSystem(this.getCorrectInstanceOfOperativeSystem("0")); 
-					firmware.addOperativeSystem(this.getCorrectInstanceOfOperativeSystem("32"));
-					firmware.addOperativeSystem(this.getCorrectInstanceOfOperativeSystem("64"));
-					firmware.setDevice(new CommercialDevice(parziale3[parziale3.length-1] + "," + parziale2[0]));
-					firmware.setVersion(parziale2[1]);
-					firmware.setBuild(parziale2[parziale2.length-2]);
-					firmware.setPercorso(letto[0]);
-					firmware.setHash(letto[1].toUpperCase());
-					firmware.setDimension(0);
-					firmwareMapNomeFile.put(firmware.getFileName(), firmware);
-					firmwareListaNomeFile.add(firmware);
-
-					String disp = parziale3[parziale3.length-1] + "," + parziale2[0];
-					if(!isPresente(disp)) {
-						arrayListDispositivi.add((new CommercialDevice(disp)));
+					
+					if(!letto[0].contains(",")) {
+						//new format without comma (introduced for some links with iOS 10)
+						//devVersBuild = devicename + ios version + ios build
+						String devVersBuild = letto[0].split("_Restore")[0];
+						String[] partial1 = devVersBuild.split("_");
+						String build = partial1[partial1.length-1];
+						String iosVersion = partial1[partial1.length-2];
+						String deviceToClean = devVersBuild.split("/")[5].replace(build, "").replace(iosVersion, "");
+						String device = deviceToClean.substring(0, deviceToClean.length()-2); //to remove the "__" at the end
+//						System.out.println(device);
+//						System.out.println(iosVersion);
+//						System.out.println(build);
+						
+						firmware.addOperativeSystem(this.getCorrectInstanceOfOperativeSystem("0")); 
+						firmware.addOperativeSystem(this.getCorrectInstanceOfOperativeSystem("32"));
+						firmware.addOperativeSystem(this.getCorrectInstanceOfOperativeSystem("64"));
+						firmware.setDevice(new CommercialDevice(device));
+						firmware.setVersion(iosVersion);
+						firmware.setBuild(build);
+						firmware.setPercorso(letto[0]);
+						firmware.setHash(letto[1].toUpperCase());
+						firmware.setSize(0);
+						firmwareMapNomeFile.put(firmware.getFileName(), firmware);
+						firmwareListaNomeFile.add(firmware);
+	
+						if(!isPresente(device)) {
+							arrayListDispositivi.add((new CommercialDevice(device)));
+						}
+						
+					} else {
+						//old format with a comma
+						String[] parziale1 = letto[0].split(",");
+						//se la dimensione della splittata e' 2 e' ok, altrimenti e' l'url particolare dell'iphone 3,1 con 4.0
+						//quindi il programma si bloccherebbe allora uso il length che corregge questo problema in questa situazione
+						String[] parziale2 = parziale1[parziale1.length-1].split("_");
+						String[] parziale3 = parziale1[parziale1.length-2].split("/");
+						firmware.addOperativeSystem(this.getCorrectInstanceOfOperativeSystem("0")); 
+						firmware.addOperativeSystem(this.getCorrectInstanceOfOperativeSystem("32"));
+						firmware.addOperativeSystem(this.getCorrectInstanceOfOperativeSystem("64"));
+						firmware.setDevice(new CommercialDevice(parziale3[parziale3.length-1] + "," + parziale2[0]));
+						firmware.setVersion(parziale2[1]);
+						firmware.setBuild(parziale2[parziale2.length-2]);
+						firmware.setPercorso(letto[0]);
+						firmware.setHash(letto[1].toUpperCase());
+						firmware.setSize(0);
+						firmwareMapNomeFile.put(firmware.getFileName(), firmware);
+						firmwareListaNomeFile.add(firmware);
+	
+						String disp = parziale3[parziale3.length-1] + "," + parziale2[0];
+						if(!isPresente(disp)) {
+							arrayListDispositivi.add((new CommercialDevice(disp)));
+						}
 					}
 				}
 				rigaFile = br.readLine();

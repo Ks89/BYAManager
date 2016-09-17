@@ -16,15 +16,12 @@ limitations under the License.
 
 package model;
 
-import lombok.Getter;
-import lombok.Setter;
-
 /**
  *	Classe che rappresenta un singolo firmware con versione, build, dispositivo ecc...
  */
 public class Firmware extends FileWithVersion{
-	@Getter @Setter private Device device;
-	@Getter @Setter private String build;
+	private Device device;
+	private String build;
 
 	public Firmware() {
 		super();
@@ -38,5 +35,21 @@ public class Firmware extends FileWithVersion{
 	//Infatti viene richiamato per salvare su file il percorso + hash
 	public String toString() {
 		return super.getUri().toString() + "___" + super.getHash();
+	}
+
+	public Device getDevice() {
+		return device;
+	}
+
+	public String getBuild() {
+		return build;
+	}
+
+	public void setDevice(Device device) {
+		this.device = device;
+	}
+
+	public void setBuild(String build) {
+		this.build = build;
 	}
 }

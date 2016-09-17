@@ -16,8 +16,6 @@ limitations under the License.
 
 package model;
 
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  * Classe astratta che rappresenta il dispositivo con un nome in codice 
@@ -25,13 +23,21 @@ import lombok.Setter;
  */
 public abstract class Device {
 	
-	@Getter @Setter private String nomeDispositivo;
+	private String nomeDispositivo;
 
 	/**
 	 * Costruttore che inizializza la classe col nome in codice del dispositivo.
 	 * @param nomeDispositivo
 	 */
 	public Device(String nomeDispositivo) {
+		this.nomeDispositivo = nomeDispositivo;
+	}
+
+	public String getNomeDispositivo() {
+		return nomeDispositivo;
+	}
+
+	public void setNomeDispositivo(String nomeDispositivo) {
 		this.nomeDispositivo = nomeDispositivo;
 	}
 }

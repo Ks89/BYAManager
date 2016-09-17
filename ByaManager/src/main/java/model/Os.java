@@ -32,13 +32,11 @@ limitations under the License.
 
 package model;
 
-import lombok.Getter;
-
 public class Os {
-	@Getter private String osName;
-	@Getter private String osVersion;
-	@Getter private String architecture;
-	@Getter private OperativeSystem operativeSystemInstance;
+	private String osName;
+	private String osVersion;
+	private String architecture;
+	private OperativeSystem operativeSystemInstance;
 
 	public Os() {
 		this.osName = System.getProperty("os.name");
@@ -76,5 +74,37 @@ public class Os {
 
 	public boolean isWindows() {
 		return osName.contains("Windows");
+	}
+
+	public String getOsName() {
+		return osName;
+	}
+
+	public String getOsVersion() {
+		return osVersion;
+	}
+
+	public String getArchitecture() {
+		return architecture;
+	}
+
+	public OperativeSystem getOperativeSystemInstance() {
+		return operativeSystemInstance;
+	}
+
+	public void setOsName(String osName) {
+		this.osName = osName;
+	}
+
+	public void setOsVersion(String osVersion) {
+		this.osVersion = osVersion;
+	}
+
+	public void setArchitecture(String architecture) {
+		this.architecture = architecture;
+	}
+
+	public void setOperativeSystemInstance(OperativeSystem operativeSystemInstance) {
+		this.operativeSystemInstance = operativeSystemInstance;
 	}
 }

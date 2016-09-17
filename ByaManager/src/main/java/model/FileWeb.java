@@ -22,8 +22,6 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
-import lombok.Getter;
-import lombok.Setter;
 
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
@@ -32,18 +30,18 @@ import org.apache.logging.log4j.LogManager;
  * @author  Stefano Cappa
  */
 public abstract class FileWeb {
-	@Getter @Setter private BufferedImage icon;
-	@Getter @Setter private URI uri;
-	@Getter @Setter private String hash; //hash calcolato con SHA1
-	@Getter @Setter private int dimension;
-	@Getter @Setter private List<OperativeSystem> operativeSystemList; //contiene architettura, os compatibile ecc...
+	private BufferedImage icon;
+	private URI uri;
+	private String hash; //hash calcolato con SHA1
+	private int size;
+	private List<OperativeSystem> operativeSystemList; //contiene architettura, os compatibile ecc...
 
 	
 	private static final Logger LOGGER = LogManager.getLogger(FileWeb.class);
 
 	public FileWeb() {
 		this.hash = null;
-		this.dimension=0;
+		this.size=0;
 		this.operativeSystemList = new ArrayList<OperativeSystem>();
 	}
 
@@ -66,4 +64,44 @@ public abstract class FileWeb {
 	}
 	
 	public abstract String getFileName();
+
+	public BufferedImage getIcon() {
+		return icon;
+	}
+
+	public URI getUri() {
+		return uri;
+	}
+
+	public String getHash() {
+		return hash;
+	}
+
+	public int getSize() {
+		return size;
+	}
+
+	public List<OperativeSystem> getOperativeSystemList() {
+		return operativeSystemList;
+	}
+
+	public void setIcon(BufferedImage icon) {
+		this.icon = icon;
+	}
+
+	public void setUri(URI uri) {
+		this.uri = uri;
+	}
+
+	public void setHash(String hash) {
+		this.hash = hash;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
+	}
+
+	public void setOperativeSystemList(List<OperativeSystem> operativeSystemList) {
+		this.operativeSystemList = operativeSystemList;
+	}
 }

@@ -156,7 +156,7 @@ public final class ParserPlist {
 			firmware.setHash("non presente");
 		}
 		//i can't know the size of a firmware obtained from version.xml. For this reason i set this size to 0.
-		firmware.setDimension(0); 
+		firmware.setSize(0); 
 		return firmware;
 	}
 }
