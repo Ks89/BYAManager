@@ -34,13 +34,14 @@ In the future, i want to integrate this script in BYAManager.
 ## Bug reports
 ATTENTION: I'll never fix issues about the Graphical Interface, because i want to recreate the entire GUI with different technologies in the future.
 <br/>
-[GO HERE](https://github.com/Ks89/BYAManager/issues)
+I found two terrible bugs related to iOS10. For more info [GO HERE](https://github.com/Ks89/BYAManager/issues)
 
 ## Changelogs
 The complete list IN ITALIAN is available [HERE](https://github.com/Ks89/BYAManager/blob/master/README-CHANGELOGS.md)
 
 
 ## News
+- 09/17/2016 - **BYAManager 1.0.1** [DOWNLOAD HERE](https://github.com/Ks89/BYAManager/releases/tag/v1.0.1) and public release [HERE](http://ks89-jailbreak.blogspot.it/2016/09/byamanager-101.html)
 - 04/11/2015 - **BYAManager 1.0.0** [DOWNLOAD HERE](https://github.com/Ks89/BYAManager/releases/tag/v1.0.0) and public release [HERE](http://ks89-jailbreak.blogspot.it/2015/04/byamanager-100.html)
 - 04/10/2015 - **BYAManager 0.9.0** [DOWNLOAD HERE](https://github.com/Ks89/BYAManager/releases/tag/v0.9.0) and public release [HERE](http://ks89-jailbreak.blogspot.it/2015/04/byamanager-090.html)
 - 04/06/2015 - **BYAManager 0.8.0** [DOWNLOAD HERE](https://github.com/Ks89/BYAManager/releases/tag/v0.8.0) and public release [HERE](http://ks89-jailbreak.blogspot.it/2015/04/byamanager-080.html)
