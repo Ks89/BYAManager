@@ -1,3 +1,7 @@
+# 1.0.1 - 09/17/2016
+- Rimosso Project Lombok come dipendenza
+- RISOLTO BUG ENORME: con iOS10 il formato degli URL era cambiato. Questa versione permette a BYAManager di avviarsi nuovamente. Tutto ciò non corregge tutti i problemi. Perchè BYAManager torni al pieno delle sue forze attendere BYAManager 1.1.0.
+
 # 1.0.0 - 04/10/2015
 - NUOVA FUNZIONE: aggiunto nuovo parametro eseguendo BYAManager tramite linea di comando. Comunque si tratta una funzione da utenti esperti e che serve più a me che ad altri ;)
 - RISOLTO BUG MINORE: ultimo bug conosciuto da tempo, risolto. Cioè, forzando l'aggiornamento del db o del programma, l'interfaccia grafica non si congela più per qualche secondo. Ora non ne conosco di rilevanti.
