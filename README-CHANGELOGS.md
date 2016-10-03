@@ -1,3 +1,6 @@
+# 1.1.0 - ??/??/????
+- COMING SOON
+
 # 1.0.1 - 09/17/2016
 - Rimosso Project Lombok come dipendenza
 - RISOLTO BUG ENORME: con iOS10 il formato degli URL era cambiato. Questa versione permette a BYAManager di avviarsi nuovamente. Tutto ciò non corregge tutti i problemi. Perchè BYAManager torni al pieno delle sue forze attendere BYAManager 1.1.0.
