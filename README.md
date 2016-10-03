@@ -30,6 +30,8 @@ In the future, i want to integrate this script in BYAManager.
 
 **This software requires Java 8 or above and an internet connection**
 
+**GOOD NEWS:** I moved BYAManager to IntelliJ and removed Project Lombok as a dependency (because quite obsolete today)
+
 
 ## Bug reports
 ATTENTION: I'll never fix issues about the Graphical Interface, because i want to recreate the entire GUI with different technologies in the future.
@@ -41,6 +43,7 @@ The complete list IN ITALIAN is available [HERE](https://github.com/Ks89/BYAMana
 
 
 ## News
+- ??/??/???? - **BYAManager 1.1.0** SCHEDULED BUT STILL UNRELEASED (do a 'git checkout master')
 - 09/17/2016 - **BYAManager 1.0.1** [DOWNLOAD HERE](https://github.com/Ks89/BYAManager/releases/tag/v1.0.1) and public release [HERE](http://ks89-jailbreak.blogspot.it/2016/09/byamanager-101.html)
 - 04/11/2015 - **BYAManager 1.0.0** [DOWNLOAD HERE](https://github.com/Ks89/BYAManager/releases/tag/v1.0.0) and public release [HERE](http://ks89-jailbreak.blogspot.it/2015/04/byamanager-100.html)
 - 04/10/2015 - **BYAManager 0.9.0** [DOWNLOAD HERE](https://github.com/Ks89/BYAManager/releases/tag/v0.9.0) and public release [HERE](http://ks89-jailbreak.blogspot.it/2015/04/byamanager-090.html)
@@ -68,6 +71,14 @@ The complete list IN ITALIAN is available [HERE](https://github.com/Ks89/BYAMana
 - 10/03/2011 - **BYAManager Beta 0.3** private
 - 08/04/2011 - **BYAManager Alpha 4** private
 - 07/31/2011 - **BYAManager Alpha 3** private
+
+
+## How to setup
+* import this maven project into IntelliJ Idea 2016 or higher
+* Create two maven configurations, with these 'Command Line' values:
+    * clean install
+    * assembly:assembly
+
 
 ## Features
 
